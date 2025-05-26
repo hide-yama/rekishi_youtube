@@ -1,0 +1,27 @@
+{
+  "name": "kaigyo-junbi",
+  "version": "1.0.0",
+  "description": "フリーランス開業準備タスク管理システム",
+  "main": "index.js",
+  "scripts": {
+    "today": "node extract.js --date $(date +%F) > daily/$(date +%F).md",
+    "sync-today": "node sync.js --file daily/$(date +%F).md",
+    "extract": "node extract.js",
+    "sync": "node sync.js",
+    "obsidian": "node obsidian-export.js",
+    "obsidian-category": "node obsidian-export.js --category",
+    "obsidian-status": "node obsidian-export.js --status",
+    "review-weekly": "node review.js --period weekly",
+    "review-monthly": "node review.js --period monthly",
+    "review-summary": "node review.js --summary",
+    "review-export": "node review.js --export"
+  },
+  "keywords": ["task-management", "freelance", "startup"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "gray-matter": "^4.0.3",
+    "minimist": "^1.2.8"
+  }
+} 
