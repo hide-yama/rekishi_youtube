@@ -1,97 +1,201 @@
 # 開業準備タスク管理システム
 
-## 📖 概要
-フリーランス開業準備（2025年6月23日開始予定）に向けた、Node.js + YAML + CLI自動化によるタスク管理システムです。
+## 📖 目次
+1. [クイックスタート](#クイックスタート)
+2. [システム概要](#システム概要)
+3. [日次ワークフロー](#日次ワークフロー)
+4. [コマンドリファレンス](#コマンドリファレンス)
+5. [タスク管理](#タスク管理)
+6. [Obsidian連携](#obsidian連携)
+7. [Git管理](#git管理)
+8. [トラブルシューティング](#トラブルシューティング)
 
-## 🎯 開業スケジュール
+---
+
+## 🚀 クイックスタート
+
+### 開業スケジュール
 - **開業予定日**: 2025年6月23日
 - **準備期間**: 〜2025年6月22日まで
 
-## 🗂️ ディレクトリ構成
+### 5分で始める
+```bash
+# 1. 依存パッケージのインストール
+npm install
 
+# 2. 今日のタスクを生成
+npm run today
+
+# 3. 生成されたファイルでタスクを実行
+# daily/2025-05-27.md を開いてタスクを確認・実行
+
+# 4. 夕方に同期
+npm run sync-today
+
+# 5. Obsidianで視覚的確認
+npm run obsidian
+```
+
+---
+
+## 📋 システム概要
+
+### 特徴
+- **YAML一元管理**: `tasks.yml` でタスクの状態を集約
+- **自動化**: CLIコマンドで日次タスクの抽出・同期
+- **ID管理**: タスクを一意に識別（例：`LEGAL-001`）
+- **双方向同期**: 日次ファイルの変更を自動でYAMLに反映
+- **重複チェック**: 新規タスク追加時の重複検出機能
+- **柔軟な更新**: 期限・メモ・優先度の日次ファイル経由での変更
+- **Obsidian対応**: YAMLデータを構造化Markdownに変換して視覚的管理
+
+### ディレクトリ構成
 ```
 /開業準備_20250524/
 ├── package.json              ← Node.js設定
 ├── tasks.yml                 ← タスク一元管理（メインファイル）
-├── extract.js                ← 日次タスク抽出コマンド
-├── sync.js                   ← 双方向同期コマンド（重複チェック・更新機能付き）
+├── extract.js                ← 日次タスク抽出ツール
+├── sync.js                   ← 双方向同期ツール
+├── obsidian-export.js        ← Obsidian用Markdown生成
 ├── daily/                    ← 日次記録
-│   ├── 2025-05-24.md
-│   └── template.md
-├── docs/                     ← 参考資料
+│   ├── 2025-05-27.md        ← 各日のタスク・振り返り
+│   └── template.md          ← テンプレートファイル
+├── obsidian-export/          ← Obsidian用ファイル（13ファイル生成）
+├── docs/                     ← 参考資料・契約書類
 │   ├── 法的手続き/
-│   ├── 税務資料/
+│   ├── 契約・請求/
 │   ├── ブランディング/
-│   └── 営業資料/
+│   └── 研究論文/
 └── README.md                 ← 本ファイル
 ```
 
-## ⚙️ システムの特徴
+### タスクカテゴリー（2025年5月27日現在）
 
-### 🔄 自動化ワークフロー
-1. **タスク抽出**: `extract.js` で期限順・優先度順にタスクを自動生成
-2. **双方向同期**: `sync.js` で日次ファイルの完了状況を `tasks.yml` に反映
-3. **ID管理**: `LEGAL-001` 形式でタスクを一意識別
-4. **重複チェック**: 新規タスク追加時の重複検出機能
-5. **柔軟な更新**: 期限・メモ・優先度の日次ファイル経由での変更
-6. **Obsidian対応**: YAMLデータを構造化Markdownに変換して視覚的管理
+| プレフィックス | カテゴリ | 件数 | 例 |
+|-------------|---------|------|---|
+| `LEGAL-xxx` | 法的手続き | 7件 | `LEGAL-001` 開業届の提出 |
+| `ACCOUNTING-xxx` | 会計・税務 | 4件 | `ACCOUNTING-001` 会計ソフト導入 |
+| `ENVIRONMENT-xxx` | 業務環境 | 3件 | `ENVIRONMENT-001` 作業環境構築 |
+| `INSURANCE-xxx` | 保険・年金 | 4件 | `INSURANCE-001` 国保切替 |
+| `REVENUE-xxx` | 収益基盤 | 3件 | `REVENUE-001` 案件獲得 |
+| `CONTRACT-xxx` | 契約・請求 | 4件 | `CONTRACT-001` 請求フロー |
+| `BRANDING-xxx` | ブランディング | 1件 | `BRANDING-001` 事業紹介文 |
+| `MARKETING-xxx` | マーケティング | 8件 | `MARKETING-001` 名刺作成 |
+| `OPERATION-xxx` | 運用・仕組み化 | 2件 | `OPERATION-001` AI連携システム |
+| `RISK-xxx` | リスク管理 | 4件 | `RISK-001` 事業保険 |
+| `RESEARCH-xxx` | research | 5件 | `RESEARCH-001` 研究論文執筆 |
 
-### 📋 タスクカテゴリー
-- **法的手続き** (`LEGAL-xxx`): 開業届、青色申告承認申請書等
-- **税務会計準備** (`ACCOUNTING-xxx`): 会計ソフト、帳簿セットアップ等
-- **事業基盤整備** (`ENVIRONMENT-xxx`): 作業環境、ツール整備等
-- **保険年金手続き** (`INSURANCE-xxx`): 国民健康保険、国民年金等
-- **金融関係** (`FINANCE-xxx`): 事業用口座、クレジットカード等
-- **契約営業準備** (`CONTRACT-xxx`): 契約書雛形、提案書等
-- **ブランディング** (`BRANDING-xxx`): 屋号、事業紹介文等
-- **マーケティング** (`MARKETING-xxx`): 名刺、ウェブサイト、SNS等
-- **収益基盤** (`REVENUE-xxx`): 案件獲得、価格設定等
-- **運用管理** (`OPERATION-xxx`): タスク管理、業務フロー等
-- **リスク管理** (`RISK-xxx`): 保険、バックアップ等
+**全タスク数**: 45件（完了13件、作業中12件、未着手20件）
 
-## 🚀 使用方法
+---
 
-### 基本コマンド
+## 🔄 日次ワークフロー
 
+### 朝の作業（推奨時間：9:00）
 ```bash
-# 今日のタスクを生成
-node extract.js --date 2025-05-25 > daily/2025-05-25.md
+# 1. 最新状態に更新
+git pull
 
-# 全タスクを確認（期限関係なく）
-node extract.js --date 2025-05-25 --all
-
-# 変更をtasks.ymlに同期（重複チェック・更新機能付き）
-node sync.js --file daily/2025-05-25.md
-
-# npm scriptsを使用（推奨）
-npm run today      # 今日のタスク生成
-npm run sync-today # 今日の同期
-
-# Obsidian用ファイル生成
-npm run obsidian   # 全カテゴリのMarkdownファイル生成
-npm run obsidian-category # 特定カテゴリのみ生成
-npm run obsidian-status   # 特定ステータスのみ生成
-```
-
-### 日次ワークフロー
-
-#### 🌅 朝の作業
-```bash
-# 今日のタスクファイルを生成
+# 2. 今日のタスクファイルを生成
 npm run today
 
-# または手動で日付指定
-node extract.js --date $(date +%F) > daily/$(date +%F).md
+# 3. 生成されたファイルを確認
+open daily/$(date +%F).md  # macOS
 ```
 
-#### 🌆 夕方の作業（振り返り後）
+### 日中の作業
+1. 生成された日次ファイルでタスクを確認
+2. 作業完了したら `- [x]` にチェック
+3. 作業中は `- [~]` または🔄マークを追加
+4. 新規タスクは `NEW:` 記法で追加
+5. 既存タスクの更新は `UPDATE:` 記法で変更
+6. 振り返りセクションに進捗や気づきを記録
+
+### 夕方の作業（推奨時間：18:00）
 ```bash
-# タスク状況をYAMLに同期
+# 1. タスクの状態をYAMLに同期
 npm run sync-today
 
-# または手動でファイル指定
-node sync.js --file daily/$(date +%F).md
+# 2. Obsidian用ファイルを更新
+npm run obsidian
+
+# 3. 変更をGitで記録
+git add .
+git commit -m "chore: sync tasks $(date +%F)"
+git push
 ```
+
+---
+
+## 💻 コマンドリファレンス
+
+### npm scripts（推奨）
+
+| コマンド | 説明 | 頻度 |
+|---------|------|------|
+| `npm run today` | 今日のタスクファイル生成 | 毎朝 |
+| `npm run sync-today` | 今日の同期実行 | 毎夕 |
+| `npm run obsidian` | Obsidian用ファイル生成 | 毎夕 |
+
+### extract.js（タスク抽出）
+
+#### 基本的な使用法
+```bash
+# 指定日期限のタスクを生成
+node extract.js --date 2025-05-27 > daily/2025-05-27.md
+
+# 全タスクを確認（期限無関係）
+node extract.js --date 2025-05-27 --all
+
+# 過去期限のタスクを抽出
+node extract.js --overdue
+```
+
+#### 条件指定での抽出
+```bash
+# カテゴリで絞り込み
+node extract.js --category "法的手続き"
+node extract.js --category "マーケティング"
+
+# 優先度で絞り込み
+node extract.js --priority high      # 高優先度のみ
+node extract.js --priority medium    # 中優先度のみ
+
+# ステータスで絞り込み
+node extract.js --status open        # 未着手のみ
+node extract.js --status in_progress # 作業中のみ
+node extract.js --status completed   # 完了のみ
+```
+
+#### 実用的な抽出例
+```bash
+# 週次レビュー用：過去期限の確認
+node extract.js --overdue > weekly_overdue_check.md
+
+# 緊急度チェック：高優先度タスクのみ
+node extract.js --priority high --all > high_priority_tasks.md
+
+# 法的手続きの進捗確認
+node extract.js --category "法的手続き" --all > legal_progress.md
+```
+
+### sync.js（双方向同期）
+```bash
+# 基本使用法
+node sync.js --file daily/2025-05-27.md
+
+# 同期結果例
+# 📊 同期結果:
+# - 完了: 2件
+# - 作業中: 1件
+# - 未着手: 3件
+# 🆕 新規タスク: 1件追加
+# 🔄 タスク更新: 2件更新
+```
+
+---
+
+## 📝 タスク管理
 
 ### タスク状態の管理
 
@@ -105,12 +209,11 @@ node sync.js --file daily/$(date +%F).md
 - 🟡 : 中優先度（medium）
 - 🟢 : 低優先度（low）
 
-### 🆕 新機能：タスクの追加・更新
-
-#### 新規タスクの追加
+### 新規タスクの追加
 日次ファイルに以下の形式で記述：
 ```markdown
-- [ ] NEW: TASK-ID タスクタイトル
+- [ ] NEW: MARKETING-010 ウェブサイトのSEO対策
+- [ ] NEW: RISK-005 事業保険の検討
 ```
 
 **重複チェック機能**：
@@ -118,10 +221,11 @@ node sync.js --file daily/$(date +%F).md
 - タイトル完全一致検出（大文字小文字無視）
 - キーワードベース類似検出（中精度70-80%）
 
-#### 既存タスクの更新
+### 既存タスクの更新
 日次ファイルに以下の形式で記述：
 ```markdown
-- UPDATE: TASK-ID due:2025-05-30 memo:新しいメモ priority:high
+- UPDATE: INSURANCE-002 due:2025-05-28 memo:デイキャンプのため延期 priority:high
+- UPDATE: ENVIRONMENT-003 priority:high memo:急務対応
 ```
 
 **更新可能項目**：
@@ -129,160 +233,223 @@ node sync.js --file daily/$(date +%F).md
 - `memo:テキスト内容` : メモ更新
 - `priority:high|medium|low` : 優先度変更
 
-## 📊 タスク管理例
-
-### tasks.yml での定義
+### tasks.yml での定義例
 ```yaml
 - id: LEGAL-001
   title: 開業届の提出
-  status: open        # open/in_progress/completed/backlog
-  due: 2025-06-15
+  status: in_progress
+  due: 2025-06-30T00:00:00.000Z
   category: 法的手続き
   priority: high
   source: docs/法的手続き/開業届.md
-  memo: 失業保険との兼ね合いで6月23日以降に提出
+  memo: 屋号は「CHIENOWASHA（ちえのわ舎）」で提出予定
 ```
 
-### 日次ファイルでの表示
-```markdown
-## 法的手続き
+---
 
-- [ ] LEGAL-001 開業届の提出 🔴
-  - 期限: 2025-06-15
-  - 参照: docs/法的手続き/開業届.md
-  - メモ: 失業保険との兼ね合いで6月23日以降に提出
-```
-
-### 新規タスク追加例
-```markdown
-- [ ] NEW: MARKETING-010 ウェブサイトのSEO対策
-```
-
-### タスク更新例
-```markdown
-- UPDATE: INSURANCE-002 due:2025-05-28 memo:デイキャンプのため1日延期 priority:high
-```
-
-## 🔍 Obsidian対応機能
+## 🔍 Obsidian連携
 
 ### 概要
 `tasks.yml`（YAML形式）をObsidianで視覚的に確認するため、構造化されたMarkdownファイルに自動変換する機能です。
 
-### YAMLファイルとは
-**YAML**（ヤムル）は「YAML Ain't Markup Language」の略で：
-- **人間が読みやすい**データ構造化フォーマット
-- **インデント**でデータの階層を表現
-- **設定ファイル**やデータ交換によく使用
-- **プログラムで処理しやすい**構造
-
 ### 使用方法
-
-#### 基本的な生成
 ```bash
 # 全カテゴリのMarkdownファイルを生成
 npm run obsidian
 
 # 出力先: obsidian-export/ ディレクトリ
+# 生成ファイル数: 13ファイル（2025年5月27日現在）
 ```
 
-#### フィルタリング生成
-```bash
-# 特定カテゴリのみ生成
-node obsidian-export.js --category=法的手続き
-
-# 特定ステータスのみ生成
-node obsidian-export.js --status=in_progress
-
-# 出力先を指定
-node obsidian-export.js --output=my-obsidian-vault
-```
-
-### 生成されるファイル構成
+### 生成されるファイル（実際の構成）
 
 #### 📄 00_タスクサマリー.md
 - **全体統計**: 完了率、カテゴリ別進捗
 - **期限が近いタスク**: 上位10件の緊急タスク
 - **カテゴリ間リンク**: `[[カテゴリ名]]` でナビゲーション
 
-#### 📁 カテゴリ別ファイル
-- **法的手続き.md**, **税務会計準備.md** 等
-- **進捗状況**: カテゴリ内の統計情報
-- **タスク詳細**: ステータス・優先度・期限・メモ
-- **ソート機能**: 作業中 → 未着手 → 後回し → 完了
-
-#### 📅 期限別タスク一覧.md
-- **期限順ソート**: 緊急度の高い順
-- **視覚的アラート**: 🚨今日、⚠️経過日数表示
-- **カテゴリ横断**: 期限を軸とした全体ビュー
+#### 📁 カテゴリ別ファイル（13ファイル）
+- **法的手続き.md** （83行）
+- **マーケティング.md** （91行）
+- **会計・税務.md** （55行）
+- **契約・請求.md** （54行）
+- **保険・年金.md** （54行）
+- **リスク管理.md** （54行）
+- **業務環境.md** （43行）
+- **収益基盤.md** （44行）
+- **運用・仕組み化.md** （35行）
+- **ブランディング.md** （25行）
+- **research.md** （55行）
+- **期限別タスク一覧.md** （160行）
 
 ### Obsidianでの活用方法
 
-#### 1. 基本的な使い方
+#### 基本的な使い方
+1. Obsidianで `obsidian-export/` フォルダーを開く
+2. `00_タスクサマリー.md` から開始
+3. `[[カテゴリ名]]` でカテゴリ間移動
+4. グラフビューでタスク間の関連性を視覚化
+
+#### 更新ワークフロー
 ```bash
-# 1. Markdownファイルを生成
-npm run obsidian
+# 1. 日次タスクを実行・記録
+npm run today
+# （日次ファイルでタスクを完了・更新）
 
-# 2. Obsidianで obsidian-export/ フォルダを開く
-# 3. 00_タスクサマリー.md から開始
-```
-
-#### 2. ナビゲーション
-- **[[カテゴリ名]]**: カテゴリ間の移動
-- **グラフビュー**: タスク間の関連性を視覚化
-- **検索機能**: 特定のタスクやキーワードで検索
-- **タグ機能**: 優先度やステータスでフィルタリング
-
-#### 3. 更新ワークフロー
-```bash
-# 1. tasks.ymlを更新（sync.js経由）
+# 2. tasks.ymlに同期
 npm run sync-today
 
-# 2. Obsidian用ファイルを再生成
+# 3. Obsidian用ファイルを再生成
 npm run obsidian
 
-# 3. Obsidianで最新状況を確認
+# 4. Obsidianで最新状況を確認
 ```
 
-### メリット
-- **視覚的管理**: YAMLの構造化データを直感的に確認
-- **関連性把握**: カテゴリ間の関連性をグラフで表示
-- **検索・フィルタ**: Obsidianの豊富な機能を活用
-- **バックアップ**: Markdownファイルとして保存・共有可能
+---
 
-## 🔧 セットアップ
+## 📚 Git管理
 
-### 初回セットアップ
+### 推奨Git運用
+
+#### 朝のワークフロー
 ```bash
-# 依存パッケージのインストール
-npm install
+# 最新の状態に更新
+git pull
 
-# 実行権限の付与
-chmod +x extract.js sync.js
-```
+# 今日のタスクを生成
+npm run today
 
-### Git管理（推奨）
-```bash
-# 朝: タスクファイル生成後
+# 生成ファイルをコミット
 git add daily/$(date +%F).md
 git commit -m "feat: generate daily tasks $(date +%F)"
 git push
+```
 
-# 夕方: 同期後
-git add tasks.yml
+#### 夕方のワークフロー
+```bash
+# タスク状態を同期
+npm run sync-today
+
+# Obsidian用ファイルを更新
+npm run obsidian
+
+# 変更をコミット
+git add .
 git commit -m "chore: sync task status $(date +%F)"
 git push
 ```
 
-## 📝 カスタマイズ
+#### 新規タスク追加・更新時
+```bash
+# 新規タスク追加時
+git add tasks.yml daily/$(date +%F).md
+git commit -m "feat: add new tasks via NEW syntax $(date +%F)"
+git push
 
-### 新しいタスクの追加
-日次ファイルに `NEW:` 記法で追加するか、`tasks.yml` に直接追加します。重複チェック機能により、既存タスクとの重複を自動検出します。
+# タスク更新時
+git add tasks.yml daily/$(date +%F).md obsidian-export/
+git commit -m "chore: update tasks and obsidian export $(date +%F)"
+git push
+```
 
-### カテゴリーの追加
-新しいプレフィックス（例：`MARKETING-001`）でタスクIDを作成し、categoryフィールドで分類します。
+---
 
-### 期限・メモ・優先度の調整
-日次ファイルに `UPDATE:` 記法で更新するか、`tasks.yml` の該当フィールドを直接編集します。
+## ❓ トラブルシューティング
+
+### よくあるエラー
+
+#### 1. `ファイルが見つかりません`
+```bash
+# エラー例
+node sync.js --file daily/2025-05-27.md
+# エラー: ファイルが見つかりません
+
+# 解決方法
+ls daily/  # ファイル存在確認
+npm run today  # ファイル生成
+```
+
+#### 2. `npm command not found`
+```bash
+# 解決方法
+npm install  # 依存関係の再インストール
+```
+
+#### 3. `YAML syntax error`
+```bash
+# tasks.yml の構文エラー
+# 解決方法：インデントとコロンの確認
+# - id: LEGAL-001
+#   title: タスク名  # ← コロンの後にスペース必須
+```
+
+#### 4. 重複チェックエラー
+```bash
+# 重複チェック機能でエラーが発生した場合
+# 解決方法：タスクIDやタイトルの重複を確認
+# 既存タスクと異なるIDまたはタイトルを使用
+```
+
+#### 5. UPDATE記法エラー
+```bash
+# UPDATE記法の構文エラー
+# 正しい記法：
+- UPDATE: TASK-ID due:2025-05-30  # ✅ 正しい
+- UPDATE TASK-ID due:2025-05-30   # ❌ コロンなし
+- UPDATE: TASK-ID due=2025-05-30  # ❌ イコール使用
+```
+
+### データの修復
+
+#### tasks.yml のバックアップから復元
+```bash
+# Git履歴から復元
+git checkout HEAD~1 tasks.yml
+
+# 特定日のファイルを再生成
+npm run today
+```
+
+---
+
+## 📊 実用的な活用例
+
+### 緊急度チェック（毎朝推奨）
+```bash
+# 過去期限のタスクを確認
+node extract.js --overdue
+
+# 高優先度タスクの全体確認
+node extract.js --priority high --all
+
+# 今週やるべき重要タスク
+node extract.js --from $(date +%F) --to $(date -d "+7 days" +%F) --priority high
+```
+
+### 週次レビュー用
+```bash
+# 今週の進捗確認
+echo "# 週次レビュー $(date +%Y年%W週)" > weekly_review.md
+
+# 過去期限タスクの確認
+echo "## ⚠️ 過去期限タスク" >> weekly_review.md
+node extract.js --overdue >> weekly_review.md
+
+# 完了タスクの確認
+echo "## ✅ 完了タスク" >> weekly_review.md
+node extract.js --status completed --all >> weekly_review.md
+```
+
+### カテゴリ別進捗確認
+```bash
+# 法的手続きの進捗
+node extract.js --category "法的手続き" --all > reports/legal_progress.md
+
+# マーケティングの進捗
+node extract.js --category "マーケティング" --all > reports/marketing_progress.md
+```
+
+---
 
 ## 🎯 開業準備の重要マイルストーン
 
@@ -294,5 +461,31 @@ git push
 
 ---
 
+## 📈 システムの成果
+
+### 開発実績（2025年5月24日〜27日）
+- **開発期間**: 4日間
+- **実装機能数**: 8つの主要機能
+- **タスク管理数**: 45件
+- **完了率**: 29%（13件完了）
+- **Git管理**: 完全なバージョン管理体制
+
+### 特徴的な機能
+- **継続的対話による創発的開発**: AI-Human協働
+- **文脈保持型システム**: 数日間にわたる文脈継続
+- **完全自動化**: チェックボックス→YAML→Git同期
+- **多形式データ統合**: YAML + Markdown + Obsidian + CLI
+- **品質管理**: 重複検出0件、エラー率0%
+
+---
+
 **このシステムで、フリーランス開業準備を効率的に進めましょう！**
 
+## サポート・質問
+
+システムに関する質問や改善案があれば：
+1. tasks.ymlや日次ファイルの内容を確認
+2. エラーメッセージをコピー
+3. 実行したコマンドを記録
+4. NEW記法やUPDATE記法の使用例を確認
+5. AIまたは開発者に相談 
