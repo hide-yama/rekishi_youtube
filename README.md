@@ -27,7 +27,7 @@ npm install
 npm run today
 
 # 3. 生成されたファイルでタスクを実行
-# daily/2025-05-27.md を開いてタスクを確認・実行
+# daily/YYYY-MM-DD.md を開いてタスクを確認・実行
 
 # 4. 夕方に同期
 npm run sync-today
@@ -58,9 +58,9 @@ npm run obsidian
 ├── sync.js                   ← 双方向同期ツール
 ├── obsidian-export.js        ← Obsidian用Markdown生成
 ├── daily/                    ← 日次記録
-│   ├── 2025-05-27.md        ← 各日のタスク・振り返り
+│   ├── YYYY-MM-DD.md        ← 各日のタスク・振り返り
 │   └── template.md          ← テンプレートファイル
-├── obsidian-export/          ← Obsidian用ファイル（13ファイル生成）
+├── obsidian-export/          ← Obsidian用ファイル（自動生成）
 ├── docs/                     ← 参考資料・契約書類
 │   ├── 法的手続き/
 │   ├── 契約・請求/
@@ -69,23 +69,23 @@ npm run obsidian
 └── README.md                 ← 本ファイル
 ```
 
-### タスクカテゴリー（2025年5月27日現在）
+### タスクカテゴリー
 
-| プレフィックス | カテゴリ | 件数 | 例 |
-|-------------|---------|------|---|
-| `LEGAL-xxx` | 法的手続き | 7件 | `LEGAL-001` 開業届の提出 |
-| `ACCOUNTING-xxx` | 会計・税務 | 4件 | `ACCOUNTING-001` 会計ソフト導入 |
-| `ENVIRONMENT-xxx` | 業務環境 | 3件 | `ENVIRONMENT-001` 作業環境構築 |
-| `INSURANCE-xxx` | 保険・年金 | 4件 | `INSURANCE-001` 国保切替 |
-| `REVENUE-xxx` | 収益基盤 | 3件 | `REVENUE-001` 案件獲得 |
-| `CONTRACT-xxx` | 契約・請求 | 4件 | `CONTRACT-001` 請求フロー |
-| `BRANDING-xxx` | ブランディング | 1件 | `BRANDING-001` 事業紹介文 |
-| `MARKETING-xxx` | マーケティング | 8件 | `MARKETING-001` 名刺作成 |
-| `OPERATION-xxx` | 運用・仕組み化 | 2件 | `OPERATION-001` AI連携システム |
-| `RISK-xxx` | リスク管理 | 4件 | `RISK-001` 事業保険 |
-| `RESEARCH-xxx` | research | 5件 | `RESEARCH-001` 研究論文執筆 |
+| プレフィックス | カテゴリ | 例 |
+|-------------|---------|---|
+| `LEGAL-xxx` | 法的手続き | `LEGAL-001` 開業届の提出 |
+| `ACCOUNTING-xxx` | 会計・税務 | `ACCOUNTING-001` 会計ソフト導入 |
+| `ENVIRONMENT-xxx` | 業務環境 | `ENVIRONMENT-001` 作業環境構築 |
+| `INSURANCE-xxx` | 保険・年金 | `INSURANCE-001` 国保切替 |
+| `REVENUE-xxx` | 収益基盤 | `REVENUE-001` 案件獲得 |
+| `CONTRACT-xxx` | 契約・請求 | `CONTRACT-001` 請求フロー |
+| `BRANDING-xxx` | ブランディング | `BRANDING-001` 事業紹介文 |
+| `MARKETING-xxx` | マーケティング | `MARKETING-001` 名刺作成 |
+| `OPERATION-xxx` | 運用・仕組み化 | `OPERATION-001` AI連携システム |
+| `RISK-xxx` | リスク管理 | `RISK-001` 事業保険 |
+| `RESEARCH-xxx` | research | `RESEARCH-001` 研究論文執筆 |
 
-**全タスク数**: 45件（完了13件、作業中12件、未着手20件）
+**現在のタスク状況**: `npm run obsidian` で最新の統計情報を確認できます
 
 ---
 
@@ -142,10 +142,10 @@ git push
 #### 基本的な使用法
 ```bash
 # 指定日期限のタスクを生成
-node extract.js --date 2025-05-27 > daily/2025-05-27.md
+node extract.js --date YYYY-MM-DD > daily/YYYY-MM-DD.md
 
 # 全タスクを確認（期限無関係）
-node extract.js --date 2025-05-27 --all
+node extract.js --date YYYY-MM-DD --all
 
 # 過去期限のタスクを抽出
 node extract.js --overdue
@@ -182,15 +182,15 @@ node extract.js --category "法的手続き" --all > legal_progress.md
 ### sync.js（双方向同期）
 ```bash
 # 基本使用法
-node sync.js --file daily/2025-05-27.md
+node sync.js --file daily/YYYY-MM-DD.md
 
 # 同期結果例
 # 📊 同期結果:
-# - 完了: 2件
-# - 作業中: 1件
-# - 未着手: 3件
-# 🆕 新規タスク: 1件追加
-# 🔄 タスク更新: 2件更新
+# - 完了: X件
+# - 作業中: X件
+# - 未着手: X件
+# 🆕 新規タスク: X件追加
+# 🔄 タスク更新: X件更新
 ```
 
 ---
@@ -258,7 +258,7 @@ node sync.js --file daily/2025-05-27.md
 npm run obsidian
 
 # 出力先: obsidian-export/ ディレクトリ
-# 生成ファイル数: 13ファイル（2025年5月27日現在）
+# 生成ファイル数: カテゴリ数 + サマリーファイル + 期限別ファイル
 ```
 
 ### 生成されるファイル（実際の構成）
@@ -268,19 +268,26 @@ npm run obsidian
 - **期限が近いタスク**: 上位10件の緊急タスク
 - **カテゴリ間リンク**: `[[カテゴリ名]]` でナビゲーション
 
-#### 📁 カテゴリ別ファイル（13ファイル）
-- **法的手続き.md** （83行）
-- **マーケティング.md** （91行）
-- **会計・税務.md** （55行）
-- **契約・請求.md** （54行）
-- **保険・年金.md** （54行）
-- **リスク管理.md** （54行）
-- **業務環境.md** （43行）
-- **収益基盤.md** （44行）
-- **運用・仕組み化.md** （35行）
-- **ブランディング.md** （25行）
-- **research.md** （55行）
-- **期限別タスク一覧.md** （160行）
+#### 📁 カテゴリ別ファイル
+各カテゴリごとに個別のMarkdownファイルが生成されます：
+- **法的手続き.md**
+- **マーケティング.md**
+- **会計・税務.md**
+- **契約・請求.md**
+- **保険・年金.md**
+- **リスク管理.md**
+- **業務環境.md**
+- **収益基盤.md**
+- **運用・仕組み化.md**
+- **ブランディング.md**
+- **research.md**
+- **期限別タスク一覧.md**
+
+各ファイルには以下の情報が含まれます：
+- カテゴリ内の進捗統計
+- タスク詳細（ステータス・優先度・期限・メモ）
+- 作業中 → 未着手 → 後回し → 完了の順でソート
+- 視覚的アイコン（🔄作業中、⭕未着手、✅完了、🔴高優先度）
 
 ### Obsidianでの活用方法
 
@@ -361,7 +368,7 @@ git push
 #### 1. `ファイルが見つかりません`
 ```bash
 # エラー例
-node sync.js --file daily/2025-05-27.md
+node sync.js --file daily/YYYY-MM-DD.md
 # エラー: ファイルが見つかりません
 
 # 解決方法
@@ -461,21 +468,19 @@ node extract.js --category "マーケティング" --all > reports/marketing_pro
 
 ---
 
-## 📈 システムの成果
+## 📈 システムの特徴と価値
 
-### 開発実績（2025年5月24日〜27日）
-- **開発期間**: 4日間
-- **実装機能数**: 8つの主要機能
-- **タスク管理数**: 45件
-- **完了率**: 29%（13件完了）
-- **Git管理**: 完全なバージョン管理体制
+### 開発アプローチ
+- **継続的対話による創発的開発**: AI-Human協働によるシステム構築
+- **文脈保持型システム**: 長期間にわたる文脈継続と累積的学習
+- **完全自動化**: チェックボックス操作→YAML更新→Git同期の自動化
+- **多形式データ統合**: YAML（構造化）+ Markdown（可読性）+ Obsidian（視覚化）+ CLI（自動化）
 
-### 特徴的な機能
-- **継続的対話による創発的開発**: AI-Human協働
-- **文脈保持型システム**: 数日間にわたる文脈継続
-- **完全自動化**: チェックボックス→YAML→Git同期
-- **多形式データ統合**: YAML + Markdown + Obsidian + CLI
-- **品質管理**: 重複検出0件、エラー率0%
+### 品質管理機能
+- **重複検出**: 新規タスク追加時の自動重複チェック
+- **データ整合性**: 双方向同期による一貫性保持
+- **バージョン管理**: Git連携による変更履歴の完全管理
+- **エラー防止**: 構文チェックと自動修正機能
 
 ---
 
