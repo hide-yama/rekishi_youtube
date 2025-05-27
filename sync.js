@@ -130,6 +130,62 @@ function detectTaskUpdates(content, existingTasks) {
   return updates;
 }
 
+// 新規タスク追加検出機能（ADD記法）
+function detectAddTasks(content, existingTasks) {
+  const lines = content.split('\n');
+  const addTasks = [];
+  
+  lines.forEach((line, index) => {
+    // ADD記法のパターンを検出: ADD: TASK-001 タスクタイトル priority:medium due:2025-08-31
+    const addMatch = line.match(/^\s*-\s*ADD:\s*([A-Z]+-\d+)\s+(.+)/i);
+    if (addMatch) {
+      const taskId = addMatch[1];
+      const taskText = addMatch[2];
+      
+      // カテゴリを抽出
+      const categoryMatch = taskId.match(/^([A-Z]+)-/);
+      const category = categoryMatch ? categoryMatch[1].toLowerCase() : 'other';
+      
+      // タイトル部分を抽出（priority:やdue:より前の部分）
+      const titleMatch = taskText.match(/^(.+?)(?:\s+priority:|$)/i);
+      const title = titleMatch ? titleMatch[1].trim() : taskText.trim();
+      
+      const newTask = {
+        id: taskId,
+        title: title,
+        category: category,
+        status: 'open',
+        lineNumber: index + 1,
+        originalLine: line
+      };
+      
+      // 優先度を抽出: priority:high|medium|low
+      const priorityMatch = taskText.match(/priority:\s*(high|medium|low)/i);
+      if (priorityMatch) {
+        newTask.priority = priorityMatch[1].toLowerCase();
+      } else {
+        newTask.priority = 'medium'; // デフォルト
+      }
+      
+      // 期限を抽出: due:YYYY-MM-DD
+      const dueMatch = taskText.match(/due:\s*([0-9-]+)/i);
+      if (dueMatch) {
+        newTask.due = dueMatch[1];
+      }
+      
+      // メモを抽出: memo:テキスト
+      const memoMatch = taskText.match(/memo:\s*(.+?)(?:\s+(?:priority:|due:)|$)/i);
+      if (memoMatch) {
+        newTask.memo = memoMatch[1].trim();
+      }
+      
+      addTasks.push(newTask);
+    }
+  });
+  
+  return addTasks;
+}
+
 try {
   // 日次ファイルを読み込み
   const content = fs.readFileSync(filePath, 'utf8');
@@ -155,9 +211,47 @@ try {
     console.log('\n⚠️ 新規タスクが検出されました。手動で確認してください。');
   }
   
+  // ADD記法による新規タスク追加の検出と処理
+  const addTasks = detectAddTasks(content, tasks);
+  let updatedTasks = [...tasks];
+  let hasAdditions = false;
+  
+  if (addTasks.length > 0) {
+    console.log('\n➕ ADD記法による新規タスク追加:');
+    addTasks.forEach(newTask => {
+      console.log(`\n📝 追加: ${newTask.id} - ${newTask.title}`);
+      
+      // 重複チェック
+      const warnings = checkDuplicates(updatedTasks, newTask);
+      if (warnings.length > 0) {
+        console.log('⚠️ 重複チェック結果:');
+        warnings.forEach(warning => console.log(`  ${warning}`));
+        console.log(`  ❓ 重複の可能性がありますが、追加を続行します`);
+      }
+      
+      // タスクを追加
+      updatedTasks.push({
+        id: newTask.id,
+        title: newTask.title,
+        category: newTask.category,
+        status: newTask.status,
+        priority: newTask.priority,
+        ...(newTask.due && { due: newTask.due }),
+        ...(newTask.memo && { memo: newTask.memo })
+      });
+      
+      console.log(`  ✅ 追加完了`);
+      console.log(`    📂 カテゴリ: ${newTask.category}`);
+      console.log(`    🎯 優先度: ${newTask.priority}`);
+      if (newTask.due) console.log(`    📅 期限: ${newTask.due}`);
+      if (newTask.memo) console.log(`    📝 メモ: ${newTask.memo}`);
+      
+      hasAdditions = true;
+    });
+  }
+  
   // タスク更新の検出と適用
   const taskUpdates = detectTaskUpdates(content, tasks);
-  let updatedTasks = [...tasks];
   let hasUpdates = false;
   
   if (taskUpdates.length > 0) {
@@ -203,22 +297,22 @@ try {
   
   lines.forEach(line => {
     // チェック済み: - [x] TASK-xxx
-    const doneMatch = line.match(/^\s*-\s\[x\]\s+(LEGAL-\d+|ACCOUNTING-\d+|ENVIRONMENT-\d+|REVENUE-\d+|INSURANCE-\d+|BRANDING-\d+|OPERATION-\d+|CONTRACT-\d+|MARKETING-\d+|RISK-\d+)/);
+    const doneMatch = line.match(/^\s*-\s\[x\]\s+(LEGAL-\d+|ACCOUNTING-\d+|ENVIRONMENT-\d+|REVENUE-\d+|INSURANCE-\d+|BRANDING-\d+|OPERATION-\d+|CONTRACT-\d+|MARKETING-\d+|RISK-\d+|RESEARCH-\d+)/);
     if (doneMatch) {
       doneIds.push(doneMatch[1]);
       return;
     }
     
     // 作業中（カスタムマーク）: - [~] TASK-xxx または 🔄マーク付き
-    const workingMatch = line.match(/^\s*-\s\[~\]\s+(LEGAL-\d+|ACCOUNTING-\d+|ENVIRONMENT-\d+|REVENUE-\d+|INSURANCE-\d+|BRANDING-\d+|OPERATION-\d+|CONTRACT-\d+|MARKETING-\d+|RISK-\d+)/) ||
-                        line.match(/^\s*-\s\[\s\]\s+(LEGAL-\d+|ACCOUNTING-\d+|ENVIRONMENT-\d+|REVENUE-\d+|INSURANCE-\d+|BRANDING-\d+|OPERATION-\d+|CONTRACT-\d+|MARKETING-\d+|RISK-\d+).*🔄/);
+    const workingMatch = line.match(/^\s*-\s\[~\]\s+(LEGAL-\d+|ACCOUNTING-\d+|ENVIRONMENT-\d+|REVENUE-\d+|INSURANCE-\d+|BRANDING-\d+|OPERATION-\d+|CONTRACT-\d+|MARKETING-\d+|RISK-\d+|RESEARCH-\d+)/) ||
+                        line.match(/^\s*-\s\[\s\]\s+(LEGAL-\d+|ACCOUNTING-\d+|ENVIRONMENT-\d+|REVENUE-\d+|INSURANCE-\d+|BRANDING-\d+|OPERATION-\d+|CONTRACT-\d+|MARKETING-\d+|RISK-\d+|RESEARCH-\d+).*🔄/);
     if (workingMatch) {
       workingIds.push(workingMatch[1]);
       return;
     }
     
     // 未完了: - [ ] TASK-xxx
-    const openMatch = line.match(/^\s*-\s\[\s\]\s+(LEGAL-\d+|ACCOUNTING-\d+|ENVIRONMENT-\d+|REVENUE-\d+|INSURANCE-\d+|BRANDING-\d+|OPERATION-\d+|CONTRACT-\d+|MARKETING-\d+|RISK-\d+)/);
+    const openMatch = line.match(/^\s*-\s\[\s\]\s+(LEGAL-\d+|ACCOUNTING-\d+|ENVIRONMENT-\d+|REVENUE-\d+|INSURANCE-\d+|BRANDING-\d+|OPERATION-\d+|CONTRACT-\d+|MARKETING-\d+|RISK-\d+|RESEARCH-\d+)/);
     if (openMatch && !line.includes('🔄')) {
       openIds.push(openMatch[1]);
     }
@@ -279,7 +373,7 @@ try {
   console.log(`- 作業中: ${workingIds.length}件`);
   console.log(`- 未着手: ${openIds.length}件`);
   
-  if (hasChanges || hasUpdates) {
+  if (hasChanges || hasUpdates || hasAdditions) {
     console.log(`✅ tasks.yml を更新しました`);
   } else {
     console.log(`ℹ️ 変更はありませんでした`);

@@ -318,3 +318,33 @@
   source: docs/マーケティング/Googleアカウント.md
   priority: high
   memo: 事業用Googleアカウント作成完了。chienowasha.comとの紐付け・送受信テスト済み。5月25日完了
+- id: RESEARCH-001
+  title: AI-Human協働プロジェクト管理システムの研究論文執筆
+  category: research
+  status: open
+  priority: medium
+  due: "2025-08-31"
+- id: RESEARCH-002
+  title: システム開発プロセスの詳細記録・分析
+  category: research
+  status: open
+  priority: medium
+  due: "2025-07-15"
+- id: RESEARCH-003
+  title: 既存プロジェクト管理手法との比較研究
+  category: research
+  status: open
+  priority: low
+  due: "2025-07-31"
+- id: RESEARCH-004
+  title: 論文投稿先の調査・選定
+  category: research
+  status: open
+  priority: low
+  due: "2025-06-30"
+- id: RESEARCH-005
+  title: 研究データの体系的整理・アーカイブ化
+  category: research
+  status: open
+  priority: medium
+  due: "2025-07-01"
