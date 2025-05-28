@@ -182,6 +182,14 @@
   source: docs/運用/AI連携システム.md
   priority: high
   memo: 本日まさに構築中。MDファイル+AI+Node.js+CLIコマンドによる独自システム。AIの不確定性を排除し、高度なリテラシーが必要な他では見ない仕組み
+- id: OPERATION-002
+  title: タイムライン分析機能の開発
+  status: completed
+  due: 2025-05-28T00:00:00.000Z
+  category: 運用・仕組み化
+  source: timeline-export.js
+  priority: high
+  memo: 2025-05-28完了。tasks.ymlから期限付きタスクを時系列分析し、過密スケジュール検出・調整提案まで自動生成。npm run timelineで実行可能
 - id: CONTRACT-001
   title: 請求書発行・提出方法の確認
   status: open

@@ -11,6 +11,7 @@
     "obsidian": "node obsidian-export.js",
     "obsidian-category": "node obsidian-export.js --category",
     "obsidian-status": "node obsidian-export.js --status",
+    "timeline": "node timeline-export.js",
     "review-weekly": "node review.js --period weekly",
     "review-monthly": "node review.js --period monthly",
     "review-summary": "node review.js --summary",
