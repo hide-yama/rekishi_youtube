@@ -21,3 +21,4 @@ Thumbs.db
 
 # 出力ファイル（必要に応じて）
 # obsidian-export/ 
+.env
