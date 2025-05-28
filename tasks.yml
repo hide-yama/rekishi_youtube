@@ -105,11 +105,11 @@
 - id: ENVIRONMENT-003
   title: 使用中の有料ツールの棚卸と分類
   status: in_progress
-  due: null
+  due: "2025-05-31"
   category: 業務環境
-  source: docs/環境/有料ツール.md
+  source: docs/業務環境/有料ツール.md
   priority: high
-  memo: docsファイル作成が急務
+  memo: 参照ファイル作成後に本格的に着手
 - id: REVENUE-001
   title: 業務委託案件の確定
   status: completed
