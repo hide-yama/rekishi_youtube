@@ -110,7 +110,7 @@ node sync.js --file daily/$(date +%F).md
 #### 新規タスクの追加
 日次ファイルに以下の形式で記述：
 ```markdown
-- [ ] NEW: TASK-ID タスクタイトル
+- ADD: TASK-ID タスクタイトル priority:medium due:2025-06-30
 ```
 
 **重複チェック機能**：
@@ -155,7 +155,7 @@ node sync.js --file daily/$(date +%F).md
 
 ### 新規タスク追加例
 ```markdown
-- [ ] NEW: MARKETING-010 ウェブサイトのSEO対策
+- ADD: MARKETING-010 ウェブサイトのSEO対策 priority:medium due:2025-06-30
 ```
 
 ### タスク更新例

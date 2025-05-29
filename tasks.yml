@@ -144,12 +144,12 @@
   memo: 市区町村にて切替済
 - id: INSURANCE-002
   title: 国民年金への切替手続き
-  status: in_progress
+  status: completed
   due: "2025-05-28"
   category: 保険・年金
   source: docs/保険/国民年金.md
   priority: high
-  memo: デイキャンプのため1日延期
+  memo: 2025-05-28市役所で手続き完了。クレジットカード支払い切り替え書類を入手
 - id: INSURANCE-003
   title: 小規模企業共済の加入準備
   status: in_progress
@@ -166,6 +166,14 @@
   source: docs/保険/節税.md
   priority: medium
   memo: iDeCo加入予定なし。ふるさと納税上限額試算が必要。家賃按分方針は決定済みだが、全経費対象のリストアップが必要
+- id: INSURANCE-006
+  title: 国民年金クレジットカード支払い切り替え手続き
+  status: open
+  due: "2025-06-15"
+  category: 保険・年金
+  source: docs/保険/国民年金クレジット.md
+  priority: medium
+  memo: INSURANCE-002完了時に入手した書類を使用。最初の12か月は納付書での現金払いが必要
 - id: BRANDING-001
   title: 事業紹介文の整備
   status: in_progress
@@ -181,7 +189,8 @@
   category: 運用・仕組み化
   source: docs/運用/AI連携システム.md
   priority: high
-  memo: 本日まさに構築中。MDファイル+AI+Node.js+CLIコマンドによる独自システム。AIの不確定性を排除し、高度なリテラシーが必要な他では見ない仕組み
+  memo: >-
+    timeline機能完成（2025-05-28）。MDファイル+AI+Node.js+CLIコマンドによる独自システム。期限付きタスクの時系列分析・過密スケジュール検出・調整提案まで自動生成。AIの不確定性を排除し、高度なリテラシーが必要な他では見ない仕組み
 - id: OPERATION-002
   title: タイムライン分析機能の開発
   status: completed
@@ -356,3 +365,17 @@
   status: open
   priority: medium
   due: "2025-07-01"
+- id: INSURANCE-006
+  title: 国民年金クレジットカード支払い切り替え手続き
+  category: insurance
+  status: open
+  priority: medium
+  due: "2025-06-15"
+  memo: INSURANCE-002完了時に入手した書類を使用。最初の12か月は納付書での現金払いが必要
+- id: INSURANCE-006
+  title: 国民年金クレジットカード支払い切り替え手続き
+  category: insurance
+  status: open
+  priority: medium
+  due: "2025-06-15"
+  memo: INSURANCE-002完了時に入手した書類を使用。最初の12か月は納付書での現金払いが必要

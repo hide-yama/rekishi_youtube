@@ -60,33 +60,6 @@ function checkDuplicates(tasks, newTaskInfo) {
   return warnings;
 }
 
-// 新規タスク検出機能
-function detectNewTasks(content, existingTasks) {
-  const lines = content.split('\n');
-  const newTasks = [];
-  
-  lines.forEach((line, index) => {
-    // 新規タスクのパターンを検出
-    const newTaskMatch = line.match(/^\s*-\s*\[\s*\]\s*NEW:\s*(.+)/i);
-    if (newTaskMatch) {
-      const taskText = newTaskMatch[1];
-      const idMatch = taskText.match(/([A-Z]+-\d+)/);
-      const titleMatch = taskText.replace(/([A-Z]+-\d+)/, '').trim();
-      
-      if (idMatch) {
-        newTasks.push({
-          id: idMatch[1],
-          title: titleMatch,
-          lineNumber: index + 1,
-          originalLine: line
-        });
-      }
-    }
-  });
-  
-  return newTasks;
-}
-
 // タスク更新検出機能
 function detectTaskUpdates(content, existingTasks) {
   const lines = content.split('\n');
@@ -193,23 +166,6 @@ try {
   
   // tasks.yml を読み込み
   const tasks = yaml.load(fs.readFileSync('tasks.yml', 'utf8'));
-  
-  // 新規タスクの検出と重複チェック
-  const newTasks = detectNewTasks(content, tasks);
-  if (newTasks.length > 0) {
-    console.log('\n🔍 新規タスクの重複チェック:');
-    newTasks.forEach(newTask => {
-      console.log(`\n📝 検出: ${newTask.id} - ${newTask.title}`);
-      const warnings = checkDuplicates(tasks, newTask);
-      if (warnings.length > 0) {
-        warnings.forEach(warning => console.log(`  ${warning}`));
-        console.log(`  ❓ 続行しますか？ (手動確認が必要)`);
-      } else {
-        console.log(`  ✅ 重複なし - 追加可能`);
-      }
-    });
-    console.log('\n⚠️ 新規タスクが検出されました。手動で確認してください。');
-  }
   
   // ADD記法による新規タスク追加の検出と処理
   const addTasks = detectAddTasks(content, tasks);
@@ -340,8 +296,27 @@ try {
           
           if (taskIndex !== -1) {
             const currentStatus = updatedTasks[taskIndex].status;
-            const newStatus = isChecked ? 'done' : 
-                             (currentStatus === 'done' || currentStatus === 'completed') ? 'in_progress' : currentStatus;
+            const newStatus = isChecked ? 'completed' : 
+                             (currentStatus === 'completed') ? 'in_progress' : currentStatus;
+            
+            if (currentStatus !== newStatus) {
+              console.log(`📝 ${taskId}: ${currentStatus} → ${newStatus}`);
+              updatedTasks[taskIndex].status = newStatus;
+              hasChanges = true;
+            }
+          }
+        }
+        
+        // 直接的なパターンも確認
+        const directIdMatch = taskText.match(/^([A-Z]+-\d+)/);
+        if (directIdMatch) {
+          const taskId = directIdMatch[1];
+          const taskIndex = updatedTasks.findIndex(task => task.id === taskId);
+          
+          if (taskIndex !== -1) {
+            const currentStatus = updatedTasks[taskIndex].status;
+            const newStatus = isChecked ? 'completed' : 
+                             (currentStatus === 'completed') ? 'in_progress' : currentStatus;
             
             if (currentStatus !== newStatus) {
               console.log(`📝 ${taskId}: ${currentStatus} → ${newStatus}`);

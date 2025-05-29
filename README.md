@@ -107,7 +107,7 @@ open daily/$(date +%F).md  # macOS
 1. 生成された日次ファイルでタスクを確認
 2. 作業完了したら `- [x]` にチェック
 3. 作業中は `- [~]` または🔄マークを追加
-4. 新規タスクは `NEW:` 記法で追加
+4. 新規タスクは `ADD:` 記法で追加
 5. 既存タスクの更新は `UPDATE:` 記法で変更
 6. 振り返りセクションに進捗や気づきを記録
 
@@ -251,8 +251,8 @@ node sync.js --file daily/YYYY-MM-DD.md
 ### 新規タスクの追加
 日次ファイルに以下の形式で記述：
 ```markdown
-- [ ] NEW: MARKETING-010 ウェブサイトのSEO対策
-- [ ] NEW: RISK-005 事業保険の検討
+- ADD: MARKETING-010 ウェブサイトのSEO対策 priority:medium due:2025-06-30
+- ADD: RISK-005 事業保険の検討 priority:high due:2025-06-15
 ```
 
 **重複チェック機能**：
@@ -353,7 +353,7 @@ npm run obsidian
 
 ---
 
-## 📚 Git管理
+## 🎯 Git管理
 
 ### 推奨Git運用
 
