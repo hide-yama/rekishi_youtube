@@ -165,7 +165,7 @@
   category: 保険・年金
   source: docs/保険/節税.md
   priority: medium
-  memo: iDeCo加入予定なし。ふるさと納税上限額試算が必要。家賃按分方針は決定済みだが、全経費対象のリストアップが必要
+  memo: アクセンチュア源泉徴収票を使用して正確な上限額計算が可能。今日実行推奨
 - id: INSURANCE-006
   title: 国民年金クレジットカード支払い切り替え手続き
   status: open
@@ -238,7 +238,7 @@
   category: マーケティング
   source: docs/マーケティング/名刺.md
   priority: high
-  memo: 屋号「CHIENOWASHA（ちえのわ舎）」でデザイン完成・プリントパック入稿完了。5月26日完了。早ければ5月27日到着予定
+  memo: 名刺が5月28日に到着済み。配布準備完了
 - id: MARKETING-002
   title: オリジナルドメインメールの署名設定
   status: completed
@@ -379,3 +379,17 @@
   priority: medium
   due: "2025-06-15"
   memo: INSURANCE-002完了時に入手した書類を使用。最初の12か月は納付書での現金払いが必要
+- id: ACCOUNTING-005
+  title: 源泉徴収票の適切な保管・管理
+  category: accounting
+  status: open
+  priority: medium
+  due: "2025-06-15"
+  memo: 確定申告まで紛失しないよう適切な場所に保管。freee入力用のデータ準備も兼ねる
+- id: ACCOUNTING-005
+  title: 源泉徴収票の適切な保管・管理
+  category: accounting
+  status: open
+  priority: medium
+  due: "2025-06-15"
+  memo: 確定申告まで紛失しないよう適切な場所に保管。freee入力用のデータ準備も兼ねる
