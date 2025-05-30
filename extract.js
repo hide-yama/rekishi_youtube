@@ -28,7 +28,13 @@ if (!argv.date && !argv.overdue && !argv.all && !argv.category && !argv.priority
   process.exit(1);
 }
 
-const today = argv.date || new Date().toISOString().split('T')[0];
+const today = argv.date || (() => {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = (now.getMonth() + 1).toString().padStart(2, '0');
+  const day = now.getDate().toString().padStart(2, '0');
+  return `${year}-${month}-${day}`;
+})();
 const showAll = argv.all || false;
 const showOverdue = argv.overdue || false;
 const filterCategory = argv.category;
