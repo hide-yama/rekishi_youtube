@@ -87,7 +87,7 @@ npm run obsidian
 | `MARKETING-xxx` | マーケティング | `MARKETING-001` 名刺作成 |
 | `OPERATION-xxx` | 運用・仕組み化 | `OPERATION-001` AI連携システム |
 | `RISK-xxx` | リスク管理 | `RISK-001` 事業保険 |
-| `RESEARCH-xxx` | research | `RESEARCH-001` 研究論文執筆 |
+| `RESEARCH-xxx` | 研究・論文 | `RESEARCH-001` 研究論文執筆 |
 
 **現在のタスク状況**: `npm run obsidian` で最新の統計情報を確認できます
 
@@ -262,6 +262,11 @@ node sync.js --file daily/YYYY-MM-DD.md
   - メモ: 各社の見積もり比較が必要
 ```
 
+**重要な注意点**：
+- **カテゴリ名**: 必ず日本語で記述（例：会計・税務、研究・論文、保険・年金）
+- **ID形式**: カテゴリプレフィックス-番号3桁（例：MARKETING-010）
+- **日付形式**: "YYYY-MM-DD"のクォート付き形式
+
 **重複チェック機能**：
 - ID完全重複検出（100%精度）
 - タイトル完全一致検出（大文字小文字無視）
@@ -313,7 +318,7 @@ npm run obsidian  # 実行後、obsidian-export/に以下が生成される
 - `マーケティング.md`
 - `運用・仕組み化.md`
 - `リスク管理.md`
-- `research.md`
+- `研究・論文.md`
 - `期限別タスク一覧.md`
 
 ### Obsidianでの使用方法
