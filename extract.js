@@ -144,27 +144,31 @@ try {
     Object.entries(groupedTasks).forEach(([category, tasks]) => {
       console.log(`## ${category}\n`);
       tasks.forEach(task => {
-        const priorityIcon = {
-          high: '🔴',
-          medium: '🟡',
-          low: '🟢'
-        }[task.priority] || '⚪';
+        // チェックボックス状態を決定
+        const checkbox = task.status === 'completed' ? '[x]' : 
+                        task.status === 'in_progress' ? '[~]' : '[ ]';
         
-        const statusIcon = task.status === 'in_progress' ? '🔄' : '';
+        // タスク行を出力（sync.js対応形式）
+        console.log(`- ${checkbox} ${task.id} ${task.title}`);
         
-        // 過去期限の場合は⚠️アイコンを追加
-        const overdueIcon = (showOverdue || new Date(task.due) < new Date(today)) ? '⚠️' : '';
-        
-        console.log(`- [ ] ${task.id} ${task.title} ${priorityIcon}${statusIcon}${overdueIcon}`);
-        console.log(`  - 期限: ${task.due}`);
-        if (task.source) {
-          console.log(`  - 参照: ${task.source}`);
+        // 属性を子項目として出力
+        if (task.due) {
+          console.log(`  - 期限: ${task.due}`);
+        }
+        if (task.memo) {
+          console.log(`  - メモ: ${task.memo}`);
+        }
+        if (task.category) {
+          console.log(`  - カテゴリ: ${task.category}`);
+        }
+        if (task.priority) {
+          console.log(`  - 優先度: ${task.priority}`);
         }
         
         // 過去期限の場合は経過日数を表示
         if (showOverdue || new Date(task.due) < new Date(today)) {
           const daysPast = Math.floor((new Date(today) - new Date(task.due)) / (1000 * 60 * 60 * 24));
-          console.log(`  - ⚠️ ${daysPast}日経過`);
+          console.log(`  - ⚠️ 経過日数: ${daysPast}日`);
         }
         console.log();
       });
