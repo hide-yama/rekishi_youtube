@@ -104,7 +104,7 @@
   memo: 基本的には委託先のツール確認後になるため、タスクとして認識不要
 - id: ENVIRONMENT-003
   title: 使用中の有料ツールの棚卸と分類
-  status: in_progress
+  status: completed
   due: "2025-05-31"
   category: 業務環境
   source: docs/業務環境/有料ツール.md
@@ -329,44 +329,44 @@
   memo: 事業用Googleアカウント作成完了。chienowasha.comとの紐付け・送受信テスト済み。5月25日完了
 - id: RESEARCH-001
   title: AI-Human協働プロジェクト管理システムの研究論文執筆
-  category: research
+  category: 研究・論文
   status: open
   priority: medium
   due: "2025-08-31"
 - id: RESEARCH-002
   title: システム開発プロセスの詳細記録・分析
-  category: research
+  category: 研究・論文
   status: open
   priority: medium
   due: "2025-07-15"
 - id: RESEARCH-003
   title: 既存プロジェクト管理手法との比較研究
-  category: research
+  category: 研究・論文
   status: open
   priority: low
   due: "2025-07-31"
 - id: RESEARCH-004
   title: 論文投稿先の調査・選定
-  category: research
+  category: 研究・論文
   status: open
   priority: low
   due: "2025-06-30"
 - id: RESEARCH-005
   title: 研究データの体系的整理・アーカイブ化
-  category: research
+  category: 研究・論文
   status: open
   priority: medium
   due: "2025-07-01"
 - id: INSURANCE-006
   title: 国民年金クレジットカード支払い切り替え手続き
-  category: insurance
+  category: 保険・年金
   status: open
   priority: medium
   due: "2025-06-15"
   memo: INSURANCE-002完了時に入手した書類を使用。最初の12か月は納付書での現金払いが必要
 - id: ACCOUNTING-005
   title: 源泉徴収票の適切な保管・管理
-  category: accounting
+  category: 会計・税務
   status: open
   priority: medium
   due: "2025-06-15"
