@@ -74,6 +74,10 @@ try {
     
     // 期限による基本フィルター
     if (showAll) {
+      // --statusオプションが指定されている場合はそれに従う
+      if (filterStatus) {
+        return true; // ステータスフィルターで既に絞り込み済み
+      }
       return task.status === 'open' || task.status === 'in_progress';
     } else if (showOverdue) {
       return (task.status === 'open' || task.status === 'in_progress') &&
@@ -169,6 +173,9 @@ try {
         }
         if (task.priority) {
           console.log(`  - 優先度: ${task.priority}`);
+        }
+        if (task.source) {
+          console.log(`  - 参照: ${task.source}`);
         }
         
         // 過去期限の場合は経過日数を表示

@@ -153,7 +153,6 @@
   category: ブランディング
   priority: high
   memo: 屋号変更「CHIENOWASHA（ちえのわ舎）」に伴い新たに作成が必要
-  source: docs/ブランディング/事業紹介文.md
 - id: OPERATION-001
   title: AI連携型タスク管理システムの構築・運用設計
   status: in_progress
@@ -347,11 +346,3 @@
   priority: medium
   due: "2025-06-15"
   memo: 現在の手動ID管理からシステマチックな自動ID生成への改善検討
-- id: TEST-001
-  title: 新規テストタスク
-  status: in_progress
-  category: テスト
-  priority: medium
-  due: "2025-06-01"
-  memo: sourceフィールド同期のテスト（進行中に変更）
-  source: docs/test/更新されたテストファイル.md
