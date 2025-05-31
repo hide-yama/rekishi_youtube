@@ -54,6 +54,11 @@ function parseDailyTasks(content) {
       currentTask.attrs.priority = priority;
       return;
     }
+    if (currentTask && line.match(/^\s*-\s*(参照|source):/)) {
+      const source = line.replace(/^\s*-\s*(参照|source):\s*/, '').trim();
+      currentTask.attrs.source = source;
+      return;
+    }
     // 空行や他の行は無視
   });
   if (currentTask) tasks.push(currentTask);
@@ -87,7 +92,8 @@ try {
         category: dt.attrs.category || 'other',
         priority: dt.attrs.priority || 'medium',
         ...(dt.attrs.due && { due: dt.attrs.due }),
-        ...(dt.attrs.memo && { memo: dt.attrs.memo })
+        ...(dt.attrs.memo && { memo: dt.attrs.memo }),
+        ...(dt.attrs.source && { source: dt.attrs.source })
       };
       updatedTasks.push(newTask);
       hasChanges = true;
@@ -110,7 +116,7 @@ try {
         changed = true;
       }
       // 属性同期
-      ['due','memo','category','priority'].forEach(attr => {
+      ['due','memo','category','priority','source'].forEach(attr => {
         if (dt.attrs[attr] && updatedTasks[idx][attr] !== dt.attrs[attr]) {
           console.log(`📝 ${dt.id}: ${attr} ${updatedTasks[idx][attr]||'未設定'} → ${dt.attrs[attr]}`);
           updatedTasks[idx][attr] = dt.attrs[attr];

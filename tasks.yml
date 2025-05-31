@@ -96,7 +96,7 @@
   category: 業務環境
   source: docs/業務環境/有料ツール.md
   priority: high
-  memo: 現在契約中の有料サービス・ツールを整理し、事業用・プライベート用に分類。経費計上準備も含む
+  memo: 15サービス調査完了。月額¥18,228、事業経費計上可能額¥11,128を確認
 - id: REVENUE-001
   title: 業務委託案件の確定
   status: completed
@@ -152,7 +152,8 @@
   due: "2025-06-15"
   category: ブランディング
   priority: high
-  memo: 屋号変更「CHIENOWASHA（ちえのわ舎）」に伴い新たに作成が必要。割ともうすぐ着手予定
+  memo: 屋号変更「CHIENOWASHA（ちえのわ舎）」に伴い新たに作成が必要
+  source: docs/ブランディング/事業紹介文.md
 - id: OPERATION-001
   title: AI連携型タスク管理システムの構築・運用設計
   status: in_progress
@@ -346,3 +347,11 @@
   priority: medium
   due: "2025-06-15"
   memo: 現在の手動ID管理からシステマチックな自動ID生成への改善検討
+- id: TEST-001
+  title: 新規テストタスク
+  status: in_progress
+  category: テスト
+  priority: medium
+  due: "2025-06-01"
+  memo: sourceフィールド同期のテスト（進行中に変更）
+  source: docs/test/更新されたテストファイル.md
