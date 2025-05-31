@@ -181,7 +181,7 @@ try {
             }
             
             if (task.source) {
-                content += `- **参照**: ${task.source}\n`;
+                content += `- **参照**: [[${task.source}]]\n`;
             }
             
             if (task.memo) {
