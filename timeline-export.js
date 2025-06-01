@@ -1,320 +1,314 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 
+/**
+ * 日付文字列をDateオブジェクトに変換
+ */
+function parseDate(dateStr) {
+    return new Date(dateStr + 'T00:00:00');
+}
+
+/**
+ * 日付をYYYY-MM-DD形式にフォーマット
+ */
+function formatDate(date) {
+    return date.toISOString().split('T')[0];
+}
+
+/**
+ * 2つの日付間の日数を計算
+ */
+function getDaysBetween(startDate, endDate) {
+    const timeDiff = endDate.getTime() - startDate.getTime();
+    return Math.ceil(timeDiff / (1000 * 3600 * 24));
+}
+
+/**
+ * 期限別累積制約チェックを実行
+ */
+function performFeasibilityCheck(tasks) {
+    const today = new Date();
+    const todayStr = formatDate(today);
+    
+    // 期限付きタスクのみ抽出（未完了）
+    const activeTasks = tasks.filter(task => 
+        task.due && 
+        task.estimated_hours > 0 && 
+        task.status !== 'completed'
+    );
+    
+    if (activeTasks.length === 0) {
+        return {
+            feasible: true,
+            message: "期限付きタスクがありません",
+            totalRequiredHours: 0,
+            availableHours: 0,
+            margin: 0,
+            constraints: []
+        };
+    }
+    
+    // 期限日でタスクをグループ化
+    const tasksByDueDate = {};
+    activeTasks.forEach(task => {
+        if (!tasksByDueDate[task.due]) {
+            tasksByDueDate[task.due] = [];
+        }
+        tasksByDueDate[task.due].push(task);
+    });
+    
+    // 期限順にソート
+    const sortedDueDates = Object.keys(tasksByDueDate).sort();
+    
+    // 期限別累積制約チェック
+    const constraints = [];
+    let cumulativeHours = 0;
+    let firstFailure = null;
+    let overallFeasible = true;
+    
+    for (const dueDate of sortedDueDates) {
+        const tasksForThisDue = tasksByDueDate[dueDate];
+        const hoursForThisDue = tasksForThisDue.reduce((sum, task) => 
+            sum + task.estimated_hours, 0
+        );
+        
+        cumulativeHours += hoursForThisDue;
+        
+        // 今日からその期限までの利用可能日数・時間
+        const dueDateObj = parseDate(dueDate);
+        const daysFromToday = getDaysBetween(today, dueDateObj);
+        
+        // 期限が過去または今日の場合の処理
+        let availableDays, availableHours;
+        if (dueDate < todayStr) {
+            // 過去の期限：既に破綻
+            availableDays = 0;
+            availableHours = 0;
+        } else if (dueDate === todayStr) {
+            // 今日期限：残り時間なし
+            availableDays = 0;
+            availableHours = 0;
+        } else {
+            // 未来の期限：正常計算
+            availableDays = Math.max(0, daysFromToday);
+            availableHours = availableDays * 4; // 1日4時間
+        }
+        
+        // この期限での実行可能性
+        const feasible = cumulativeHours <= availableHours;
+        const shortage = feasible ? 0 : cumulativeHours - availableHours;
+        
+        // 最初の破綻を記録
+        if (!feasible && !firstFailure) {
+            firstFailure = {
+                dueDate,
+                shortage,
+                cumulativeHours,
+                availableHours
+            };
+            overallFeasible = false;
+        }
+        
+        // 期限の分類
+        const isToday = dueDate === todayStr;
+        const isPast = dueDate < todayStr;
+        
+        constraints.push({
+            due: dueDate,
+            tasksThisDue: hoursForThisDue,
+            taskCount: tasksForThisDue.length,
+            cumulativeTasks: cumulativeHours,
+            availableDays,
+            availableHours,
+            feasible,
+            shortage,
+            isToday,
+            isPast,
+            adjustable: !isToday && !isPast,
+            tasks: tasksForThisDue.map(t => ({ id: t.id, title: t.title, hours: t.estimated_hours }))
+        });
+    }
+    
+    // 全体統計を計算
+    const totalRequiredHours = cumulativeHours;
+    const finalConstraint = constraints[constraints.length - 1];
+    const totalAvailableHours = finalConstraint ? finalConstraint.availableHours : 0;
+    
+    return {
+        feasible: overallFeasible,
+        totalRequiredHours,
+        availableHours: totalAvailableHours,
+        margin: overallFeasible ? totalAvailableHours - totalRequiredHours : -(firstFailure?.shortage || 0),
+        activeTasks: activeTasks.length,
+        constraints,
+        firstFailure,
+        latestDue: sortedDueDates[sortedDueDates.length - 1] || null
+    };
+}
+
 function generateTimeline() {
     try {
-        // tasks.ymlを読み込み
-        const tasksData = yaml.load(fs.readFileSync('tasks.yml', 'utf8'));
+        console.log('📊 **期限別実行可能性判定を実行中...**\n');
         
-        // 期限があるタスクのみを抽出してソート
-        const tasksWithDue = tasksData
-            .filter(task => task.due && task.due !== null)
-            .map(task => ({
-                ...task,
-                dueDate: new Date(task.due)
-            }))
-            .sort((a, b) => a.dueDate - b.dueDate);
-
-        // 今日の日付（時刻をリセット）
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        // 期限別にグループ化
-        const tasksByDate = {};
-        tasksWithDue.forEach(task => {
-            const dateStr = task.dueDate.toISOString().split('T')[0];
-            if (!tasksByDate[dateStr]) {
-                tasksByDate[dateStr] = [];
+        // tasks.ymlを読み込み
+        const yamlData = fs.readFileSync('tasks.yml', 'utf8');
+        const tasksData = yaml.load(yamlData);
+        
+        if (!tasksData || !Array.isArray(tasksData)) {
+            console.log('❌ タスクデータが見つかりません');
+            return;
+        }
+        
+        // 実行可能性判定を実行
+        const result = performFeasibilityCheck(tasksData);
+        
+        // 結果のヘッダー表示
+        console.log('='.repeat(60));
+        console.log('📅 **期限別実行可能性判定結果**');
+        console.log('='.repeat(60));
+        
+        // 総合判定表示
+        if (result.feasible) {
+            console.log(`✅ **総合判定: 実行可能**`);
+            console.log(`📊 必要時間: ${result.totalRequiredHours}時間 / 利用可能: ${result.availableHours}時間`);
+            console.log(`📈 余裕: ${result.margin}時間\n`);
+        } else {
+            console.log(`❌ **総合判定: 実行不可能**`);
+            if (result.firstFailure) {
+                console.log(`🚨 **最初の破綻**: ${result.firstFailure.dueDate}期限で${result.firstFailure.shortage}時間不足`);
+                console.log(`📊 累積必要: ${result.firstFailure.cumulativeHours}時間 / 利用可能: ${result.firstFailure.availableHours}時間\n`);
             }
-            tasksByDate[dateStr].push(task);
-        });
-
-        // タイムライン生成
-        let timeline = `# 📅 開業準備タスク タイムライン
-
-> 生成日時: ${new Date().toLocaleString('ja-JP')}
-
-`;
-
-        // 期間別にセクション分け
-        const sections = [
-            {
-                title: '🚨 緊急対応期間',
-                startDate: new Date(today),
-                endDate: new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000), // 1週間後
-                emoji: '🔥'
-            },
-            {
-                title: '📋 開業準備期間',
-                startDate: new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000),
-                endDate: new Date('2025-06-23'),
-                emoji: '📅'
-            },
-            {
-                title: '🎯 開業後整備期間',
-                startDate: new Date('2025-06-23'),
-                endDate: new Date('2025-07-31'),
-                emoji: '🔧'
+        }
+        
+        // 期限別詳細表示
+        console.log('📋 **期限別詳細分析**');
+        console.log('-'.repeat(60));
+        
+        if (result.constraints.length === 0) {
+            console.log('📝 ' + result.message);
+            return;
+        }
+        
+        result.constraints.forEach((constraint, index) => {
+            const statusIcon = constraint.feasible ? '✅' : '❌';
+            const typeIcon = constraint.isPast ? '⏰' : constraint.isToday ? '🔥' : '📅';
+            
+            let header = `${statusIcon} ${typeIcon} **${constraint.due}期限**`;
+            if (constraint.isPast) header += ' (過去期限)';
+            if (constraint.isToday) header += ' (今日期限)';
+            
+            console.log(header);
+            console.log(`   🎯 この期限: ${constraint.tasksThisDue}時間 (${constraint.taskCount}件)`);
+            console.log(`   📊 累積必要: ${constraint.cumulativeTasks}時間`);
+            console.log(`   ⏳ 利用可能: ${constraint.availableHours}時間 (${constraint.availableDays}日間)`);
+            
+            if (!constraint.feasible) {
+                console.log(`   🚨 **不足**: ${constraint.shortage}時間`);
+                if (constraint.adjustable) {
+                    console.log(`   💡 **調整可能**: 期限変更で解決可能`);
+                } else {
+                    console.log(`   ⚠️  **緊急**: 即座の対応が必要`);
+                }
             }
-        ];
-
-        // 各セクションを生成
-        sections.forEach(section => {
-            const sectionTasks = Object.entries(tasksByDate)
-                .filter(([dateStr]) => {
-                    const date = new Date(dateStr);
-                    return date >= section.startDate && date < section.endDate;
-                })
-                .sort(([a], [b]) => a.localeCompare(b));
-
-            if (sectionTasks.length > 0) {
-                timeline += `## ${section.title}\n\n`;
-
-                sectionTasks.forEach(([dateStr, tasks]) => {
-                    const date = new Date(dateStr);
-                    // 日付差の計算を修正
-                    const daysDiff = Math.round((date - today) / (1000 * 60 * 60 * 24));
-                    
-                    let dateLabel = formatDateLabel(dateStr, daysDiff);
-                    let warningEmoji = '';
-                    
-                    if (tasks.length >= 5) {
-                        warningEmoji = ' 🚨';
-                    } else if (tasks.length >= 3) {
-                        warningEmoji = ' ⚠️';
-                    }
-
-                    timeline += `### ${dateLabel}${warningEmoji}\n`;
-                    
-                    if (tasks.length >= 3) {
-                        timeline += `**${tasks.length}件同時**\n`;
-                    }
-
-                    // 優先度順でソート
-                    const sortedTasks = tasks.sort((a, b) => {
-                        const priorityOrder = { high: 0, medium: 1, low: 2 };
-                        return priorityOrder[a.priority] - priorityOrder[b.priority];
-                    });
-
-                    sortedTasks.forEach(task => {
-                        const priorityEmoji = getPriorityEmoji(task.priority);
-                        const statusEmoji = getStatusEmoji(task.status);
-                        timeline += `- ${priorityEmoji} ${statusEmoji} **${task.id}**: ${task.title}\n`;
-                        
-                        if (task.memo) {
-                            timeline += `  - 📝 ${task.memo}\n`;
-                        }
-                    });
-
-                    timeline += '\n';
+            
+            // タスク詳細（不足している場合のみ）
+            if (!constraint.feasible) {
+                console.log(`   📝 含まれるタスク:`);
+                constraint.tasks.forEach(task => {
+                    console.log(`      - ${task.id}: ${task.title} (${task.hours}時間)`);
                 });
             }
+            
+            console.log('');
         });
-
-        // 問題分析セクション
-        timeline += generateProblemAnalysis(tasksByDate);
-
-        // 調整提案セクション
-        timeline += generateAdjustmentProposal(tasksByDate);
-
-        // ファイルに出力
-        fs.writeFileSync('timeline.md', timeline);
-
-        console.log('✅ タイムラインを生成しました: timeline.md');
-        console.log(`📊 期限付きタスク: ${tasksWithDue.length}件`);
         
-        // 問題のある日をレポート
-        const problematicDates = Object.entries(tasksByDate)
-            .filter(([, tasks]) => tasks.length >= 3)
-            .length;
-        
-        if (problematicDates > 0) {
-            console.log(`⚠️  過密な日: ${problematicDates}日間`);
+        // 調整提案
+        if (!result.feasible) {
+            console.log('💡 **調整提案**');
+            console.log('-'.repeat(60));
+            
+            const adjustableConstraints = result.constraints.filter(c => !c.feasible && c.adjustable);
+            if (adjustableConstraints.length > 0) {
+                console.log('🔧 **期限変更による解決案:**');
+                adjustableConstraints.forEach(constraint => {
+                    const suggestedDays = Math.ceil(constraint.shortage / 4);
+                    const currentDate = new Date(constraint.due + 'T00:00:00');
+                    const newDate = new Date(currentDate.getTime() + suggestedDays * 24 * 60 * 60 * 1000);
+                    const newDateStr = formatDate(newDate);
+                    
+                    console.log(`   • ${constraint.due} → ${newDateStr} (+${suggestedDays}日延期)`);
+                    console.log(`     理由: ${constraint.shortage}時間不足 → ${suggestedDays}日追加で解決`);
+                });
+            }
+            
+            const urgentConstraints = result.constraints.filter(c => !c.feasible && !c.adjustable);
+            if (urgentConstraints.length > 0) {
+                console.log('\n🚨 **緊急対応が必要:**');
+                urgentConstraints.forEach(constraint => {
+                    if (constraint.isPast) {
+                        console.log(`   • ${constraint.due}: 既に期限超過 (${constraint.shortage}時間分)`);
+                        console.log(`     → 期限の再交渉が必要`);
+                    } else if (constraint.isToday) {
+                        console.log(`   • 今日期限: ${constraint.shortage}時間の作業が未完了`);
+                        console.log(`     → 他業務の調整または期限延期交渉が必要`);
+                    }
+                });
+            }
         }
-
-        return timeline;
+        
+        // 出力ファイル生成
+        const outputContent = generateTimelineExportFile(result);
+        fs.writeFileSync('timeline-export.md', outputContent);
+        console.log('📄 timeline-export.md が生成されました');
         
     } catch (error) {
-        console.error('❌ エラー:', error.message);
+        console.error('❌ エラーが発生しました:', error.message);
     }
 }
 
-function formatDateLabel(dateStr, daysDiff) {
-    const date = new Date(dateStr);
-    const monthDay = `${date.getMonth() + 1}月${date.getDate()}日`;
+function generateTimelineExportFile(result) {
+    const now = new Date();
+    let content = `# 期限別実行可能性判定結果\n\n`;
+    content += `生成日時: ${now.toISOString().replace('T', ' ').slice(0, 19)}\n\n`;
     
-    if (daysDiff === 0) {
-        return `${monthDay}（今日）`;
-    } else if (daysDiff === 1) {
-        return `${monthDay}（明日）`;
-    } else if (daysDiff > 0) {
-        return `${monthDay}（${daysDiff}日後）`;
+    // 総合判定
+    content += `## 総合判定\n\n`;
+    if (result.feasible) {
+        content += `✅ **実行可能** - すべての期限で制約を満たしています\n\n`;
+        content += `- 必要時間: ${result.totalRequiredHours}時間\n`;
+        content += `- 利用可能: ${result.availableHours}時間\n`;
+        content += `- 余裕: ${result.margin}時間\n\n`;
     } else {
-        return `${monthDay}（${Math.abs(daysDiff)}日前）`;
+        content += `❌ **実行不可能** - 期限制約を満たせません\n\n`;
+        if (result.firstFailure) {
+            content += `🚨 最初の破綻: ${result.firstFailure.dueDate}期限で${result.firstFailure.shortage}時間不足\n\n`;
+        }
     }
-}
-
-function getPriorityEmoji(priority) {
-    switch (priority) {
-        case 'high': return '🔴';
-        case 'medium': return '🟡';
-        case 'low': return '🟢';
-        default: return '⚪';
-    }
-}
-
-function getStatusEmoji(status) {
-    switch (status) {
-        case 'completed': return '✅';
-        case 'in_progress': return '🔄';
-        case 'open': return '⭕';
-        case 'on_hold': return '📋';
-        default: return '⭕';
-    }
-}
-
-function generateProblemAnalysis(tasksByDate) {
-    let analysis = `---
-
-## 🚨 問題分析
-
-### 📊 期限別タスク密度
-`;
-
-    const sortedDates = Object.entries(tasksByDate)
-        .sort(([a], [b]) => a.localeCompare(b));
-
-    sortedDates.forEach(([dateStr, tasks]) => {
-        const count = tasks.length;
-        // 見積もり時間の合計を計算
-        const totalHours = tasks.reduce((sum, task) => {
-            return sum + (task.estimated_hours || 0);
-        }, 0);
+    
+    // 期限別詳細
+    content += `## 期限別詳細\n\n`;
+    result.constraints.forEach(constraint => {
+        const status = constraint.feasible ? '✅' : '❌';
+        const type = constraint.isPast ? '⏰ 過去期限' : constraint.isToday ? '🔥 今日期限' : '📅 未来期限';
         
-        let emoji = '📅';
-        let status = '';
-        let hourStatus = '';
+        content += `### ${status} ${constraint.due} ${type}\n\n`;
+        content += `- この期限のタスク: ${constraint.tasksThisDue}時間 (${constraint.taskCount}件)\n`;
+        content += `- 累積必要時間: ${constraint.cumulativeTasks}時間\n`;
+        content += `- 利用可能時間: ${constraint.availableHours}時間 (${constraint.availableDays}日間)\n`;
         
-        // タスク数による評価
-        if (count >= 5) {
-            emoji = '🚨';
-            status = ' - **明らかに過密、要調整**';
-        } else if (count >= 3) {
-            emoji = '⚠️';
-            status = ' - やや過密、注意が必要';
+        if (!constraint.feasible) {
+            content += `- **不足**: ${constraint.shortage}時間\n`;
         }
         
-        // 見積もり時間による評価（1日1時間制約）
-        if (totalHours > 4) {
-            hourStatus = ` | ⚠️ 時間超過: ${totalHours}時間（推奨4時間以内）`;
-        } else if (totalHours > 0) {
-            hourStatus = ` | ✅ 時間: ${totalHours}時間`;
-        }
-
-        analysis += `- ${emoji} **${dateStr}**: ${count}件${hourStatus}${status}\n`;
-    });
-
-    // 時間ベース負荷分析を追加
-    analysis += `\n### ⏰ 時間ベース負荷分析\n`;
-    
-    const heavyWorkloadDates = sortedDates.filter(([dateStr, tasks]) => {
-        const totalHours = tasks.reduce((sum, task) => sum + (task.estimated_hours || 0), 0);
-        return totalHours > 4;
+        content += `\n`;
     });
     
-    if (heavyWorkloadDates.length > 0) {
-        analysis += `\n**🚨 重負荷日（4時間超過）: ${heavyWorkloadDates.length}日間**\n\n`;
-        heavyWorkloadDates.forEach(([dateStr, tasks]) => {
-            const totalHours = tasks.reduce((sum, task) => sum + (task.estimated_hours || 0), 0);
-            const exceededHours = totalHours - 4;
-            analysis += `- **${dateStr}**: ${totalHours}時間（${exceededHours}時間超過）\n`;
-            
-            // 見積もり時間があるタスクのみ表示
-            const tasksWithHours = tasks.filter(task => task.estimated_hours);
-            if (tasksWithHours.length > 0) {
-                tasksWithHours.forEach(task => {
-                    analysis += `  - ${task.id}: ${task.estimated_hours}時間\n`;
-                });
-            }
-        });
-    } else {
-        analysis += `\n✅ **時間ベースでの問題なし**（全日程4時間以内）\n`;
-    }
-
-    // 最も問題のある日を特定
-    const mostProblematic = sortedDates
-        .filter(([, tasks]) => tasks.length >= 5)
-        .sort(([, a], [, b]) => b.length - a.length);
-
-    if (mostProblematic.length > 0) {
-        const [worstDate, worstTasks] = mostProblematic[0];
-        analysis += `\n### 🚨 最重要問題\n`;
-        analysis += `**${worstDate}に${worstTasks.length}件集中** - 緊急調整が必要\n\n`;
-        
-        analysis += `#### 該当タスク\n`;
-        worstTasks.forEach(task => {
-            const priorityEmoji = getPriorityEmoji(task.priority);
-            analysis += `- ${priorityEmoji} ${task.id}: ${task.title}\n`;
-        });
-    }
-
-    return analysis + '\n';
+    return content;
 }
 
-function generateAdjustmentProposal(tasksByDate) {
-    let proposal = `## 🎯 調整提案
-
-### 基本方針
-- **1日最大3件**を目標とする
-- **高優先度タスク**を優先的に分散
-- **依存関係**を考慮した順序調整
-- **開業日（6月23日）**前後での適切な配置
-
-### 推奨調整
-`;
-
-    // 最も過密な日を特定
-    const problematicDates = Object.entries(tasksByDate)
-        .filter(([, tasks]) => tasks.length >= 5)
-        .sort(([, a], [, b]) => b.length - a.length);
-
-    if (problematicDates.length > 0) {
-        const [worstDate, worstTasks] = problematicDates[0];
-        
-        proposal += `#### ${worstDate}の${worstTasks.length}件を分散\n\n`;
-        
-        // 高優先度タスクを先に処理
-        const highPriorityTasks = worstTasks.filter(t => t.priority === 'high');
-        const mediumPriorityTasks = worstTasks.filter(t => t.priority === 'medium');
-        const lowPriorityTasks = worstTasks.filter(t => t.priority === 'low');
-
-        // 分散提案
-        const redistributionPlan = [
-            { date: '6月10日', tasks: highPriorityTasks.slice(0, 1) },
-            { date: '6月15日', tasks: highPriorityTasks.slice(1, 2) },
-            { date: '6月20日', tasks: highPriorityTasks.slice(2, 4) },
-            { date: '6月22日', tasks: highPriorityTasks.slice(4, 7) },
-            { date: '7月5日', tasks: [...mediumPriorityTasks.slice(0, 3), ...lowPriorityTasks] }
-        ];
-
-        redistributionPlan.forEach(plan => {
-            if (plan.tasks.length > 0) {
-                proposal += `**${plan.date}**\n`;
-                plan.tasks.forEach(task => {
-                    const priorityEmoji = getPriorityEmoji(task.priority);
-                    proposal += `- ${priorityEmoji} ${task.id}: ${task.title}\n`;
-                });
-                proposal += '\n';
-            }
-        });
-    }
-
-    return proposal;
-}
-
-// スクリプト実行
+// 実行
 if (require.main === module) {
     generateTimeline();
 }
 
-module.exports = { generateTimeline }; 
+module.exports = { generateTimeline, performFeasibilityCheck }; 
