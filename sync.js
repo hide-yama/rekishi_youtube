@@ -35,7 +35,9 @@ function parseDailyTasks(content) {
     }
     // 属性行:   - 期限: ...  - メモ: ...  - カテゴリ: ...
     if (currentTask && line.match(/^\s*-\s*(期限|due):/)) {
-      const due = line.replace(/^\s*-\s*(期限|due):\s*/, '').trim();
+      let due = line.replace(/^\s*-\s*(期限|due):\s*/, '').trim();
+      // クォート除去
+      due = due.replace(/^"+|"+$/g, '').replace(/^'+|'+$/g, '');
       currentTask.attrs.due = due;
       return;
     }
@@ -103,7 +105,8 @@ try {
         ...(dt.attrs.due && { due: dt.attrs.due }),
         ...(dt.attrs.memo && { memo: dt.attrs.memo }),
         ...(dt.attrs.source && { source: dt.attrs.source }),
-        ...(dt.attrs.estimated_hours && { estimated_hours: dt.attrs.estimated_hours })
+        ...(dt.attrs.estimated_hours && { estimated_hours: dt.attrs.estimated_hours }),
+        ...(dt.attrs.fixed !== undefined && { fixed: dt.attrs.fixed })
       };
       updatedTasks.push(newTask);
       hasChanges = true;
@@ -126,13 +129,15 @@ try {
         changed = true;
       }
       // 属性同期
-      ['due','memo','category','priority','source','estimated_hours'].forEach(attr => {
-        if (dt.attrs[attr] && updatedTasks[idx][attr] !== dt.attrs[attr]) {
+      ['due','memo','category','priority','source','estimated_hours','fixed'].forEach(attr => {
+        if (dt.attrs[attr] !== undefined && updatedTasks[idx][attr] !== dt.attrs[attr]) {
           console.log(`📝 ${dt.id}: ${attr} ${updatedTasks[idx][attr]||'未設定'} → ${dt.attrs[attr]}`);
           updatedTasks[idx][attr] = dt.attrs[attr];
           changed = true;
         }
       });
+      // dailyファイルに記載がない属性はtasks.ymlの値を保持（上書きしない）
+      // 何もしなくてOK
       if (changed) hasChanges = true;
     }
   });
@@ -141,8 +146,9 @@ try {
 
   // 4. 保存
   if (hasChanges) {
-    const yamlOptions = { lineWidth: 120, quotingType: '"', forceQuotes: false };
-    fs.writeFileSync('tasks.yml', yaml.dump(updatedTasks, yamlOptions));
+    // const yamlOptions = { lineWidth: 120, quotingType: '"', forceQuotes: false };
+    // fs.writeFileSync('tasks.yml', yaml.dump(updatedTasks, yamlOptions));
+    fs.writeFileSync('tasks.yml', yaml.dump(updatedTasks));
     console.log('✅ tasks.yml を更新しました');
   } else {
     console.log('ℹ️ 変更はありませんでした');

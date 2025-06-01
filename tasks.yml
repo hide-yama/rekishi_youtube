@@ -1,7 +1,7 @@
 - id: LEGAL-001
   title: 開業届の提出
   status: in_progress
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 法的手続き
   priority: high
   estimated_hours: 2
@@ -9,7 +9,7 @@
 - id: LEGAL-002
   title: 青色申告承認申請書の提出
   status: in_progress
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 法的手続き
   priority: high
   estimated_hours: 1.5
@@ -17,7 +17,7 @@
 - id: LEGAL-003
   title: 屋号の決定と記載
   status: in_progress
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 法的手続き
   priority: high
   estimated_hours: 1
@@ -33,7 +33,7 @@
 - id: LEGAL-005
   title: 雇用保険説明会参加
   status: completed
-  due: "2025-05-23"
+  due: '2025-05-23'
   category: 法的手続き
   priority: high
   estimated_hours: 2.5
@@ -41,7 +41,7 @@
 - id: LEGAL-006
   title: 初回失業認定日出席
   status: open
-  due: "2025-06-05"
+  due: '2025-06-05'
   category: 法的手続き
   priority: high
   estimated_hours: 2
@@ -57,7 +57,7 @@
 - id: ACCOUNTING-001
   title: 会計ソフトの選定と初期設定
   status: open
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 会計・税務
   priority: high
   estimated_hours: 3.5
@@ -65,7 +65,7 @@
 - id: ACCOUNTING-002
   title: 事業用の銀行口座の開設
   status: open
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 会計・税務
   priority: high
   estimated_hours: 2.5
@@ -73,7 +73,7 @@
 - id: ACCOUNTING-003
   title: 事業用クレジットカードの整備
   status: open
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 会計・税務
   priority: low
   estimated_hours: 1.5
@@ -81,7 +81,7 @@
 - id: ACCOUNTING-004
   title: 帳簿の運用ルールの決定
   status: open
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 会計・税務
   priority: medium
   estimated_hours: 2
@@ -97,7 +97,7 @@
 - id: ENVIRONMENT-002
   title: 業務用ツールの選定（プロジェクト管理など）
   status: completed
-  due: "2025-06-23"
+  due: '2025-06-23'
   category: 業務環境
   priority: medium
   estimated_hours: 2
@@ -105,7 +105,7 @@
 - id: ENVIRONMENT-003
   title: 使用中の有料ツールの棚卸と分類
   status: completed
-  due: "2025-05-31"
+  due: '2025-05-31'
   category: 業務環境
   source: docs/業務環境/有料ツール.md
   priority: high
@@ -122,7 +122,7 @@
 - id: REVENUE-002
   title: 今後の案件獲得戦略の設計
   status: open
-  due: "2025-07-01"
+  due: '2025-07-01'
   category: 収益基盤
   priority: medium
   estimated_hours: 4
@@ -130,7 +130,7 @@
 - id: REVENUE-003
   title: 法人化の検討
   status: in_progress
-  due: "2025-12-31"
+  due: '2025-12-31'
   category: 収益基盤
   priority: low
   estimated_hours: 6
@@ -146,7 +146,7 @@
 - id: INSURANCE-002
   title: 国民年金への切替手続き
   status: completed
-  due: "2025-05-28"
+  due: '2025-05-28'
   category: 保険・年金
   priority: high
   estimated_hours: 1.5
@@ -154,7 +154,7 @@
 - id: INSURANCE-003
   title: 小規模企業共済の加入準備
   status: in_progress
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 保険・年金
   priority: medium
   estimated_hours: 2.5
@@ -162,7 +162,7 @@
 - id: INSURANCE-004
   title: 節税意識（iDeCoやふるさと納税等の検討）
   status: completed
-  due: "2025-06-01"
+  due: '2025-06-01'
   category: 保険・年金
   priority: medium
   estimated_hours: 3
@@ -170,7 +170,7 @@
 - id: INSURANCE-005
   title: 国民年金クレジットカード支払い切り替え手続き
   status: open
-  due: "2025-06-15"
+  due: '2025-06-15'
   category: 保険・年金
   priority: medium
   estimated_hours: 1
@@ -178,7 +178,7 @@
 - id: BRANDING-001
   title: 事業紹介文の整備
   status: open
-  due: "2025-06-15"
+  due: '2025-06-15'
   category: ブランディング
   priority: high
   estimated_hours: 3.5
@@ -186,7 +186,7 @@
 - id: OPERATION-001
   title: AI連携型タスク管理システムの構築・運用設計
   status: in_progress
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 運用・仕組み化
   priority: high
   estimated_hours: 12
@@ -195,16 +195,18 @@
 - id: OPERATION-002
   title: タイムライン分析機能の開発
   status: completed
-  due: "2025-05-28"
+  due: '2025-05-28'
   category: 運用・仕組み化
   source: timeline-export.js
   priority: high
   estimated_hours: 8
-  memo: 2025-05-28完了。tasks.ymlから期限付きタスクを時系列分析し、過密スケジュール検出・調整提案まで自動生成。npm run timelineで実行可能
+  memo: >-
+    2025-05-28完了。tasks.ymlから期限付きタスクを時系列分析し、過密スケジュール検出・調整提案まで自動生成。npm run
+    timelineで実行可能
 - id: CONTRACT-001
   title: 請求書発行・提出方法の確認
   status: open
-  due: "2025-06-23"
+  due: '2025-06-23'
   category: 契約・請求
   priority: high
   estimated_hours: 2
@@ -212,7 +214,7 @@
 - id: CONTRACT-002
   title: freee上の経理処理体制
   status: in_progress
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 契約・請求
   priority: high
   estimated_hours: 4
@@ -228,7 +230,7 @@
 - id: CONTRACT-004
   title: 按分ルールの設計・記録
   status: open
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 契約・請求
   priority: medium
   estimated_hours: 2.5
@@ -252,15 +254,15 @@
 - id: MARKETING-003
   title: ポートフォリオ資料の作成
   status: in_progress
-  due: "2025-06-01"
+  due: '2025-06-10'
   estimated_hours: 3
   category: マーケティング
   priority: medium
-  memo: 事業計画より自己紹介に近い資料。6月1日開始予定
+  memo: 事業計画より自己紹介に近い資料。期限を6/10に延期
 - id: MARKETING-004
   title: SNS（Xなど）の活用方針設計
   status: open
-  due: "2025-06-20"
+  due: '2025-06-20'
   category: マーケティング
   priority: low
   estimated_hours: 2
@@ -276,7 +278,7 @@
 - id: MARKETING-006
   title: 既存ドメインの解約・移行
   status: open
-  due: "2025-07-31"
+  due: '2025-07-31'
   category: マーケティング
   priority: low
   estimated_hours: 1.5
@@ -284,7 +286,7 @@
 - id: MARKETING-007
   title: Gmail転送設定・メールアドレス管理
   status: open
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: マーケティング
   priority: medium
   estimated_hours: 1
@@ -292,7 +294,7 @@
 - id: RISK-001
   title: 業務データの保存場所・構造設計
   status: in_progress
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: リスク管理
   priority: medium
   estimated_hours: 3
@@ -308,23 +310,23 @@
 - id: RISK-003
   title: プロジェクト管理用Cursor活用システムの開発
   status: open
-  due: "2025-06-01"
-  estimated_hours: 2.5
+  due: '2025-06-15'
+  estimated_hours: 10
   category: リスク管理
   priority: medium
-  memo: 現在のタスク管理システムをベースに横展開。6月に現状棚卸しから開始
+  memo: 現在のタスク管理システムをベースに横展開。1週間プロジェクト運用後に着手
 - id: RISK-004
   title: 個人事業用リスク一覧の作成と管理
-  status: open
-  due: "\"2025-06-03\""
-  category: プロジェクト管理
+  status: completed
+  due: '2025-06-03'
+  category: リスク管理
   priority: high
   estimated_hours: 1
-  memo: 17件52.5時間の異常過密スケジュール調整計画
+  memo: テスト用JSファイル3件、バックアップファイル1件、cursorrules削除完了
 - id: OPERATION-004
   title: AI連携タスク管理システム研究論文の作成
   status: open
-  due: "2025-07-31"
+  due: '2025-07-31'
   category: 運用・仕組み化
   priority: low
   estimated_hours: 15
@@ -342,40 +344,40 @@
   category: 研究・論文
   status: open
   priority: medium
-  due: "2025-08-31"
+  due: '2025-08-31'
   estimated_hours: 20
 - id: RESEARCH-002
   title: システム開発プロセスの詳細記録・分析
   category: 研究・論文
   status: open
   priority: medium
-  due: "2025-07-15"
+  due: '2025-07-15'
   estimated_hours: 8
 - id: RESEARCH-003
   title: 既存プロジェクト管理手法との比較研究
   category: 研究・論文
   status: open
   priority: low
-  due: "2025-07-31"
+  due: '2025-07-31'
   estimated_hours: 12
 - id: RESEARCH-004
   title: 論文投稿先の調査・選定
   category: 研究・論文
   status: open
   priority: low
-  due: "2025-06-30"
+  due: '2025-06-30'
   estimated_hours: 4
 - id: RESEARCH-005
   title: 研究データの体系的整理・アーカイブ化
   category: 研究・論文
   status: open
   priority: medium
-  due: "2025-07-01"
+  due: '2025-07-01'
   estimated_hours: 6
 - id: ACCOUNTING-005
   title: freee導入・初期設定完了
   status: open
-  due: "2025-06-30"
+  due: '2025-06-30'
   estimated_hours: 4.5
   category: 会計・税務
   source: docs/リスク管理/個人事業リスク一覧.md
@@ -384,7 +386,7 @@
 - id: ACCOUNTING-006
   title: 税理士との初回相談・年間契約検討
   status: open
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: 会計・税務
   source: docs/リスク管理/個人事業リスク一覧.md
   priority: high
@@ -395,32 +397,59 @@
   status: completed
   category: 運用・仕組み化
   priority: high
-  due: "2025-06-02"
+  due: '2025-06-02'
   estimated_hours: 6
-  memo: v2.0統一作業後のスパゲッティーコード化・潜在バグの有無を総合チェック。sync.js、extract.js、timeline-export.js、obsidian-export.js、review.jsの5ファイル対象
+  memo: >-
+    v2.0統一作業後のスパゲッティーコード化・潜在バグの有無を総合チェック。sync.js、extract.js、timeline-export.js、obsidian-export.js、review.jsの5ファイル対象
 - id: OPERATION-006
   title: タスクID管理システムの改善設計
   status: completed
   category: 運用・仕組み化
   priority: medium
-  due: "2025-06-15"
+  due: '2025-06-15'
   estimated_hours: 4
   memo: 現在の手動ID管理からシステマチックな自動ID生成への改善検討
 - id: RISK-005
   title: リスク管理マスターの月次見直し・実行タスク選定
   status: open
-  due: "2025-06-30"
+  due: '2025-06-30'
   category: リスク管理
   source: docs/リスク管理/個人事業リスク一覧.md
   priority: medium
   estimated_hours: 2
-  memo: "リスク一覧（20項目）の状況変化確認、優先度再評価、今月実行すべき対策タスクの選定・tasks.yml移行。【6月選定候補】freee導入、税理士相談、緊急PC環境、セキュリティポリシー策定。次回実施予定: 2025-07-31"
+  memo: >-
+    リスク一覧（20項目）の状況変化確認、優先度再評価、今月実行すべき対策タスクの選定・tasks.yml移行。【6月選定候補】freee導入、税理士相談、緊急PC環境、セキュリティポリシー策定。次回実施予定:
+    2025-07-31
 - id: OPERATION-007
   title: 時間見積もりベースタスク管理システム実装
-  status: open
+  status: completed
   category: オペレーション改善
   priority: high
-  due: "2025-06-05"
+  due: '2025-06-05'
   estimated_hours: 9
-  memo: 期限だけでなく見積もり時間から逆算した着手期限を計算し、作業負荷の可視化・調整提案を自動化。計画的なタスク管理を実現。
+  memo: 2025-06-01完了済み。段階的アラートシステム・実行可能性判定システム完成
   source: docs/システム設計/時間見積もりベーストaskマネジメント実装計画.md
+- id: SYSTEM-001
+  title: 重負荷アラート対応（8.5時間→現実的スケジュールへの調整）
+  status: open
+  category: システム運用
+  priority: high
+  due: '2025-06-02'
+  memo: 期限当日タスク3件の実際的対応策検討
+  estimated_hours: 1
+- id: SYSTEM-002
+  title: React/TypeScript移行検討タスクの追加
+  status: open
+  category: システム構築
+  priority: medium
+  due: '2025-06-15'
+  memo: 現行システムの技術選択評価・移行可能性調査
+  estimated_hours: 2
+- id: PROJECT-001
+  title: タイムライン分析による6月30日重負荷問題の事前対応
+  status: open
+  category: プロジェクト管理
+  priority: high
+  due: '2025-06-03'
+  memo: 17件52.5時間の異常過密スケジュール調整計画
+  estimated_hours: 1

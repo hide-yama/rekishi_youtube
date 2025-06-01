@@ -17,12 +17,16 @@
     "review-summary": "node review.js --summary",
     "review-export": "node review.js --export"
   },
-  "keywords": ["task-management", "freelance", "startup"],
+  "keywords": [
+    "task-management",
+    "freelance",
+    "startup"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "js-yaml": "^4.1.0",
     "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
     "minimist": "^1.2.8"
   }
-} 
+}

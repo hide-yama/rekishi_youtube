@@ -60,6 +60,18 @@ function calculateDailyWorkload(date, tasks, config) {
     // 見積もり時間がないタスクや完了済みタスクは除外
     if (!task.estimated_hours || task.status === 'completed') return;
     
+    // fixed: trueのタスクはdue日に全時間を割り当て、それ以外の日は出さない
+    if (task.fixed) {
+      if (task.due === date && (task.status === 'open' || task.status === 'in_progress')) {
+        tasksForDay.push({
+          ...task,
+          workType: 'fixed',
+          dailyHours: task.estimated_hours // 全時間をその日に割り当て
+        });
+      }
+      return;
+    }
+    
     // ケース1: 期限当日のタスク（緊急対応）
     if (task.due === date && (task.status === 'open' || task.status === 'in_progress')) {
       tasksForDay.push({
