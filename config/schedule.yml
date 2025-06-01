@@ -1,0 +1,17 @@
+# 時間見積もりベースタスク管理システム設定（シンプル版）
+# 作成日: 2025-06-01
+
+# 作業時間設定
+daily_work_hours: 1           # 1つのタスクに1日最大1時間
+buffer_days: 1                # 着手期限のバッファ日数
+
+# アラート設定
+alert_thresholds:
+  heavy_workload_hours: 4.0   # 4時間以上でアラート（1日1時間×4タスクが目安）
+
+# 表示設定
+display:
+  time_format: "decimal"     # 時間表示形式（decimal: 4.0h）
+  show_start_deadline: true  # 着手期限表示
+  show_workload_alert: true  # 負荷アラート表示
+  show_daily_allocation: true # 日次配分表示 

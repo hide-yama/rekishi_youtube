@@ -186,9 +186,16 @@ function generateProblemAnalysis(tasksByDate) {
 
     sortedDates.forEach(([dateStr, tasks]) => {
         const count = tasks.length;
+        // 見積もり時間の合計を計算
+        const totalHours = tasks.reduce((sum, task) => {
+            return sum + (task.estimated_hours || 0);
+        }, 0);
+        
         let emoji = '📅';
         let status = '';
+        let hourStatus = '';
         
+        // タスク数による評価
         if (count >= 5) {
             emoji = '🚨';
             status = ' - **明らかに過密、要調整**';
@@ -196,9 +203,43 @@ function generateProblemAnalysis(tasksByDate) {
             emoji = '⚠️';
             status = ' - やや過密、注意が必要';
         }
+        
+        // 見積もり時間による評価（1日1時間制約）
+        if (totalHours > 4) {
+            hourStatus = ` | ⚠️ 時間超過: ${totalHours}時間（推奨4時間以内）`;
+        } else if (totalHours > 0) {
+            hourStatus = ` | ✅ 時間: ${totalHours}時間`;
+        }
 
-        analysis += `- ${emoji} **${dateStr}**: ${count}件${status}\n`;
+        analysis += `- ${emoji} **${dateStr}**: ${count}件${hourStatus}${status}\n`;
     });
+
+    // 時間ベース負荷分析を追加
+    analysis += `\n### ⏰ 時間ベース負荷分析\n`;
+    
+    const heavyWorkloadDates = sortedDates.filter(([dateStr, tasks]) => {
+        const totalHours = tasks.reduce((sum, task) => sum + (task.estimated_hours || 0), 0);
+        return totalHours > 4;
+    });
+    
+    if (heavyWorkloadDates.length > 0) {
+        analysis += `\n**🚨 重負荷日（4時間超過）: ${heavyWorkloadDates.length}日間**\n\n`;
+        heavyWorkloadDates.forEach(([dateStr, tasks]) => {
+            const totalHours = tasks.reduce((sum, task) => sum + (task.estimated_hours || 0), 0);
+            const exceededHours = totalHours - 4;
+            analysis += `- **${dateStr}**: ${totalHours}時間（${exceededHours}時間超過）\n`;
+            
+            // 見積もり時間があるタスクのみ表示
+            const tasksWithHours = tasks.filter(task => task.estimated_hours);
+            if (tasksWithHours.length > 0) {
+                tasksWithHours.forEach(task => {
+                    analysis += `  - ${task.id}: ${task.estimated_hours}時間\n`;
+                });
+            }
+        });
+    } else {
+        analysis += `\n✅ **時間ベースでの問題なし**（全日程4時間以内）\n`;
+    }
 
     // 最も問題のある日を特定
     const mostProblematic = sortedDates

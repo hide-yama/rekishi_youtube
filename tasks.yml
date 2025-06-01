@@ -4,6 +4,7 @@
   due: "2025-06-30"
   category: 法的手続き
   priority: high
+  estimated_hours: 2
   memo: 屋号は「CHIENOWASHA（ちえのわ舎）」で提出予定。失業保険の待機期間考慮で6月23日以降に提出
 - id: LEGAL-002
   title: 青色申告承認申請書の提出
@@ -11,6 +12,7 @@
   due: "2025-06-30"
   category: 法的手続き
   priority: high
+  estimated_hours: 1.5
   memo: 開業届と同時提出予定
 - id: LEGAL-003
   title: 屋号の決定と記載
@@ -18,6 +20,7 @@
   due: "2025-06-30"
   category: 法的手続き
   priority: high
+  estimated_hours: 1
   memo: 「CHIENOWASHA（ちえのわ舎）」に変更決定。関連タスクの更新が必要
 - id: LEGAL-004
   title: 離職票の提出／ハローワークでの手続き
@@ -25,6 +28,7 @@
   due: null
   category: 法的手続き
   priority: high
+  estimated_hours: 3
   memo: 5月14日提出済
 - id: LEGAL-005
   title: 雇用保険説明会参加
@@ -32,6 +36,7 @@
   due: "2025-05-23"
   category: 法的手続き
   priority: high
+  estimated_hours: 2.5
   memo: 5月23日参加済み
 - id: LEGAL-006
   title: 初回失業認定日出席
@@ -39,6 +44,7 @@
   due: "2025-06-05"
   category: 法的手続き
   priority: high
+  estimated_hours: 2
   memo: 6月5日
 - id: LEGAL-007
   title: 給付開始日と業務開始日の整合
@@ -46,6 +52,7 @@
   due: null
   category: 法的手続き
   priority: high
+  estimated_hours: 1
   memo: 給付開始6月20日以降 → 開始日6月23日でクリア
 - id: ACCOUNTING-001
   title: 会計ソフトの選定と初期設定
@@ -53,6 +60,7 @@
   due: "2025-06-30"
   category: 会計・税務
   priority: high
+  estimated_hours: 3.5
   memo: freeeで確定。事前準備として機能理解・操作方法の学習を推奨
 - id: ACCOUNTING-002
   title: 事業用の銀行口座の開設
@@ -60,6 +68,7 @@
   due: "2025-06-30"
   category: 会計・税務
   priority: high
+  estimated_hours: 2.5
   memo: 住信SBIネット銀行で確定。開業届提出後に申込み。事前準備として必要書類の確認・準備を推奨
 - id: ACCOUNTING-003
   title: 事業用クレジットカードの整備
@@ -67,6 +76,7 @@
   due: "2025-06-30"
   category: 会計・税務
   priority: low
+  estimated_hours: 1.5
   memo: Bonvoyカード継続使用。freeeでプライベート併用でも按分設定可能
 - id: ACCOUNTING-004
   title: 帳簿の運用ルールの決定
@@ -74,6 +84,7 @@
   due: "2025-06-30"
   category: 会計・税務
   priority: medium
+  estimated_hours: 2
   memo: 未設定。記帳のタイミングや方法はこれから構築予定
 - id: ENVIRONMENT-001
   title: PC・ディスプレイなど業務機材の準備
@@ -81,6 +92,7 @@
   due: null
   category: 業務環境
   priority: high
+  estimated_hours: 4
   memo: 業務開始に十分な環境が整っている
 - id: ENVIRONMENT-002
   title: 業務用ツールの選定（プロジェクト管理など）
@@ -88,6 +100,7 @@
   due: "2025-06-23"
   category: 業務環境
   priority: medium
+  estimated_hours: 2
   memo: 基本的には委託先のツール確認後になるため、タスクとして認識不要
 - id: ENVIRONMENT-003
   title: 使用中の有料ツールの棚卸と分類
@@ -96,6 +109,7 @@
   category: 業務環境
   source: docs/業務環境/有料ツール.md
   priority: high
+  estimated_hours: 1.5
   memo: 現在契約中の有料サービス・ツールを整理し、事業用・プライベート用に分類。経費計上準備も含む
 - id: REVENUE-001
   title: 業務委託案件の確定
@@ -103,6 +117,7 @@
   due: null
   category: 収益基盤
   priority: high
+  estimated_hours: 8
   memo: トランスコスモス社（レバテック経由）、月額65万円（税込）、6月23日開始、3か月更新制
 - id: REVENUE-002
   title: 今後の案件獲得戦略の設計
@@ -110,6 +125,7 @@
   due: "2025-07-01"
   category: 収益基盤
   priority: medium
+  estimated_hours: 4
   memo: まだ具体的な戦略を立てていない。開業手続き完了後の7月1日に検討開始
 - id: REVENUE-003
   title: 法人化の検討
@@ -117,6 +133,7 @@
   due: "2025-12-31"
   category: 収益基盤
   priority: low
+  estimated_hours: 6
   memo: 年収が一定を超えたら税制優遇を見て法人化も視野に。ただし従業員を雇う意志は今のところなし
 - id: INSURANCE-001
   title: 国民健康保険への切替手続き
@@ -124,6 +141,7 @@
   due: null
   category: 保険・年金
   priority: high
+  estimated_hours: 2
   memo: 市区町村にて切替済
 - id: INSURANCE-002
   title: 国民年金への切替手続き
@@ -131,6 +149,7 @@
   due: "2025-05-28"
   category: 保険・年金
   priority: high
+  estimated_hours: 1.5
   memo: 2025-05-28市役所で手続き完了。クレジットカード支払い切り替え書類を入手
 - id: INSURANCE-003
   title: 小規模企業共済の加入準備
@@ -138,13 +157,15 @@
   due: "2025-06-30"
   category: 保険・年金
   priority: medium
+  estimated_hours: 2.5
   memo: 満額加入予定（月7万円）。まだ申込手続きはしていない
 - id: INSURANCE-004
   title: 節税意識（iDeCoやふるさと納税等の検討）
-  status: open
+  status: completed
   due: "2025-06-01"
   category: 保険・年金
   priority: medium
+  estimated_hours: 3
   memo: アクセンチュア源泉徴収票を使用して正確な上限額計算が可能。今日実行推奨
 - id: INSURANCE-005
   title: 国民年金クレジットカード支払い切り替え手続き
@@ -152,6 +173,7 @@
   due: "2025-06-15"
   category: 保険・年金
   priority: medium
+  estimated_hours: 1
   memo: INSURANCE-002完了時に入手した書類を使用。最初の12か月は納付書での現金払いが必要
 - id: BRANDING-001
   title: 事業紹介文の整備
@@ -159,6 +181,7 @@
   due: "2025-06-15"
   category: ブランディング
   priority: high
+  estimated_hours: 3.5
   memo: 屋号変更「CHIENOWASHA（ちえのわ舎）」に伴い新たに作成が必要
 - id: OPERATION-001
   title: AI連携型タスク管理システムの構築・運用設計
@@ -166,6 +189,7 @@
   due: "2025-06-30"
   category: 運用・仕組み化
   priority: high
+  estimated_hours: 12
   memo: >-
     timeline機能完成（2025-05-28）。MDファイル+AI+Node.js+CLIコマンドによる独自システム。期限付きタスクの時系列分析・過密スケジュール検出・調整提案まで自動生成。AIの不確定性を排除し、高度なリテラシーが必要な他では見ない仕組み
 - id: OPERATION-002
@@ -175,6 +199,7 @@
   category: 運用・仕組み化
   source: timeline-export.js
   priority: high
+  estimated_hours: 8
   memo: 2025-05-28完了。tasks.ymlから期限付きタスクを時系列分析し、過密スケジュール検出・調整提案まで自動生成。npm run timelineで実行可能
 - id: CONTRACT-001
   title: 請求書発行・提出方法の確認
@@ -182,6 +207,7 @@
   due: "2025-06-23"
   category: 契約・請求
   priority: high
+  estimated_hours: 2
   memo: レバテックプラットフォームでの請求フロー情報待ち。6月23日業務開始時に情報共有予定。freeeでの売上記録方法の事前理解と初回請求準備が必要
 - id: CONTRACT-002
   title: freee上の経理処理体制
@@ -189,6 +215,7 @@
   due: "2025-06-30"
   category: 契約・請求
   priority: high
+  estimated_hours: 4
   memo: 銀行・カード連携設定方法、按分ルール設定、売上登録手順の学習が必要。明日から毎日少しずつ疑問を解消していく
 - id: CONTRACT-003
   title: インボイス制度対応方針
@@ -196,6 +223,7 @@
   due: null
   category: 契約・請求
   priority: medium
+  estimated_hours: 2
   memo: 年収1,000万円未満のため未登録方針確定。1,000万円超過時が登録判断基準。委託先への説明済み
 - id: CONTRACT-004
   title: 按分ルールの設計・記録
@@ -203,6 +231,7 @@
   due: "2025-06-30"
   category: 契約・請求
   priority: medium
+  estimated_hours: 2.5
   memo: 家賃・通信費・光熱費・サブスク等の事業利用割合を定義。ACCOUNTING-005と連携してmdファイルで管理予定
 - id: MARKETING-001
   title: 名刺の作成
@@ -210,6 +239,7 @@
   due: null
   category: マーケティング
   priority: high
+  estimated_hours: 2.5
   memo: 名刺が5月28日に到着済み。配布準備完了
 - id: MARKETING-002
   title: オリジナルドメインメールの署名設定
@@ -217,11 +247,13 @@
   due: null
   category: マーケティング
   priority: high
+  estimated_hours: 1.5
   memo: chienowasha.comでメールアドレス登録完了。送受信テスト済み。5月25日完了
 - id: MARKETING-003
   title: ポートフォリオ資料の作成
-  status: open
+  status: in_progress
   due: "2025-06-01"
+  estimated_hours: 3
   category: マーケティング
   priority: medium
   memo: 事業計画より自己紹介に近い資料。6月1日開始予定
@@ -231,6 +263,7 @@
   due: "2025-06-20"
   category: マーケティング
   priority: low
+  estimated_hours: 2
   memo: 早期のブランディング固定は避ける。6月後半に検討
 - id: MARKETING-005
   title: 新ドメインの取得（屋号変更対応）
@@ -238,6 +271,7 @@
   due: null
   category: マーケティング
   priority: high
+  estimated_hours: 2
   memo: chienowasha.com取得完了。5月25日完了
 - id: MARKETING-006
   title: 既存ドメインの解約・移行
@@ -245,6 +279,7 @@
   due: "2025-07-31"
   category: マーケティング
   priority: low
+  estimated_hours: 1.5
   memo: curuvia.comの解約手続き。新ドメイン移行後に実施
 - id: MARKETING-007
   title: Gmail転送設定・メールアドレス管理
@@ -252,6 +287,7 @@
   due: "2025-06-30"
   category: マーケティング
   priority: medium
+  estimated_hours: 1
   memo: 新Googleアカウント作成後、プライベートGmailへの転送設定またはLINE通知設定
 - id: RISK-001
   title: 業務データの保存場所・構造設計
@@ -259,6 +295,7 @@
   due: "2025-06-30"
   category: リスク管理
   priority: medium
+  estimated_hours: 3
   memo: 委託先PC+クラウド環境、個人知識蓄積はGoogleドライブ使用予定。事業用Googleアカウント作成が必要
 - id: RISK-002
   title: バックアップ体制（ローカル＋クラウド）の検討・整備
@@ -266,27 +303,31 @@
   due: null
   category: リスク管理
   priority: medium
+  estimated_hours: 2.5
   memo: 現在使用中の500GBハードディスクを活用。準備完了
 - id: RISK-003
   title: プロジェクト管理用Cursor活用システムの開発
   status: open
   due: "2025-06-01"
+  estimated_hours: 2.5
   category: リスク管理
   priority: medium
   memo: 現在のタスク管理システムをベースに横展開。6月に現状棚卸しから開始
 - id: RISK-004
   title: 個人事業用リスク一覧の作成と管理
   status: open
-  due: "2025-06-01"
-  category: リスク管理
-  priority: low
-  memo: 6月に入ったら確認開始。ドキュメント作成でテキスト管理
+  due: "\"2025-06-03\""
+  category: プロジェクト管理
+  priority: high
+  estimated_hours: 1
+  memo: 17件52.5時間の異常過密スケジュール調整計画
 - id: OPERATION-004
   title: AI連携タスク管理システム研究論文の作成
   status: open
   due: "2025-07-31"
   category: 運用・仕組み化
   priority: low
+  estimated_hours: 15
   memo: 独自システムの試行錯誤過程を論文形式で記録。他では見ない高度な仕組みの分析・ドキュメント化
 - id: MARKETING-008
   title: 事業用Googleアカウントの作成
@@ -294,6 +335,7 @@
   due: null
   category: マーケティング
   priority: high
+  estimated_hours: 1
   memo: 事業用Googleアカウント作成完了。chienowasha.comとの紐付け・送受信テスト済み。5月25日完了
 - id: RESEARCH-001
   title: AI-Human協働プロジェクト管理システムの研究論文執筆
@@ -301,34 +343,40 @@
   status: open
   priority: medium
   due: "2025-08-31"
+  estimated_hours: 20
 - id: RESEARCH-002
   title: システム開発プロセスの詳細記録・分析
   category: 研究・論文
   status: open
   priority: medium
   due: "2025-07-15"
+  estimated_hours: 8
 - id: RESEARCH-003
   title: 既存プロジェクト管理手法との比較研究
   category: 研究・論文
   status: open
   priority: low
   due: "2025-07-31"
+  estimated_hours: 12
 - id: RESEARCH-004
   title: 論文投稿先の調査・選定
   category: 研究・論文
   status: open
   priority: low
   due: "2025-06-30"
+  estimated_hours: 4
 - id: RESEARCH-005
   title: 研究データの体系的整理・アーカイブ化
   category: 研究・論文
   status: open
   priority: medium
   due: "2025-07-01"
+  estimated_hours: 6
 - id: ACCOUNTING-005
   title: freee導入・初期設定完了
   status: open
   due: "2025-06-30"
+  estimated_hours: 4.5
   category: 会計・税務
   source: docs/リスク管理/個人事業リスク一覧.md
   priority: high
@@ -340,6 +388,7 @@
   category: 会計・税務
   source: docs/リスク管理/個人事業リスク一覧.md
   priority: high
+  estimated_hours: 3
   memo: 税務ペナルティリスク対策。個人事業主の確定申告、経費処理、消費税課税事業者移行等の相談体制構築。月次レビューサービスの検討含む
 - id: OPERATION-005
   title: JSファイル群の総合品質チェック
@@ -347,6 +396,7 @@
   category: 運用・仕組み化
   priority: high
   due: "2025-06-02"
+  estimated_hours: 6
   memo: v2.0統一作業後のスパゲッティーコード化・潜在バグの有無を総合チェック。sync.js、extract.js、timeline-export.js、obsidian-export.js、review.jsの5ファイル対象
 - id: OPERATION-006
   title: タスクID管理システムの改善設計
@@ -354,6 +404,7 @@
   category: 運用・仕組み化
   priority: medium
   due: "2025-06-15"
+  estimated_hours: 4
   memo: 現在の手動ID管理からシステマチックな自動ID生成への改善検討
 - id: RISK-005
   title: リスク管理マスターの月次見直し・実行タスク選定
@@ -362,362 +413,14 @@
   category: リスク管理
   source: docs/リスク管理/個人事業リスク一覧.md
   priority: medium
+  estimated_hours: 2
   memo: "リスク一覧（20項目）の状況変化確認、優先度再評価、今月実行すべき対策タスクの選定・tasks.yml移行。【6月選定候補】freee導入、税理士相談、緊急PC環境、セキュリティポリシー策定。次回実施予定: 2025-07-31"
-- id: LEGAL-001
-  title: 開業届の提出
-  status: in_progress
-  due: "2025-06-30"
-  category: 法的手続き
-  priority: high
-  memo: 屋号は「CHIENOWASHA（ちえのわ舎）」で提出予定。失業保険の待機期間考慮で6月23日以降に提出
-- id: LEGAL-002
-  title: 青色申告承認申請書の提出
-  status: in_progress
-  due: "2025-06-30"
-  category: 法的手続き
-  priority: high
-  memo: 開業届と同時提出予定
-- id: LEGAL-003
-  title: 屋号の決定と記載
-  status: in_progress
-  due: "2025-06-30"
-  category: 法的手続き
-  priority: high
-  memo: 「CHIENOWASHA（ちえのわ舎）」に変更決定。関連タスクの更新が必要
-- id: LEGAL-004
-  title: 離職票の提出／ハローワークでの手続き
-  status: completed
-  due: null
-  category: 法的手続き
-  priority: high
-  memo: 5月14日提出済
-- id: LEGAL-005
-  title: 雇用保険説明会参加
-  status: completed
-  due: "2025-05-23"
-  category: 法的手続き
-  priority: high
-  memo: 5月23日参加済み
-- id: LEGAL-006
-  title: 初回失業認定日出席
+- id: OPERATION-007
+  title: 時間見積もりベースタスク管理システム実装
   status: open
+  category: オペレーション改善
+  priority: high
   due: "2025-06-05"
-  category: 法的手続き
-  priority: high
-  memo: 6月5日
-- id: LEGAL-007
-  title: 給付開始日と業務開始日の整合
-  status: completed
-  due: null
-  category: 法的手続き
-  priority: high
-  memo: 給付開始6月20日以降 → 開始日6月23日でクリア
-- id: ACCOUNTING-001
-  title: 会計ソフトの選定と初期設定
-  status: open
-  due: "2025-06-30"
-  category: 会計・税務
-  priority: high
-  memo: freeeで確定。事前準備として機能理解・操作方法の学習を推奨
-- id: ACCOUNTING-002
-  title: 事業用の銀行口座の開設
-  status: open
-  due: "2025-06-30"
-  category: 会計・税務
-  priority: high
-  memo: 住信SBIネット銀行で確定。開業届提出後に申込み。事前準備として必要書類の確認・準備を推奨
-- id: ACCOUNTING-003
-  title: 事業用クレジットカードの整備
-  status: open
-  due: "2025-06-30"
-  category: 会計・税務
-  priority: low
-  memo: Bonvoyカード継続使用。freeeでプライベート併用でも按分設定可能
-- id: ACCOUNTING-004
-  title: 帳簿の運用ルールの決定
-  status: open
-  due: "2025-06-30"
-  category: 会計・税務
-  priority: medium
-  memo: 未設定。記帳のタイミングや方法はこれから構築予定
-- id: ENVIRONMENT-001
-  title: PC・ディスプレイなど業務機材の準備
-  status: completed
-  due: null
-  category: 業務環境
-  priority: high
-  memo: 業務開始に十分な環境が整っている
-- id: ENVIRONMENT-002
-  title: 業務用ツールの選定（プロジェクト管理など）
-  status: completed
-  due: "2025-06-23"
-  category: 業務環境
-  priority: medium
-  memo: 基本的には委託先のツール確認後になるため、タスクとして認識不要
-- id: ENVIRONMENT-003
-  title: 使用中の有料ツールの棚卸と分類
-  status: completed
-  due: "2025-05-31"
-  category: 業務環境
-  source: docs/業務環境/有料ツール.md
-  priority: high
-  memo: 15サービス調査完了。月額¥18,228、事業経費計上可能額¥11,128を確認
-- id: REVENUE-001
-  title: 業務委託案件の確定
-  status: completed
-  due: null
-  category: 収益基盤
-  priority: high
-  memo: トランスコスモス社（レバテック経由）、月額65万円（税込）、6月23日開始、3か月更新制
-- id: REVENUE-002
-  title: 今後の案件獲得戦略の設計
-  status: open
-  due: "2025-07-01"
-  category: 収益基盤
-  priority: medium
-  memo: まだ具体的な戦略を立てていない。開業手続き完了後の7月1日に検討開始
-- id: REVENUE-003
-  title: 法人化の検討
-  status: in_progress
-  due: "2025-12-31"
-  category: 収益基盤
-  priority: low
-  memo: 年収が一定を超えたら税制優遇を見て法人化も視野に。ただし従業員を雇う意志は今のところなし
-- id: INSURANCE-001
-  title: 国民健康保険への切替手続き
-  status: completed
-  due: null
-  category: 保険・年金
-  priority: high
-  memo: 市区町村にて切替済
-- id: INSURANCE-002
-  title: 国民年金への切替手続き
-  status: completed
-  due: "2025-05-28"
-  category: 保険・年金
-  priority: high
-  memo: 2025-05-28市役所で手続き完了。クレジットカード支払い切り替え書類を入手
-- id: INSURANCE-003
-  title: 小規模企業共済の加入準備
-  status: in_progress
-  due: "2025-06-30"
-  category: 保険・年金
-  priority: medium
-  memo: 満額加入予定（月7万円）。まだ申込手続きはしていない
-- id: INSURANCE-004
-  title: 節税意識（iDeCoやふるさと納税等の検討）
-  status: open
-  due: "2025-06-01"
-  category: 保険・年金
-  priority: medium
-  memo: アクセンチュア源泉徴収票を使用して正確な上限額計算が可能。今日実行推奨
-- id: BRANDING-001
-  title: 事業紹介文の整備
-  status: open
-  due: "2025-06-15"
-  category: ブランディング
-  priority: high
-  memo: 屋号変更「CHIENOWASHA（ちえのわ舎）」に伴い新たに作成が必要
-- id: OPERATION-001
-  title: AI連携型タスク管理システムの構築・運用設計
-  status: in_progress
-  due: "2025-06-30"
-  category: 運用・仕組み化
-  priority: high
-  memo: >-
-    timeline機能完成（2025-05-28）。MDファイル+AI+Node.js+CLIコマンドによる独自システム。期限付きタスクの時系列分析・過密スケジュール検出・調整提案まで自動生成。AIの不確定性を排除し、高度なリテラシーが必要な他では見ない仕組み
-- id: OPERATION-002
-  title: タイムライン分析機能の開発
-  status: completed
-  due: "2025-05-28"
-  category: 運用・仕組み化
-  source: timeline-export.js
-  priority: high
-  memo: 2025-05-28完了。tasks.ymlから期限付きタスクを時系列分析し、過密スケジュール検出・調整提案まで自動生成。npm run timelineで実行可能
-- id: CONTRACT-001
-  title: 請求書発行・提出方法の確認
-  status: open
-  due: "2025-06-23"
-  category: 契約・請求
-  priority: high
-  memo: レバテックプラットフォームでの請求フロー情報待ち。6月23日業務開始時に情報共有予定。freeeでの売上記録方法の事前理解と初回請求準備が必要
-- id: CONTRACT-002
-  title: freee上の経理処理体制
-  status: in_progress
-  due: "2025-06-30"
-  category: 契約・請求
-  priority: high
-  memo: 銀行・カード連携設定方法、按分ルール設定、売上登録手順の学習が必要。明日から毎日少しずつ疑問を解消していく
-- id: CONTRACT-003
-  title: インボイス制度対応方針
-  status: completed
-  due: null
-  category: 契約・請求
-  priority: medium
-  memo: 年収1,000万円未満のため未登録方針確定。1,000万円超過時が登録判断基準。委託先への説明済み
-- id: CONTRACT-004
-  title: 按分ルールの設計・記録
-  status: open
-  due: "2025-06-30"
-  category: 契約・請求
-  priority: medium
-  memo: 家賃・通信費・光熱費・サブスク等の事業利用割合を定義。ACCOUNTING-005と連携してmdファイルで管理予定
-- id: MARKETING-001
-  title: 名刺の作成
-  status: completed
-  due: null
-  category: マーケティング
-  priority: high
-  memo: 名刺が5月28日に到着済み。配布準備完了
-- id: MARKETING-002
-  title: オリジナルドメインメールの署名設定
-  status: completed
-  due: null
-  category: マーケティング
-  priority: high
-  memo: chienowasha.comでメールアドレス登録完了。送受信テスト済み。5月25日完了
-- id: MARKETING-003
-  title: ポートフォリオ資料の作成
-  status: open
-  due: "2025-06-01"
-  category: マーケティング
-  priority: medium
-  memo: 事業計画より自己紹介に近い資料。6月1日開始予定
-- id: MARKETING-004
-  title: SNS（Xなど）の活用方針設計
-  status: open
-  due: "2025-06-20"
-  category: マーケティング
-  priority: low
-  memo: 早期のブランディング固定は避ける。6月後半に検討
-- id: MARKETING-005
-  title: 新ドメインの取得（屋号変更対応）
-  status: completed
-  due: null
-  category: マーケティング
-  priority: high
-  memo: chienowasha.com取得完了。5月25日完了
-- id: MARKETING-006
-  title: 既存ドメインの解約・移行
-  status: open
-  due: "2025-07-31"
-  category: マーケティング
-  priority: low
-  memo: curuvia.comの解約手続き。新ドメイン移行後に実施
-- id: MARKETING-007
-  title: Gmail転送設定・メールアドレス管理
-  status: open
-  due: "2025-06-30"
-  category: マーケティング
-  priority: medium
-  memo: 新Googleアカウント作成後、プライベートGmailへの転送設定またはLINE通知設定
-- id: RISK-001
-  title: 業務データの保存場所・構造設計
-  status: in_progress
-  due: "2025-06-30"
-  category: リスク管理
-  priority: medium
-  memo: 委託先PC+クラウド環境、個人知識蓄積はGoogleドライブ使用予定。事業用Googleアカウント作成が必要
-- id: RISK-002
-  title: バックアップ体制（ローカル＋クラウド）の検討・整備
-  status: completed
-  due: null
-  category: リスク管理
-  priority: medium
-  memo: 現在使用中の500GBハードディスクを活用。準備完了
-- id: RISK-003
-  title: プロジェクト管理用Cursor活用システムの開発
-  status: open
-  due: "2025-06-01"
-  category: リスク管理
-  priority: medium
-  memo: 現在のタスク管理システムをベースに横展開。6月に現状棚卸しから開始
-- id: RISK-004
-  title: 個人事業用リスク一覧の作成と管理
-  status: open
-  due: "2025-06-01"
-  category: リスク管理
-  priority: low
-  memo: 6月に入ったら確認開始。ドキュメント作成でテキスト管理
-- id: OPERATION-004
-  title: AI連携タスク管理システム研究論文の作成
-  status: open
-  due: "2025-07-31"
-  category: 運用・仕組み化
-  priority: low
-  memo: 独自システムの試行錯誤過程を論文形式で記録。他では見ない高度な仕組みの分析・ドキュメント化
-- id: MARKETING-008
-  title: 事業用Googleアカウントの作成
-  status: completed
-  due: null
-  category: マーケティング
-  priority: high
-  memo: 事業用Googleアカウント作成完了。chienowasha.comとの紐付け・送受信テスト済み。5月25日完了
-- id: RESEARCH-001
-  title: AI-Human協働プロジェクト管理システムの研究論文執筆
-  category: 研究・論文
-  status: open
-  priority: medium
-  due: "2025-08-31"
-- id: RESEARCH-002
-  title: システム開発プロセスの詳細記録・分析
-  category: 研究・論文
-  status: open
-  priority: medium
-  due: "2025-07-15"
-- id: RESEARCH-003
-  title: 既存プロジェクト管理手法との比較研究
-  category: 研究・論文
-  status: open
-  priority: low
-  due: "2025-07-31"
-- id: RESEARCH-004
-  title: 論文投稿先の調査・選定
-  category: 研究・論文
-  status: open
-  priority: low
-  due: "2025-06-30"
-- id: RESEARCH-005
-  title: 研究データの体系的整理・アーカイブ化
-  category: 研究・論文
-  status: open
-  priority: medium
-  due: "2025-07-01"
-- id: ACCOUNTING-005
-  title: freee導入・初期設定完了
-  status: open
-  due: "2025-06-30"
-  category: 会計・税務
-  source: docs/リスク管理/個人事業リスク一覧.md
-  priority: high
-  memo: 税務リスク対策の最優先項目。銀行・クレジットカード連携、按分ルール設定、売上・経費登録の基本操作習得。 ACCOUNTING-001と統合実施
-- id: ACCOUNTING-006
-  title: 税理士との初回相談・年間契約検討
-  status: open
-  due: "2025-06-30"
-  category: 会計・税務
-  source: docs/リスク管理/個人事業リスク一覧.md
-  priority: high
-  memo: 税務ペナルティリスク対策。個人事業主の確定申告、経費処理、消費税課税事業者移行等の相談体制構築。 月次レビューサービスの検討含む
-- id: OPERATION-005
-  title: JSファイル群の総合品質チェック
-  status: completed
-  category: 運用・仕組み化
-  priority: high
-  due: "2025-06-02"
-  memo: v2.0統一作業後のスパゲッティーコード化・潜在バグの有無を総合チェック。sync.js、extract.js、timeline-export.js、obsidian-export.js、review.jsの5ファイル対象
-- id: OPERATION-006
-  title: タスクID管理システムの改善設計
-  status: completed
-  category: 運用・仕組み化
-  priority: medium
-  due: "2025-06-15"
-  memo: 現在の手動ID管理からシステマチックな自動ID生成への改善検討
-- id: RISK-005
-  title: リスク管理マスターの月次見直し・実行タスク選定
-  status: open
-  due: "2025-06-30"
-  category: リスク管理
-  source: docs/リスク管理/個人事業リスク一覧.md
-  priority: medium
-  memo: "リスク一覧（20項目）の状況変化確認、優先度再評価、今月実行すべき対策タスクの選定・tasks.yml移行。 【6月選定候補】freee導入、税理士相談、緊急PC環境、セキュリティポリシー策定。 次回実施予定: 2025-07-31"
+  estimated_hours: 9
+  memo: 期限だけでなく見積もり時間から逆算した着手期限を計算し、作業負荷の可視化・調整提案を自動化。計画的なタスク管理を実現。
+  source: docs/システム設計/時間見積もりベーストaskマネジメント実装計画.md

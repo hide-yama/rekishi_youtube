@@ -59,6 +59,15 @@ function parseDailyTasks(content) {
       currentTask.attrs.source = source;
       return;
     }
+    if (currentTask && line.match(/^\s*-\s*(見積もり時間|estimated_hours):/)) {
+      const estimated = line.replace(/^\s*-\s*(見積もり時間|estimated_hours):\s*/, '').trim();
+      // "3.5時間" → 3.5 に変換
+      const hours = parseFloat(estimated.replace(/時間$/, ''));
+      if (!isNaN(hours)) {
+        currentTask.attrs.estimated_hours = hours;
+      }
+      return;
+    }
     // 空行や他の行は無視
   });
   if (currentTask) tasks.push(currentTask);
@@ -93,7 +102,8 @@ try {
         priority: dt.attrs.priority || 'medium',
         ...(dt.attrs.due && { due: dt.attrs.due }),
         ...(dt.attrs.memo && { memo: dt.attrs.memo }),
-        ...(dt.attrs.source && { source: dt.attrs.source })
+        ...(dt.attrs.source && { source: dt.attrs.source }),
+        ...(dt.attrs.estimated_hours && { estimated_hours: dt.attrs.estimated_hours })
       };
       updatedTasks.push(newTask);
       hasChanges = true;
@@ -116,7 +126,7 @@ try {
         changed = true;
       }
       // 属性同期
-      ['due','memo','category','priority','source'].forEach(attr => {
+      ['due','memo','category','priority','source','estimated_hours'].forEach(attr => {
         if (dt.attrs[attr] && updatedTasks[idx][attr] !== dt.attrs[attr]) {
           console.log(`📝 ${dt.id}: ${attr} ${updatedTasks[idx][attr]||'未設定'} → ${dt.attrs[attr]}`);
           updatedTasks[idx][attr] = dt.attrs[attr];

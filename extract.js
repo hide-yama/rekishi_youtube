@@ -4,15 +4,22 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 const argv = require('minimist')(process.argv.slice(2));
 
-if (!argv.date && !argv.overdue && !argv.all && !argv.category && !argv.priority && !argv.status && !argv.from && !argv.to) {
+// schedule-calculator.jsをインポート
+const scheduleCalculator = require('./schedule-calculator');
+
+if (!argv.date && !argv.overdue && !argv.all && !argv.category && !argv.priority && !argv.status && !argv.from && !argv.to && !argv.schedule && !argv.workload) {
   console.error('使用方法:');
   console.error('  node extract.js --date YYYY-MM-DD [オプション]');
   console.error('  node extract.js --overdue [オプション]');
+  console.error('  node extract.js --schedule [YYYY-MM-DD]');
+  console.error('  node extract.js --workload YYYY-MM-DD');
   console.error('');
   console.error('オプション:');
   console.error('  --date YYYY-MM-DD    指定日期限のタスクを抽出');
   console.error('  --all                全タスクを表示（期限無関係）');
   console.error('  --overdue            過去期限のタスクを抽出');
+  console.error('  --schedule [日付]    時間ベーススケジュール表示（省略時は今日）');
+  console.error('  --workload YYYY-MM-DD 指定日の作業負荷分析');
   console.error('  --category カテゴリ   特定カテゴリのみ抽出');
   console.error('  --priority 優先度     特定優先度のみ抽出 (high/medium/low)');
   console.error('  --status ステータス   特定ステータスのみ抽出 (open/in_progress/done/completed)');
@@ -22,19 +29,40 @@ if (!argv.date && !argv.overdue && !argv.all && !argv.category && !argv.priority
   console.error('例:');
   console.error('  node extract.js --date 2025-05-25');
   console.error('  node extract.js --overdue');
+  console.error('  node extract.js --schedule');
+  console.error('  node extract.js --workload 2025-06-01');
   console.error('  node extract.js --category 法的手続き');
   console.error('  node extract.js --priority high');
   console.error('  node extract.js --from 2025-06-01 --to 2025-06-15');
   process.exit(1);
 }
 
-const today = argv.date || (() => {
+const today = argv.date || argv.schedule || argv.workload || (() => {
   const now = new Date();
   const year = now.getFullYear();
   const month = (now.getMonth() + 1).toString().padStart(2, '0');
   const day = now.getDate().toString().padStart(2, '0');
   return `${year}-${month}-${day}`;
 })();
+
+// 時間ベーススケジュール表示
+if (argv.schedule || argv.workload) {
+  try {
+    const tasks = yaml.load(fs.readFileSync('tasks.yml', 'utf8'));
+    const config = scheduleCalculator.loadConfig();
+    
+    if (argv.schedule) {
+      displaySchedule(tasks, today, config);
+    } else if (argv.workload) {
+      displayWorkload(tasks, today, config);
+    }
+  } catch (error) {
+    console.error('エラー:', error.message);
+    process.exit(1);
+  }
+  process.exit(0);
+}
+
 const showAll = argv.all || false;
 const showOverdue = argv.overdue || false;
 const filterCategory = argv.category;
@@ -165,6 +193,9 @@ try {
         if (task.due) {
           console.log(`  - 期限: ${task.due}`);
         }
+        if (task.estimated_hours) {
+          console.log(`  - 見積もり時間: ${task.estimated_hours}時間`);
+        }
         if (task.memo) {
           console.log(`  - メモ: ${task.memo}`);
         }
@@ -199,15 +230,56 @@ try {
       priorityStats[task.priority] = (priorityStats[task.priority] || 0) + 1;
     });
     
-    console.log(`- 🔴 高優先度: ${priorityStats.high}件`);
-    console.log(`- 🟡 中優先度: ${priorityStats.medium}件`);
-    console.log(`- 🟢 低優先度: ${priorityStats.low}件\n`);
+    console.log(`- **🔴高優先度**: ${priorityStats.high}件`);
+    console.log(`- **🟡中優先度**: ${priorityStats.medium}件`);
+    console.log(`- **🟢低優先度**: ${priorityStats.low}件`);
     
     // カテゴリ別集計
     console.log(`### カテゴリ別内訳\n`);
     Object.entries(groupedTasks).forEach(([category, tasks]) => {
       console.log(`- **${category}**: ${tasks.length}件`);
     });
+    
+    // 時間ベース作業負荷チェック（日次ファイル限定）
+    if (argv.date && !showAll && !showOverdue && !filterCategory && !filterPriority && !filterStatus) {
+      const config = scheduleCalculator.loadConfig();
+      const workload = scheduleCalculator.calculateDailyWorkload(today, tasks, config);
+      
+      console.log(`\n### 📈 今日の作業負荷\n`);
+      
+      // 期限当日と計画的作業を分けて表示
+      const dueTodayTasks = workload.tasks.filter(t => t.workType === 'due_today');
+      const plannedTasks = workload.tasks.filter(t => t.workType === 'planned');
+      
+      if (dueTodayTasks.length > 0) {
+        const dueTodayHours = dueTodayTasks.reduce((sum, t) => sum + t.dailyHours, 0);
+        console.log(`- **🚨 期限当日タスク**: ${dueTodayTasks.length}件（${dueTodayHours}時間）`);
+      }
+      
+      if (plannedTasks.length > 0) {
+        console.log(`- **📅 計画的作業**: ${plannedTasks.length}件（${plannedTasks.length}時間）`);
+      }
+      
+      console.log(`- **合計予定時間**: ${workload.totalHours}時間`);
+      console.log(`- **負荷状況**: ${workload.status.emoji} ${workload.status.text}`);
+      
+      if (workload.isHeavyWorkload) {
+        console.log(`\n⚠️ **重負荷アラート**: 今日は${workload.totalHours}時間の作業が予定されており、推奨上限（4時間）を超えています。`);
+        
+        if (dueTodayTasks.length > 0) {
+          console.log(`**緊急**: 期限当日タスク${dueTodayTasks.length}件があります。これらは延期困難です。`);
+          dueTodayTasks.forEach(task => {
+            console.log(`  - ${task.id}: ${task.estimated_hours}時間`);
+          });
+        }
+        
+        if (plannedTasks.length > 0) {
+          console.log(`**提案**: 計画的作業${plannedTasks.length}件のうち、一部を明日以降に延期することを検討してください。`);
+        }
+        
+        console.log(`\n詳細分析: \`node extract.js --workload ${today}\``);
+      }
+    }
     console.log();
   }
   
@@ -240,4 +312,124 @@ try {
 } catch (error) {
   console.error('エラーが発生しました:', error.message);
   process.exit(1);
+}
+
+/**
+ * 時間ベーススケジュール表示
+ */
+function displaySchedule(tasks, date, config) {
+  console.log(`# ${date} 時間ベーススケジュール（1日1時間制約）\n`);
+  console.log(`生成日時: ${new Date().toLocaleString('ja-JP')}\n`);
+  
+  // 今日作業すべきタスク
+  const todayWorkload = scheduleCalculator.calculateDailyWorkload(date, tasks, config);
+  
+  if (todayWorkload.tasks.length === 0) {
+    console.log(`## 🎉 今日作業すべきタスクはありません\n`);
+  } else {
+    console.log(`## 🚨 今日作業すべきタスク（1日1時間配分）\n`);
+    
+    todayWorkload.tasks.forEach(task => {
+      const allocation = scheduleCalculator.calculateTaskAllocation(task, config);
+      if (allocation) {
+        const currentDayIndex = allocation.dailyAllocation.findIndex(day => day.date === date) + 1;
+        console.log(`- [ ] ${task.id} ${task.title} ［${task.estimated_hours}h］`);
+        console.log(`  - 期限: ${task.due} → 着手期限: ${allocation.startDeadline}`);
+        console.log(`  - 今日の作業: 1時間（${currentDayIndex}日目/${allocation.daysNeeded}日計画）\n`);
+      }
+    });
+  }
+  
+  // 今日の作業負荷状況
+  console.log(`## ⏰ 今日の作業負荷状況\n`);
+  console.log(`- **作業予定タスク**: ${todayWorkload.totalHours}個（${todayWorkload.totalHours}時間）`);
+  console.log(`- **状況**: ${todayWorkload.status.emoji} ${todayWorkload.status.text}\n`);
+  
+  // 今後7日間の負荷予測
+  const forecast = scheduleCalculator.generateWorkloadForecast(tasks, 7, date);
+  console.log(`## 📊 今後7日間の負荷予測\n`);
+  console.log(`| 日付 | タスク数 | 必要時間 | 状況 |`);
+  console.log(`|------|----------|----------|------|`);
+  
+  forecast.forEach(workload => {
+    const dateStr = workload.date.substring(5); // MM-DD形式
+    console.log(`| ${dateStr} | ${workload.totalHours}個 | ${workload.totalHours}.0h | ${workload.status.emoji} ${workload.status.text} |`);
+  });
+  console.log();
+  
+  // 重負荷日のアラート
+  const alerts = scheduleCalculator.generateAlerts(forecast);
+  if (alerts.length > 0) {
+    console.log(`## 🚨 重負荷日のアラート\n`);
+    
+    alerts.forEach(alert => {
+      const dateStr = alert.date.substring(5); // MM-DD形式
+      console.log(`### 📅 ${dateStr}（${alert.taskCount}タスク同時実行）`);
+      alert.tasks.forEach(task => {
+        console.log(`- ${task.id}（${task.dayInfo}）`);
+      });
+      console.log(`\n**提案**: ${alert.suggestion}\n`);
+    });
+  }
+}
+
+/**
+ * 作業負荷分析表示
+ */
+function displayWorkload(tasks, date, config) {
+  console.log(`# ${date} 作業負荷分析\n`);
+  console.log(`生成日時: ${new Date().toLocaleString('ja-JP')}\n`);
+  
+  const workload = scheduleCalculator.calculateDailyWorkload(date, tasks, config);
+  
+  console.log(`## 📊 基本情報\n`);
+  console.log(`- **対象日**: ${date}`);
+  console.log(`- **作業予定タスク数**: ${workload.totalHours}個`);
+  console.log(`- **必要時間**: ${workload.totalHours}時間（1タスク1時間）`);
+  console.log(`- **負荷レベル**: ${workload.status.emoji} ${workload.status.text}`);
+  console.log(`- **アラート**: ${workload.isHeavyWorkload ? '⚠️ 重負荷' : '✅ 正常'}\n`);
+  
+  if (workload.tasks.length === 0) {
+    console.log(`## 🎉 この日は作業予定がありません\n`);
+  } else {
+    console.log(`## 📋 作業予定タスク詳細\n`);
+    
+    workload.tasks.forEach((task, index) => {
+      const allocation = scheduleCalculator.calculateTaskAllocation(task, config);
+      if (allocation) {
+        const currentDayIndex = allocation.dailyAllocation.findIndex(day => day.date === date) + 1;
+        console.log(`### ${index + 1}. ${task.id} ${task.title}\n`);
+        console.log(`- **見積もり時間**: ${task.estimated_hours}時間`);
+        console.log(`- **期限**: ${task.due}`);
+        console.log(`- **着手期限**: ${allocation.startDeadline}`);
+        console.log(`- **作業進捗**: ${currentDayIndex}日目/${allocation.daysNeeded}日計画`);
+        console.log(`- **優先度**: ${task.priority}`);
+        console.log(`- **カテゴリ**: ${task.category}`);
+        if (task.memo) {
+          console.log(`- **メモ**: ${task.memo}`);
+        }
+        console.log();
+      }
+    });
+  }
+  
+  // 推奨スケジュール調整
+  if (workload.isHeavyWorkload) {
+    console.log(`## 🔧 推奨スケジュール調整\n`);
+    console.log(`現在の負荷が推奨レベル（4時間）を超えています。以下の調整を検討してください：\n`);
+    
+    if (workload.totalHours === 4) {
+      console.log(`- 上限ギリギリです。可能であれば1つのタスクの開始を1日遅らせることを検討してください。`);
+    } else if (workload.totalHours === 5) {
+      console.log(`- 1タスク超過です。以下のいずれかを検討してください：`);
+      console.log(`  - 1つのタスクの開始を1日遅らせる`);
+      console.log(`  - 1つのタスクの期限交渉を行う`);
+    } else {
+      console.log(`- ${workload.totalHours - 4}タスク超過です。以下の対策が必要です：`);
+      console.log(`  - 複数のタスクの開始を遅らせる`);
+      console.log(`  - 期限の見直しを行う`);
+      console.log(`  - タスクの優先度を再検討する`);
+    }
+    console.log();
+  }
 } 
