@@ -11,11 +11,12 @@
     "obsidian": "node obsidian-export.js",
     "obsidian-category": "node obsidian-export.js --category",
     "obsidian-status": "node obsidian-export.js --status",
-    "timeline": "node timeline-export.js",
+    "calendar": "node calendar-scheduler.js > calendar-output.md",
     "review-weekly": "node review.js --period weekly",
     "review-monthly": "node review.js --period monthly",
     "review-summary": "node review.js --summary",
-    "review-export": "node review.js --export"
+    "review-export": "node review.js --export",
+    "sync-all": "npm run sync-today && npm run obsidian && npm run calendar"
   },
   "keywords": [
     "task-management",
