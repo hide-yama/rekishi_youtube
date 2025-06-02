@@ -46,6 +46,7 @@
   priority: high
   estimated_hours: 2
   memo: 6月5日
+  fixed: true
 - id: LEGAL-007
   title: 給付開始日と業務開始日の整合
   status: completed

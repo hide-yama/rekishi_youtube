@@ -20,7 +20,8 @@ function loadTasksFromYaml(path = 'tasks.yml') {
         title: task.title,
         due: typeof task.due === 'string' ? task.due.replace(/"/g, '') : task.due,
         estimated_hours: task.estimated_hours,
-        fixed: !!task.fixed
+        fixed: !!task.fixed,
+        status: task.status
     }));
 }
 
@@ -101,37 +102,63 @@ function generateCalendarSchedule(tasks, startDate = new Date(), monthsToShow = 
 /**
  * カレンダー表示用のMarkdown生成
  */
-function generateCalendarMarkdown(schedule, today) {
+function generateCalendarMarkdown(schedule, today, allTasksRaw) {
     let output = "# カレンダー式タスクスケジュール\n\n";
     output += `生成日時: ${new Date().toLocaleString('ja-JP')}\n`;
     output += `📍 **今日**: ${today}\n\n`;
-    // scheduleがMap型かオブジェクト型かで分岐
     let sortedDates;
     if (typeof schedule.keys === 'function') {
         sortedDates = Array.from(schedule.keys()).sort();
     } else {
         sortedDates = Object.keys(schedule).sort();
     }
-    sortedDates.forEach(date => {
-        // Map型ならget、オブジェクト型ならプロパティ参照
+    // status情報付きの全タスクリスト
+    const allTasks = allTasksRaw || [];
+    // 冒頭に現時点（今日）での繰越タスクをまとめて表示
+    const carryOverTasks = allTasks.filter(t => {
+        // 割り当て日（最初に割り当てられた日） < today かつ statusがopen/in_progress
+        let firstAssigned = null;
+        for (const d of sortedDates) {
+            if (d >= today) break;
+            const dayTasks = typeof schedule.get === 'function' ? schedule.get(d) : schedule[d];
+            if (dayTasks.some(dt => dt.id === t.id)) {
+                firstAssigned = d;
+                break;
+            }
+        }
+        return firstAssigned && firstAssigned < today && (t.status === 'open' || t.status === 'in_progress');
+    });
+    output += `### 繰越タスク\n`;
+    if (carryOverTasks.length === 0) {
+        output += `（繰越なし）\n`;
+    } else {
+        carryOverTasks.forEach(task => {
+            output += `- ${task.id} ${task.title} (期限: ${task.due})\n`;
+        });
+    }
+    output += `\n`;
+    // 今日以降の日付のみ出力
+    sortedDates.filter(date => date >= today).forEach(date => {
         const tasks = typeof schedule.get === 'function' ? schedule.get(date) : schedule[date];
         const isToday = date === today;
         const isPast = new Date(date) < new Date(today);
         output += `## ${date}`;
         if (isToday) {
             output += " 📍 **今日**";
-        } else if (isPast) {
-            output += " (過去)";
         }
         output += `\n`;
-        // 負荷表示
+        // タスクリスト
         const totalHours = tasks.reduce((sum, t) => sum + (t.hours || 1), 0);
         output += `**負荷**: ${totalHours}/4時間\n\n`;
-        tasks.forEach(task => {
-            output += `- ${task.id} ${task.title} (期限: ${task.due})`;
-            if (task.hours && task.hours > 1) output += ` [${task.hours}時間]`;
-            output += `\n`;
-        });
+        if (tasks.length === 0) {
+            output += `（割り当てなし）\n`;
+        } else {
+            tasks.forEach(task => {
+                output += `- ${task.id} ${task.title} (期限: ${task.due})`;
+                if (task.hours && task.hours > 1) output += ` [${task.hours}時間]`;
+                output += `\n`;
+            });
+        }
         output += "\n";
     });
     return output;
@@ -152,8 +179,7 @@ function scheduleTasks(tasks, startDate, endDate) {
     normalTasks.forEach(task => {
         let hoursLeft = task.estimated_hours;
         let day = new Date(task.due);
-        // 1日バッファ
-        day.setDate(day.getDate() - 1);
+        // バッファなし：期限日から逆算
         while (hoursLeft > 0) {
             const dateStr = day.toISOString().split('T')[0];
             // その日の合計（fixed含む）
@@ -167,10 +193,20 @@ function scheduleTasks(tasks, startDate, endDate) {
                 }
             }
             day.setDate(day.getDate() - 1);
-            // バッファを超えて過去に割り当てる場合も許容
         }
     });
     return calendar;
+}
+
+// 今日やるべきタスクを抽出する関数
+function getTodayTasks(tasks, calendar, today) {
+    // 今日に割り当てられているタスクID
+    const assigned = (calendar[today] || []).map(t => t.id);
+    // 期限が今日の未完了タスクID
+    const dueToday = tasks.filter(t => t.due === today && (t.status === 'open' || t.status === 'in_progress')).map(t => t.id);
+    // 和集合
+    const ids = Array.from(new Set([...assigned, ...dueToday]));
+    return ids.map(id => tasks.find(t => t.id === id));
 }
 
 /**
@@ -190,11 +226,11 @@ function main() {
         console.log('⚠️ 有効なタスクがありません。終了します。');
         return;
     }
-    const today = new Date();
-    const end = new Date(today);
+    const today = formatDate(new Date());
+    const end = new Date();
     end.setMonth(end.getMonth() + 2);
-    const calendar = scheduleTasks(tasks, today, end);
-    const markdown = generateCalendarMarkdown(calendar, today);
+    const calendar = scheduleTasks(tasks, new Date(), end);
+    const markdown = generateCalendarMarkdown(calendar, today, tasks);
     fs.writeFileSync('calendar-output.md', markdown);
     console.log('\n✅ calendar-output.md に出力完了');
     console.log('\n📅 生成されたスケジュール:');
@@ -207,4 +243,4 @@ if (require.main === module) {
     main();
 }
 
-module.exports = { generateCalendarSchedule, generateCalendarMarkdown, loadTasksFromYaml }; 
+module.exports = { generateCalendarSchedule, generateCalendarMarkdown, loadTasksFromYaml, scheduleTasks, getTodayTasks }; 
