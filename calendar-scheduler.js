@@ -1,5 +1,6 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
+const scheduleCalculator = require('./schedule-calculator');
 
 /**
  * カレンダー式タスクスケジューラー
@@ -49,6 +50,7 @@ function subtractDays(date, days) {
  * カレンダースケジュール生成
  */
 function generateCalendarSchedule(tasks, startDate = new Date(), monthsToShow = 2) {
+    const config = scheduleCalculator.loadConfig();
     const schedule = new Map(); // 日付 -> タスク配列
     const today = formatDate(new Date());
     
@@ -78,17 +80,35 @@ function generateCalendarSchedule(tasks, startDate = new Date(), monthsToShow = 
             
             const dayTasks = schedule.get(dateStr);
             
-            // 1日4時間制限チェック
-            if (dayTasks.length < 4) {
-                dayTasks.push({
-                    id: task.id,
-                    title: task.title,
-                    due: task.due
-                });
-                hoursToPlace--;
-                console.log(`  ✓ ${dateStr} に配置 (残り${hoursToPlace}時間)`);
+            // 1日上限取得
+            const dayHourLimit = config.alert_thresholds?.heavy_workload_hours || 4;
+            // 1タスク1日上限取得
+            const taskHourLimit = config.daily_work_hours || 1;
+            // その日の合計（fixed含む）
+            let total = dayTasks.reduce((sum, t) => sum + (t.hours || taskHourLimit), 0);
+
+            // デバッグ: 割当前のその日のタスク状況
+            console.log(`  [DEBUG] ${dateStr} 割当前: タスク数=${dayTasks.length}, 合計時間=${total}, タスクID=[${dayTasks.map(t => t.id).join(', ')}]`);
+
+            if (total < dayHourLimit) {
+                const assign = Math.min(taskHourLimit, dayHourLimit - total, hoursToPlace);
+                if (assign > 0) {
+                    // 重複割当防止: 既に同じタスクIDがその日に存在しない場合のみ追加
+                    if (!dayTasks.some(t => t.id === task.id)) {
+                        dayTasks.push({ ...task, hours: assign });
+                        hoursToPlace -= assign;
+                        // デバッグ: 割当直後のその日のタスク状況
+                        let afterTotal = dayTasks.reduce((sum, t) => sum + (t.hours || taskHourLimit), 0);
+                        console.log(`    [DEBUG] ${dateStr} ← ${task.id} を${assign}時間割当（残り${hoursToPlace}時間） 割当後: タスク数=${dayTasks.length}, 合計時間=${afterTotal}, タスクID=[${dayTasks.map(t => t.id).join(', ')}]`);
+                    } else {
+                        // デバッグ: 重複割当をスキップ
+                        console.log(`    [DEBUG] ${dateStr} ← ${task.id} は既に割当済みのためスキップ`);
+                        // 進めるだけ
+                        hoursToPlace -= assign;
+                    }
+                }
             } else {
-                console.log(`  ⚠️ ${dateStr} は満杯 (4/4), 前日へ`);
+                console.log(`  ⚠️ ${dateStr} は満杯 (${total}/${dayHourLimit}), 前日へ`);
             }
             
             // 前日へ移動
@@ -165,7 +185,7 @@ function generateCalendarMarkdown(schedule, today, allTasksRaw) {
 }
 
 function scheduleTasks(tasks, startDate, endDate) {
-    // 日付ごとにタスクを割り当てる
+    const config = scheduleCalculator.loadConfig();
     const calendar = {};
     // まずfixed: trueのタスクをdue日に全時間割り当て
     tasks.forEach(task => {
@@ -179,13 +199,13 @@ function scheduleTasks(tasks, startDate, endDate) {
     normalTasks.forEach(task => {
         let hoursLeft = task.estimated_hours;
         let day = new Date(task.due);
-        // バッファなし：期限日から逆算
+        const dayHourLimit = config.alert_thresholds?.heavy_workload_hours || 4;
+        const taskHourLimit = config.daily_work_hours || 1;
         while (hoursLeft > 0) {
             const dateStr = day.toISOString().split('T')[0];
-            // その日の合計（fixed含む）
-            let total = (calendar[dateStr] || []).reduce((sum, t) => sum + t.hours, 0);
-            if (total < 4) {
-                const assign = Math.min(1, 4 - total, hoursLeft);
+            let total = (calendar[dateStr] || []).reduce((sum, t) => sum + (t.hours || taskHourLimit), 0);
+            if (total < dayHourLimit) {
+                const assign = Math.min(taskHourLimit, dayHourLimit - total, hoursLeft);
                 if (assign > 0) {
                     if (!calendar[dateStr]) calendar[dateStr] = [];
                     calendar[dateStr].push({ ...task, hours: assign });

@@ -432,7 +432,7 @@
   source: docs/システム設計/時間見積もりベーストaskマネジメント実装計画.md
 - id: SYSTEM-001
   title: 重負荷アラート対応（8.5時間→現実的スケジュールへの調整）
-  status: open
+  status: completed
   category: システム運用
   priority: high
   due: '2025-06-02'
@@ -448,9 +448,25 @@
   estimated_hours: 2
 - id: PROJECT-001
   title: タイムライン分析による6月30日重負荷問題の事前対応
-  status: open
+  status: completed
   category: プロジェクト管理
   priority: high
   due: '2025-06-03'
-  memo: 17件52.5時間の異常過密スケジュール調整計画
+  memo: 17件52.5時間の異常過密スケジュール調整計画。カレンダー割当・負荷分散ロジックの最終調整・仕様明文化により完了
+  estimated_hours: 1
+- id: RESEARCH-010
+  title: 研究論文の要件・ゴール・見せ方を改めて考え直す
+  status: completed
+  category: 研究・論文
+  priority: high
+  due: '2025-06-04'
+  memo: 本日要件・ゴールの洗い出しとアウトライン案を作成し、完了
+  estimated_hours: 1
+- id: RESEARCH-011
+  title: 研究論文の進捗・内容を振り返る
+  status: open
+  category: 研究・論文
+  priority: medium
+  due: '2025-06-11'
+  memo: 1週間後に研究論文の進捗・内容を1時間かけて振り返る
   estimated_hours: 1

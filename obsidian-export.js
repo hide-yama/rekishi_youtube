@@ -10,6 +10,13 @@ const outputDir = args.find(arg => arg.startsWith('--output='))?.split('=')[1] |
 const categoryFilter = args.find(arg => arg.startsWith('--category='))?.split('=')[1];
 const statusFilter = args.find(arg => arg.startsWith('--status='))?.split('=')[1];
 
+// 日付差分（日単位、時刻無視）を計算する関数を追加
+function dateDiffInDays(date1, date2) {
+  const d1 = new Date(date1.getFullYear(), date1.getMonth(), date1.getDate());
+  const d2 = new Date(date2.getFullYear(), date2.getMonth(), date2.getDate());
+  return Math.floor((d2 - d1) / (1000 * 60 * 60 * 24));
+}
+
 try {
     // tasks.ymlを読み込み
     const tasksData = yaml.load(fs.readFileSync('tasks.yml', 'utf8'));
@@ -94,7 +101,7 @@ try {
         .map(task => ({
             ...task,
             dueDate: new Date(task.due),
-            daysUntilDue: Math.ceil((new Date(task.due) - today) / (1000 * 60 * 60 * 24))
+            daysUntilDue: dateDiffInDays(today, new Date(task.due))
         }))
         .sort((a, b) => a.dueDate - b.dueDate)
         .slice(0, 10);

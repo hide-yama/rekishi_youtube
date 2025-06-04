@@ -245,46 +245,42 @@ try {
 
   // --date指定時は必ずこの分岐で「今日取り組むべきタスク」だけを出力
   if (argv.date && !showAll && !showOverdue && !filterCategory && !filterPriority && !filterStatus) {
+    // tasks.ymlを読み込み
     const allTasks = yaml.load(fs.readFileSync('tasks.yml', 'utf8'));
-    const calendar = scheduleTasks(allTasks);
-    // getTodayTasksで今日やるべきタスクを抽出
-    const todayTaskObjs = getTodayTasks(allTasks, calendar, today);
-    // status: open/in_progressのみ抽出
-    const todayTasks = todayTaskObjs.filter(task => task && (task.status === 'open' || task.status === 'in_progress'));
-    // ラベル付与
-    const todayTaskList = todayTasks.map(task => {
-      let label = '【今日割当】';
-      if (task.due === today) {
-        label = '【今日期限】';
-      } else if (new Date(task.due) < new Date(today)) {
-        label = '【繰越】';
-      }
-      return { ...task, label };
-    });
-    // 出力
+    // 未完了タスクのみ抽出
+    const tasks = allTasks.filter(task => task.status === 'open' || task.status === 'in_progress');
+    // カレンダースケジューラーで今日の割当を計算
+    const calendar = scheduleTasks(tasks);
+    // 今日割当タスクID
+    const todayAssignedIds = (calendar[today] || []).map(t => t.id);
+    // 期限切れ未完了タスクID
+    const overdueIds = tasks.filter(task => new Date(task.due) < new Date(today)).map(t => t.id);
+    // 今日割当＋期限切れ未完了タスクの和集合
+    const ids = Array.from(new Set([...todayAssignedIds, ...overdueIds]));
+    const todayTasks = ids.map(id => tasks.find(t => t.id === id)).filter(Boolean);
+    // Markdown出力
     console.log(`# ${today}\n`);
     console.log('## 今日取り組むべきタスク\n');
-    if (todayTaskList.length === 0) {
+    if (todayTasks.length === 0) {
       console.log('（なし）\n');
     } else {
-      todayTaskList.forEach(task => {
+      todayTasks.forEach(task => {
         const checkbox = task.status === 'completed' ? '[x]' : task.status === 'in_progress' ? '[~]' : '[ ]';
-        console.log(`- ${checkbox} ${task.id} ${task.title} ${task.label}`);
+        console.log(`- ${checkbox} ${task.id} ${task.title}`);
         if (task.due) console.log(`  - 期限: "${task.due}"`);
         if (task.estimated_hours) console.log(`  - 見積もり時間: ${task.estimated_hours}時間`);
         if (task.memo) console.log(`  - メモ: ${task.memo}`);
         if (task.category) console.log(`  - カテゴリ: ${task.category}`);
         if (task.priority) console.log(`  - 優先度: ${task.priority}`);
+        if (task.fixed) console.log(`  - 固定割当: true`);
+        if (new Date(task.due) < new Date(today)) console.log('  - ⚠️ 期限切れ（繰越）');
         console.log();
       });
     }
     // 統計
-    const carryOverCount = todayTaskList.filter(t => t.label === '【繰越】').length;
-    const dueTodayCount = todayTaskList.filter(t => t.label === '【今日期限】').length;
-    const todayAssignCount = todayTaskList.filter(t => t.label === '【今日割当】').length;
-    const totalHours = todayTaskList.reduce((sum, t) => sum + (t.estimated_hours || t.hours || 0), 0);
+    const totalHours = todayTasks.reduce((sum, t) => sum + (t.estimated_hours || t.hours || 0), 0);
     console.log('## 統計・作業負荷');
-    console.log(`- 今日取り組むべきタスク合計: ${todayTaskList.length}件（繰越${carryOverCount}件＋今日期限${dueTodayCount}件＋今日割当${todayAssignCount}件）`);
+    console.log(`- 今日取り組むべきタスク合計: ${todayTasks.length}件`);
     console.log(`- 合計見積もり時間: ${totalHours}時間\n`);
     // 振り返りセクション
     console.log('---\n');
