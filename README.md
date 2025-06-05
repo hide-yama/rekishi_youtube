@@ -49,10 +49,13 @@ npm run sync-all
 /開業準備/
 ├── package.json              ← Node.js設定
 ├── tasks.yml                 ← タスク一元管理（メインファイル）
-├── extract.js                ← 日次タスク抽出・スケジュール分析ツール
-├── sync.js                   ← 双方向同期ツール
-├── obsidian-export.js        ← Obsidian用Markdown生成
-├── calendar-scheduler.js     ← カレンダー割当・出力スクリプト
+├── scripts/                  ← スクリプト群
+│   ├── extract.js            ← 日次タスク抽出・スケジュール分析ツール
+│   ├── sync.js               ← 双方向同期ツール
+│   ├── obsidian-export.js    ← Obsidian用Markdown生成
+│   ├── calendar-scheduler.js ← カレンダー割当・出力スクリプト
+│   ├── review.js             ← 週次・月次レビュー・サマリー
+│   └── schedule-calculator.js← スケジュール計算補助
 ├── calendar-output.md        ← カレンダー出力ファイル
 ├── daily/                    ← 日次記録
 │   ├── YYYY-MM-DD.md        ← 各日のタスク・振り返り
@@ -149,7 +152,7 @@ git push
 - タスクの新規追加・更新は原則としてデイリーファイル経由で行う
 - tasks.yml直接編集は緊急時のみ、必ず変更内容をデイリーファイルにも反映
 - 大量更新・複数タスク変更時はとくにデイリーファイル経由を推奨
-- デイリーファイル→sync.js→tasks.ymlの流れが設計思想
+- デイリーファイル→scripts/sync.js→tasks.ymlの流れが設計思想
 - タスク削除・属性変更時のトレーサビリティ確保のため、変更履歴をデイリーファイルに明確に記録
 
 ### 日付形式について
@@ -222,12 +225,12 @@ git push
 ```bash
 npm run sync-all
 # または
-node sync.js --file daily/YYYY-MM-DD.md
+node scripts/sync.js --file daily/YYYY-MM-DD.md
 ```
 
 ### 2. extract.jsで期限付きタスクが見つからない
 ```bash
-node extract.js --date YYYY-MM-DD --all  # 全タスクを表示
+node scripts/extract.js --date YYYY-MM-DD --all  # 全タスクを表示
 grep "due.*YYYY-MM-DD" tasks.yml  # 該当日期限のタスクを検索
 ```
 

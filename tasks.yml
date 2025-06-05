@@ -40,7 +40,7 @@
   memo: 5月23日参加済み
 - id: LEGAL-006
   title: 初回失業認定日出席
-  status: open
+  status: completed
   due: '2025-06-05'
   category: 法的手続き
   priority: high
@@ -294,28 +294,28 @@
   memo: 新Googleアカウント作成後、プライベートGmailへの転送設定またはLINE通知設定
 - id: RISK-001
   title: 業務データの保存場所・構造設計
-  status: in_progress
-  due: '2025-06-30'
+  status: completed
+  due: '2025-06-10'
   category: リスク管理
-  priority: medium
+  priority: high
   estimated_hours: 3
-  memo: 委託先PC+クラウド環境、個人知識蓄積はGoogleドライブ使用予定。事業用Googleアカウント作成が必要
+  memo: docs/リスク管理/trouble.pdf を確認し、重要事項をまとめる
 - id: RISK-002
   title: バックアップ体制（ローカル＋クラウド）の検討・整備
   status: completed
-  due: null
+  due: '2025-06-10'
   category: リスク管理
-  priority: medium
+  priority: high
   estimated_hours: 2.5
-  memo: 現在使用中の500GBハードディスクを活用。準備完了
+  memo: docs/リスク管理/security.pdf を確認し、Typeformアンケートに回答
 - id: RISK-003
   title: プロジェクト管理用Cursor活用システムの開発
   status: open
-  due: '2025-06-15'
+  due: '2025-06-23'
   estimated_hours: 10
   category: リスク管理
-  priority: medium
-  memo: 現在のタスク管理システムをベースに横展開。1週間プロジェクト運用後に着手
+  priority: low
+  memo: https://platform.levtech.jp/contact/input/?inquiryType=harassment
 - id: RISK-004
   title: 個人事業用リスク一覧の作成と管理
   status: completed
@@ -470,3 +470,53 @@
   due: '2025-06-11'
   memo: 1週間後に研究論文の進捗・内容を1時間かけて振り返る
   estimated_hours: 1
+- id: ENTRANCE-001
+  title: 参画案内メール内容の確認・返信
+  status: completed
+  category: 参画準備
+  priority: high
+  due: '2025-06-06'
+  memo: 入場詳細・注意事項を確認し、返信済みか再確認
+- id: ENTRANCE-002
+  title: サポート担当者情報の登録
+  status: completed
+  category: 参画準備
+  priority: medium
+  due: '2025-06-06'
+  memo: 石川瑞菜さん（08048141487, mizuna.ishikawa@levtech.jp）を連絡帳に登録
+- id: ENTRANCE-003
+  title: 参画初日のGoogle Meet URL確認・カレンダー登録
+  status: completed
+  category: 参画準備
+  priority: high
+  due: '2025-06-23'
+  memo: 09:00開始、https://meet.google.com/dma-pnuq-jhm
+- id: REPORT-001
+  title: 作業報告書の提出方法確認
+  status: open
+  category: 事務手続き
+  priority: medium
+  due: '2025-06-30'
+  memo: レバテックプラットフォームで提出。案件によっては別途説明あり
+- id: REPORT-002
+  title: 請求書提出方法・期限の確認
+  status: open
+  category: 事務手続き
+  priority: medium
+  due: '2025-07-03'
+  memo: 'プラットフォームまたはメール（report@levtech.jp, CC: mizuna.ishikawa@levtech.jp）で提出'
+- id: REPORT-003
+  title: 休暇・遅参等の連絡フロー確認
+  status: open
+  category: 事務手続き
+  priority: medium
+  due: '2025-06-23'
+  memo: >-
+    事前連絡＋Typeform（https://crmleverages.typeform.com/to/u67kvMSy#id=ENG0000670173）またはメール/LINE
+- id: SUPPORT-001
+  title: LINE公式アカウントの案内確認・登録
+  status: open
+  category: 事務手続き
+  priority: low
+  due: '2025-06-23'
+  memo: 参画後に案内メールが届く。サポート用LINEアカウントを登録
