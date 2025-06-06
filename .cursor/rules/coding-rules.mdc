@@ -48,6 +48,26 @@ rules:
 - トラブル時はREADME.mdのFAQ・トラブルシューティングに従い、解決できない場合はAIまたは開発者に相談
 - ルールや運用方針の例外が必要な場合は、必ず理由を明記する
 
+## 【朝の初動ワークフロー（必須）】
+- 毎朝、以下の手順を厳守すること：
+  1. git pull
+  2. npm run today
+  3. open daily/$(date +%F).md  # macOSの場合
+- 生成された日次ファイルでタスクを確認・編集し、作業を開始すること
+- 手動でdailyファイルを作成するのは緊急時のみとし、通常は自動生成に従うこと
+
+※本プロジェクトは現状、管理者1名による単独運用です。そのため朝の初動ワークフローにおける「git pull」は省略可能です。
+複数端末・複数人で運用する場合のみ、pullを推奨します。
+
+## 【夕方・作業終了時のワークフロー（必須）】
+- 毎夕、以下の手順を厳守すること：
+  1. npm run sync-all
+  2. git add .
+  3. git commit -m "chore: sync tasks, obsidian, calendar $(date +%F)"
+  4. git push
+- 日中にdailyファイルやtasks.yml等を編集した場合も、必ずこの手順で全ての変更を記録・反映すること
+- Obsidian・カレンダー出力もこのタイミングで自動生成される
+
 # タスク更新の安全性ルール
 - タスクの新規追加・更新は原則としてデイリーファイル経由で行う（トレーサビリティ・ファイル破損リスク回避）
 - tasks.yml直接編集は緊急時のみ、必ず変更内容をデイリーファイルにも反映する
@@ -60,10 +80,10 @@ rules:
 - npm run sync-all：同期＋Obsidian＋カレンダー一括実行
 - npm run obsidian：Obsidian用ファイル生成（個別実行用）
 - npm run calendar：カレンダー出力ファイル生成（個別実行用）
-- node extract.js --date YYYY-MM-DD：指定日タスク抽出
-- node extract.js --schedule [日付]：時間ベーススケジュール表示
-- node extract.js --workload 日付：指定日の詳細作業負荷分析
-- node sync.js --file daily/YYYY-MM-DD.md：日次ファイルとtasks.ymlの同期
+- node scripts/extract.js --date YYYY-MM-DD：指定日タスク抽出
+- node scripts/extract.js --schedule [日付]：時間ベーススケジュール表示
+- node scripts/extract.js --workload 日付：指定日の詳細作業負荷分析
+- node scripts/sync.js --file daily/YYYY-MM-DD.md：日次ファイルとtasks.ymlの同期
 
 # 推奨Git運用
 - 朝：git pull→npm run today→git add/commit/push

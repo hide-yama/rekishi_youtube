@@ -16,7 +16,7 @@
   memo: 開業届と同時提出予定
 - id: LEGAL-003
   title: 屋号の決定と記載
-  status: in_progress
+  status: completed
   due: '2025-06-30'
   category: 法的手続き
   priority: high
@@ -159,7 +159,8 @@
   category: 保険・年金
   priority: medium
   estimated_hours: 2.5
-  memo: 満額加入予定（月7万円）。まだ申込手続きはしていない
+  memo: 満額加入予定（月7万円）。まだ申込手続きはしていない。公式サイトを熟読し、最新情報を把握する。必要事項はmdファイルにある程度まとめ済み。
+  source: docs/保険・年金/小規模企業共済_加入準備.md
 - id: INSURANCE-004
   title: 節税意識（iDeCoやふるさと納税等の検討）
   status: completed
@@ -170,7 +171,7 @@
   memo: アクセンチュア源泉徴収票を使用して正確な上限額計算が可能。今日実行推奨
 - id: INSURANCE-005
   title: 国民年金クレジットカード支払い切り替え手続き
-  status: open
+  status: completed
   due: '2025-06-15'
   category: 保険・年金
   priority: medium
@@ -178,15 +179,16 @@
   memo: INSURANCE-002完了時に入手した書類を使用。最初の12か月は納付書での現金払いが必要
 - id: BRANDING-001
   title: 事業紹介文の整備
-  status: open
+  status: completed
   due: '2025-06-15'
   category: ブランディング
   priority: high
   estimated_hours: 3.5
   memo: 屋号変更「CHIENOWASHA（ちえのわ舎）」に伴い新たに作成が必要
+  source: docs/ブランディング/事業紹介文ドラフト.md
 - id: OPERATION-001
   title: AI連携型タスク管理システムの構築・運用設計
-  status: in_progress
+  status: completed
   due: '2025-06-30'
   category: 運用・仕組み化
   priority: high
@@ -520,3 +522,12 @@
   priority: low
   due: '2025-06-23'
   memo: 参画後に案内メールが届く。サポート用LINEアカウントを登録
+- id: TEMPLATE-001
+  title: タスク管理システムのテンプレート化・一般化
+  status: open
+  category: 運用・仕組み化
+  priority: high
+  due: '2025-06-23'
+  memo: >-
+    固有情報（屋号・個人名・特定カテゴリ等）を除外し、誰でも使えるテンプレートを作成。README・ルール・スクリプト・サンプルtasks.yml/daily/obsidian-export等を一般化。配布・公開・他者利用も視野に。
+  estimated_hours: 8
