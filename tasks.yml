@@ -479,6 +479,7 @@
   priority: high
   due: '2025-06-06'
   memo: 入場詳細・注意事項を確認し、返信済みか再確認
+  estimated_hours: 0.5
 - id: ENTRANCE-002
   title: サポート担当者情報の登録
   status: completed
@@ -486,6 +487,7 @@
   priority: medium
   due: '2025-06-06'
   memo: 石川瑞菜さん（08048141487, mizuna.ishikawa@levtech.jp）を連絡帳に登録
+  estimated_hours: 0.5
 - id: ENTRANCE-003
   title: 参画初日のGoogle Meet URL確認・カレンダー登録
   status: completed
@@ -493,6 +495,7 @@
   priority: high
   due: '2025-06-23'
   memo: 09:00開始、https://meet.google.com/dma-pnuq-jhm
+  estimated_hours: 0.5
 - id: REPORT-001
   title: 作業報告書の提出方法確認
   status: open
@@ -500,6 +503,7 @@
   priority: medium
   due: '2025-06-30'
   memo: レバテックプラットフォームで提出。案件によっては別途説明あり
+  estimated_hours: 0.5
 - id: REPORT-002
   title: 請求書提出方法・期限の確認
   status: open
@@ -507,6 +511,7 @@
   priority: medium
   due: '2025-07-03'
   memo: 'プラットフォームまたはメール（report@levtech.jp, CC: mizuna.ishikawa@levtech.jp）で提出'
+  estimated_hours: 0.5
 - id: REPORT-003
   title: 休暇・遅参等の連絡フロー確認
   status: open
@@ -515,6 +520,7 @@
   due: '2025-06-23'
   memo: >-
     事前連絡＋Typeform（https://crmleverages.typeform.com/to/u67kvMSy#id=ENG0000670173）またはメール/LINE
+  estimated_hours: 0.5
 - id: SUPPORT-001
   title: LINE公式アカウントの案内確認・登録
   status: open
@@ -522,6 +528,7 @@
   priority: low
   due: '2025-06-23'
   memo: 参画後に案内メールが届く。サポート用LINEアカウントを登録
+  estimated_hours: 0.5
 - id: TEMPLATE-001
   title: タスク管理システムのテンプレート化・一般化
   status: open
@@ -531,3 +538,16 @@
   memo: >-
     固有情報（屋号・個人名・特定カテゴリ等）を除外し、誰でも使えるテンプレートを作成。README・ルール・スクリプト・サンプルtasks.yml/daily/obsidian-export等を一般化。配布・公開・他者利用も視野に。
   estimated_hours: 8
+- id: ACCOUNTING-007
+  title: アクセンチュア請求書（2025年6月2日付）の支払い・PDF保存
+  status: completed
+  category: 会計・税務
+  priority: high
+  due: '2025-06-25'
+  memo: >-
+    アクセンチュアからの請求書（159,196円、Personnel No.
+    13795079、支払期日2025/06/25）を受領。指定口座（JPモルガン銀行、普通
+    0451800）へ期日までに振込手続き。請求書をPDF化し、docs/会計・財務/アクセンチュア請求書_20250602.pdfとして保存。必要に応じて支払い記録・証憑も同フォルダーに格納。2025-06-07
+    振込・PDF保存完了
+  source: docs/会計・財務/アクセンチュア請求書_20250602.pdf
+  estimated_hours: 1
