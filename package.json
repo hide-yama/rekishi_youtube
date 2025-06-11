@@ -1,7 +1,7 @@
 {
-  "name": "kaigyo-junbi",
+  "name": "project-task-manager",
   "version": "1.0.0",
-  "description": "フリーランス開業準備タスク管理システム",
+  "description": "汎用プロジェクト管理ツール - YAML + Markdown + 時間管理",
   "main": "index.js",
   "scripts": {
     "today": "node scripts/extract.js --date $(date +%F) > daily/$(date +%F).md",
@@ -19,9 +19,11 @@
     "sync-all": "npm run sync-today && npm run obsidian && npm run calendar"
   },
   "keywords": [
-    "task-management",
-    "freelance",
-    "startup"
+    "task-management", 
+    "project-management",
+    "yaml",
+    "markdown",
+    "time-tracking"
   ],
   "author": "",
   "license": "MIT",

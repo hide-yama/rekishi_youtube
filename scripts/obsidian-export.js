@@ -21,10 +21,11 @@ try {
     // tasks.ymlを読み込み
     const tasksData = yaml.load(fs.readFileSync('tasks.yml', 'utf8'));
     
-    // 出力ディレクトリを作成
-    if (!fs.existsSync(outputDir)) {
-        fs.mkdirSync(outputDir, { recursive: true });
+    // 出力ディレクトリを完全にクリアして再作成
+    if (fs.existsSync(outputDir)) {
+        fs.rmSync(outputDir, { recursive: true, force: true });
     }
+    fs.mkdirSync(outputDir, { recursive: true });
 
     // カテゴリ別にタスクを分類
     const tasksByCategory = {};
