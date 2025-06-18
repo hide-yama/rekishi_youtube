@@ -1,61 +1,53 @@
-# サンプルタスクデータ - 実際に使用する際はこれらを削除して独自のタスクを追加してください
-
 - id: PROJECT-001
-  title: "[サンプル] プロジェクト要件定義書の作成"
-  status: in_progress
-  due: '2025-06-15'
+  title: '[サンプル] プロジェクト要件定義書の作成'
+  status: open
+  due: '2025-06-19'
   category: プロジェクト管理
-  priority: high
-  estimated_hours: 4
-  memo: ステークホルダーとの要件確認会議を経て、詳細な要件定義書を作成
-
+  priority: medium
+  estimated_hours: 1
+  memo: このプロジェクト管理ツールでのタスク運用ルールとGitHub連携方法の明確化
 - id: DEV-001
-  title: "[サンプル] システム設計書の作成"
+  title: '[サンプル] システム設計書の作成'
   status: open
   due: '2025-06-20'
   category: 開発
-  priority: high
-  estimated_hours: 6
-  memo: アーキテクチャ図とデータベース設計を含む詳細設計書を作成
-
+  priority: medium
+  estimated_hours: 2
+  memo: 動画への歌詞埋め込み自動化ツール・ライブラリの調査
 - id: DEV-002
-  title: "[サンプル] データベース設計"
+  title: '[サンプル] データベース設計'
   status: open
   due: '2025-06-25'
   category: 開発
   priority: medium
   estimated_hours: 3
   memo: ERDとテーブル定義書の作成
-
 - id: TEST-001
-  title: "[サンプル] ユニットテストの実装"
+  title: '[サンプル] ユニットテストの実装'
   status: completed
   due: '2025-06-10'
   category: テスト
   priority: high
   estimated_hours: 4
   memo: 主要機能のユニットテストを作成し、カバレッジ80%以上を達成
-
 - id: DESIGN-001
-  title: "[サンプル] UIデザイン・プロトタイプ作成"
-  status: completed
-  due: '2025-06-05'
+  title: '[サンプル] UIデザイン・プロトタイプ作成'
+  status: open
+  due: '2025-06-18'
   category: デザイン
-  priority: medium
-  estimated_hours: 8
-  memo: Figmaでプロトタイプ作成完了、ユーザビリティテスト済
-
+  priority: high
+  estimated_hours: 2
+  memo: シティポップ風ビジュアルスタイルの定義と基本プロンプトのテスト生成
 - id: DEPLOY-001
-  title: "[サンプル] 本番環境デプロイ準備"
+  title: '[サンプル] 本番環境デプロイ準備'
   status: open
   due: '2025-06-30'
   category: デプロイ
   priority: medium
   estimated_hours: 3
   memo: CI/CDパイプライン設定とインフラ構築
-
 - id: MEETING-001
-  title: "[サンプル] 週次進捗会議"
+  title: '[サンプル] 週次進捗会議'
   status: in_progress
   due: '2025-06-11'
   category: ミーティング
@@ -63,21 +55,43 @@
   estimated_hours: 1
   memo: プロジェクト進捗報告と課題共有
   fixed: true
-
 - id: DOC-001
-  title: "[サンプル] API仕様書作成"
+  title: '[サンプル] API仕様書作成'
   status: open
   due: '2025-06-18'
   category: ドキュメント
   priority: medium
   estimated_hours: 2
   memo: REST API仕様書をSwaggerで作成
-
 - id: REVIEW-001
-  title: "[サンプル] コードレビュー"
+  title: '[サンプル] コードレビュー'
   status: in_progress
   due: '2025-06-12'
   category: レビュー
   priority: high
   estimated_hours: 2
   memo: セキュリティとパフォーマンスの観点から重点的にレビュー
+- id: PLAN-001
+  title: Phase 1試作の実行計画作成
+  status: open
+  category: プロジェクト管理
+  priority: high
+  due: '2025-06-18'
+  memo: 第1弾楽曲（歴史年号×J-POP）の詳細仕様決定と作業スケジュール化
+  estimated_hours: 2
+- id: TECH-001
+  title: 技術スタック・ツールの選定
+  status: open
+  category: 開発
+  priority: high
+  due: '2025-06-18'
+  memo: Suno AI料金プラン、動画編集ソフト（Premiere/DaVinci）、画像生成AI（Midjourney/SD）の調査と選定
+  estimated_hours: 2
+- id: DATA-001
+  title: 日本史重要年号データベース作成（第1弾）
+  status: open
+  category: 開発
+  priority: high
+  due: '2025-06-19'
+  memo: 受験重要年号200個から最初の50個を選定し、語呂合わせ作成開始
+  estimated_hours: 3
