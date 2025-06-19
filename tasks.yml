@@ -1,13 +1,13 @@
 - id: PROJECT-001
-  title: '[サンプル] プロジェクト要件定義書の作成'
-  status: open
+  title: プロジェクト要件定義書の作成
+  status: completed
   due: '2025-06-19'
   category: プロジェクト管理
   priority: medium
   estimated_hours: 1
   memo: このプロジェクト管理ツールでのタスク運用ルールとGitHub連携方法の明確化
 - id: DEV-001
-  title: '[サンプル] システム設計書の作成'
+  title: 動画への歌詞埋め込み自動化ツール・ライブラリの調査
   status: open
   due: '2025-06-20'
   category: 開発
@@ -15,62 +15,21 @@
   estimated_hours: 2
   memo: 動画への歌詞埋め込み自動化ツール・ライブラリの調査
 - id: DEV-002
-  title: '[サンプル] データベース設計'
+  title: 動画制作プロセスの自動化検討
   status: open
   due: '2025-07-15'
   category: 開発
   priority: medium
   estimated_hours: 3
   memo: 動画制作プロセスの自動化可能部分を特定し実装方法検討
-- id: TEST-001
-  title: '[サンプル] ユニットテストの実装'
-  status: completed
-  due: '2025-06-10'
-  category: テスト
-  priority: high
-  estimated_hours: 4
-  memo: 主要機能のユニットテストを作成し、カバレッジ80%以上を達成
 - id: DESIGN-001
-  title: '[サンプル] UIデザイン・プロトタイプ作成'
+  title: シティポップ風ビジュアルスタイルの定義と基本プロンプトのテスト生成
   status: open
   due: '2025-06-18'
   category: デザイン
   priority: high
   estimated_hours: 2
   memo: シティポップ風ビジュアルスタイルの定義と基本プロンプトのテスト生成
-- id: DEPLOY-001
-  title: '[サンプル] 本番環境デプロイ準備'
-  status: open
-  due: '2025-06-30'
-  category: デプロイ
-  priority: medium
-  estimated_hours: 3
-  memo: CI/CDパイプライン設定とインフラ構築
-- id: MEETING-001
-  title: '[サンプル] 週次進捗会議'
-  status: in_progress
-  due: '2025-06-11'
-  category: ミーティング
-  priority: low
-  estimated_hours: 1
-  memo: プロジェクト進捗報告と課題共有
-  fixed: true
-- id: DOC-001
-  title: '[サンプル] API仕様書作成'
-  status: open
-  due: '2025-06-18'
-  category: ドキュメント
-  priority: medium
-  estimated_hours: 2
-  memo: REST API仕様書をSwaggerで作成
-- id: REVIEW-001
-  title: '[サンプル] コードレビュー'
-  status: in_progress
-  due: '2025-06-12'
-  category: レビュー
-  priority: high
-  estimated_hours: 2
-  memo: セキュリティとパフォーマンスの観点から重点的にレビュー
 - id: PLAN-001
   title: Phase 1試作の実行計画作成
   status: open
@@ -89,11 +48,13 @@
   estimated_hours: 2
 - id: DATA-001
   title: 日本史重要年号データベース作成（第1弾）
-  status: open
+  status: completed
   category: 開発
   priority: high
   due: '2025-06-19'
-  memo: 受験重要年号200個から最初の50個を選定し、語呂合わせ作成開始
+  memo: >-
+    受験重要年号200個から最初の50個を選定し、語呂合わせ作成開始 →
+    145個の年号と語呂合わせをjapanese-history-dates.ymlに完成
   estimated_hours: 3
 - id: PLAN-002
   title: プロジェクト全体のタスク洗い出しとロードマップ作成
@@ -113,11 +74,11 @@
   estimated_hours: 2
 - id: TECH-002
   title: Suno AIアカウント開設・プラン選択
-  status: open
+  status: completed
   category: 開発
   priority: high
   due: '2025-06-19'
-  memo: Suno AIの料金プラン比較と最適プラン選定、アカウント開設
+  memo: Suno AIの料金プラン比較と最適プラン選定、アカウント開設 → プロプランで契約済み
   estimated_hours: 1
 - id: TECH-003
   title: 動画編集ソフトの導入・設定
