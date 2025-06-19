@@ -97,7 +97,7 @@
   estimated_hours: 3
 - id: PLAN-002
   title: プロジェクト全体のタスク洗い出しとロードマップ作成
-  status: open
+  status: completed
   category: プロジェクト管理
   priority: high
   due: '2025-06-18'
