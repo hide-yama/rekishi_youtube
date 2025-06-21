@@ -132,10 +132,8 @@ function generateMindmapContent(tasks) {
         .join('、');
 
     if (priorityStats) {
-        content += `\t\t優先度別: ${priorityStats}\n`;
+        content += `\t\t優先度別: ${priorityStats}`;
     }
-
-
 
     return content;
 }
@@ -146,7 +144,7 @@ function generateMindmapContent(tasks) {
 function writeToFile(content, outputPath) {
     try {
         fs.writeFileSync(outputPath, content, 'utf8');
-        console.log(`✅ マインドマップファイルを生成しました: ${outputPath}`);
+        console.error(`✅ マインドマップファイルを生成しました: ${outputPath}`);
     } catch (error) {
         console.error('❌ ファイル書き込みに失敗しました:', error.message);
         process.exit(1);
@@ -172,27 +170,45 @@ function showCategoryStats(tasks) {
 }
 
 /**
+ * カテゴリ別タスク数を標準エラー出力に表示（リダイレクト対応）
+ */
+function showCategoryStatsToStderr(tasks) {
+    const categories = categorizeTask(tasks);
+    console.error('\n📊 カテゴリ別タスク数:');
+
+    Object.entries(categories)
+        .sort(([a], [b]) => a.localeCompare(b))
+        .forEach(([category, tasks]) => {
+            const completed = tasks.filter(t => t.status === 'completed' || t.status === 'done').length;
+            const inProgress = tasks.filter(t => t.status === 'in_progress').length;
+            const open = tasks.filter(t => t.status === 'open').length;
+
+            console.error(`  ${category}: ${tasks.length}件 (完了:${completed}, 進行:${inProgress}, 未着手:${open})`);
+        });
+}
+
+/**
  * メイン処理
  */
 function main() {
-    console.log('🗺️  マインドマップファイル生成開始...');
+    // リダイレクト使用時は標準出力ではなく標準エラー出力を使用
+    console.error('🗺️  マインドマップファイル生成開始...');
 
     // tasks.yml読み込み
     const tasks = loadTasks();
-    console.log(`📋 ${tasks.length}件のタスクを読み込みました`);
+    console.error(`📋 ${tasks.length}件のタスクを読み込みました`);
 
-    // カテゴリ統計表示
-    showCategoryStats(tasks);
+    // カテゴリ統計表示（標準エラー出力に変更）
+    showCategoryStatsToStderr(tasks);
 
     // マインドマップコンテンツ生成
     const content = generateMindmapContent(tasks);
 
-    // ファイル出力
-    const outputPath = path.join(__dirname, '..', 'tasks-mindmap.md');
-    writeToFile(content, outputPath);
+    // 標準出力にコンテンツのみを出力（リダイレクト対応、改行なし）
+    process.stdout.write(content);
 
-    console.log('\n🎉 マインドマップファイルの生成が完了しました！');
-    console.log('💡 使用方法: マインドマップツールにファイル内容をコピー&ペーストしてください');
+    console.error('\n🎉 マインドマップファイルの生成が完了しました！');
+    console.error('💡 使用方法: マインドマップツールにファイル内容をコピー&ペーストしてください');
 }
 
 // スクリプト実行

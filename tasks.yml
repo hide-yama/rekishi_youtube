@@ -9,11 +9,11 @@
 - id: DEV-001
   title: 動画への歌詞埋め込み自動化ツール・ライブラリの調査
   status: open
-  due: '2025-06-20'
+  due: '2025-07-15'
   category: 開発
   priority: medium
   estimated_hours: 2
-  memo: 動画への歌詞埋め込み自動化ツール・ライブラリの調査
+  memo: 動画への歌詞埋め込み自動化ツール・ライブラリの調査（期限延期）
 - id: DEV-002
   title: 動画制作プロセスの自動化検討
   status: open
@@ -24,28 +24,30 @@
   memo: 動画制作プロセスの自動化可能部分を特定し実装方法検討
 - id: DESIGN-001
   title: シティポップ風ビジュアルスタイルの定義と基本プロンプトのテスト生成
-  status: open
+  status: completed
   due: '2025-06-18'
   category: デザイン
   priority: high
-  estimated_hours: 2
-  memo: シティポップ風ビジュアルスタイルの定義と基本プロンプトのテスト生成
+  estimated_hours: 0
+  memo: プロンプト体系完成、基礎テスト完了 → docs/prompt-development.md に進捗記録
 - id: PLAN-001
   title: Phase 1試作の実行計画作成
-  status: open
+  status: in_progress
   category: プロジェクト管理
   priority: high
   due: '2025-06-18'
-  memo: 第1弾楽曲（歴史年号×J-POP）の詳細仕様決定と作業スケジュール化
-  estimated_hours: 2
+  memo: >-
+    楽曲完成、現在画像生成中、順調に進行。次フェーズは動画制作（外部ファイル連携実験が必要） → docs/project-management.md
+    に進捗記録
+  estimated_hours: 1
 - id: TECH-001
   title: 技術スタック・ツールの選定
-  status: open
+  status: completed
   category: 開発
   priority: high
   due: '2025-06-18'
-  memo: Suno AI料金プラン、動画編集ソフト（Premiere/DaVinci）、画像生成AI（Midjourney/SD）の調査と選定
-  estimated_hours: 2
+  memo: Suno AI、Midjourney、Adobe Premiere Pro確定 → docs/project-management.md に記録
+  estimated_hours: 0
 - id: DATA-001
   title: 日本史重要年号データベース作成（第1弾）
   status: completed
@@ -66,12 +68,12 @@
   estimated_hours: 3
 - id: PLAN-003
   title: ターゲット楽曲選定（第1弾）
-  status: open
+  status: completed
   category: プロジェクト管理
   priority: high
   due: '2025-06-20'
-  memo: 第1弾として制作する楽曲のスタイル・テーマを決定
-  estimated_hours: 2
+  memo: YOASOBI風ボーカルスタイル確定、楽曲完成済み → PLAN-001と重複のため統合完了
+  estimated_hours: 0
 - id: TECH-002
   title: Suno AIアカウント開設・プラン選択
   status: completed
@@ -82,52 +84,52 @@
   estimated_hours: 1
 - id: TECH-003
   title: 動画編集ソフトの導入・設定
-  status: open
+  status: completed
   category: 開発
   priority: high
   due: '2025-06-20'
-  memo: Premiere Pro/DaVinci Resolveの選定と環境構築
-  estimated_hours: 3
+  memo: Adobe Premiere Pro導入完了
+  estimated_hours: 0
 - id: TECH-004
   title: 画像生成AIアカウント開設・設定
   status: open
   category: 開発
   priority: high
-  due: '2025-06-20'
-  memo: Midjourney/Stable Diffusionのアカウント開設と初期設定
+  due: '2025-07-10'
+  memo: Midjourney/Stable Diffusionのアカウント開設と初期設定（期限延期）
   estimated_hours: 2
 - id: TECH-005
   title: GitHub/Git運用ルール確定
-  status: open
+  status: completed
   category: 開発
   priority: medium
   due: '2025-06-21'
-  memo: ブランチ運用、コミットルール、プルリクエストフローの策定
+  memo: ブランチ運用、コミットルール、プルリクエストフローの策定 → 運用ルール確定完了
   estimated_hours: 1
 - id: CONTENT-001
   title: 楽曲スタイル・ジャンル決定
-  status: open
+  status: completed
   category: プロジェクト管理
   priority: high
   due: '2025-06-21'
-  memo: YOASOBI風、Vaundy風等のスタイル優先順位決定
-  estimated_hours: 2
+  memo: YOASOBI風スタイル決定完了
+  estimated_hours: 0
 - id: CONTENT-002
   title: チャンネル名・ブランディング方針決定
   status: open
   category: マーケティング
   priority: medium
-  due: '2025-06-22'
-  memo: YouTubeチャンネル名、コンセプト、ブランドメッセージの確定
+  due: '2025-07-15'
+  memo: 楽曲制作完了後に検討予定（期限延期）
   estimated_hours: 2
 - id: DATA-002
   title: 年号語呂合わせ50個作成
-  status: open
+  status: completed
   category: 開発
   priority: high
   due: '2025-06-23'
-  memo: 受験重要年号から50個選定し、覚えやすい語呂合わせを作成
-  estimated_hours: 5
+  memo: 実際には200個完成済みだが、タスクタイトルは50個のまま維持
+  estimated_hours: 0
 - id: DATA-003
   title: 第1弾楽曲用年号10個選定
   status: open
@@ -146,12 +148,12 @@
   estimated_hours: 3
 - id: DESIGN-002
   title: シティポップ風ビジュアルスタイル確定
-  status: open
+  status: completed
   category: デザイン
   priority: high
   due: '2025-06-22'
-  memo: 色合い、雰囲気、時代設定等の詳細ビジュアル仕様を確定
-  estimated_hours: 2
+  memo: シティポップ風ビジュアルスタイル確定完了
+  estimated_hours: 0
 - id: DESIGN-003
   title: 第1弾用画像生成（5-10枚）
   status: open
@@ -170,20 +172,20 @@
   estimated_hours: 3
 - id: MUSIC-001
   title: 第1弾歌詞作成（年号10個含む）
-  status: open
+  status: completed
   category: 開発
   priority: high
-  due: '2025-06-28'
-  memo: 選定した年号10個を自然に含む完成歌詞の作成
-  estimated_hours: 4
+  due: '2025-06-23'
+  memo: 第1弾歌詞完成済み
+  estimated_hours: 0
 - id: MUSIC-002
   title: Suno AIで楽曲生成（複数バリエーション）
   status: open
   category: 開発
   priority: high
-  due: '2025-06-30'
-  memo: 作成した歌詞でSuno AIを使い複数バリエーションの楽曲生成
-  estimated_hours: 3
+  due: '2025-06-24'
+  memo: 完成した歌詞とスタイル指示でSunoを使用して第1弾楽曲を制作
+  estimated_hours: 2
 - id: MUSIC-003
   title: 楽曲選定・調整
   status: open
@@ -235,11 +237,11 @@
 - id: VIDEO-005
   title: サムネイル作成
   status: open
-  category: デザイン
+  category: 開発
   priority: high
-  due: '2025-07-07'
-  memo: クリックされやすい魅力的なサムネイル画像作成
-  estimated_hours: 2
+  due: '2025-07-05'
+  memo: Adobe Premiere Proでの外部ファイル連携機能調査と動画制作自動化・簡略化の検討（期限延期）
+  estimated_hours: 3
 - id: PUBLISH-001
   title: YouTubeチャンネル開設
   status: open
@@ -519,4 +521,44 @@
   priority: low
   due: '2025-12-31'
   memo: 学習塾や学校との連携可能性検討
+  estimated_hours: 2
+- id: LYRICS-001
+  title: 第1弾歌詞作成・構成設計
+  status: open
+  category: 開発
+  priority: high
+  due: '2025-06-21'
+  memo: 「古代王国の誕生」の歌詞作成。曲構成、年号の組み込み方、史実の肉付け方法、全体バランスを検討
+  estimated_hours: 4
+- id: TEMPLATE-001
+  title: 歌詞テンプレート作成
+  status: open
+  category: 開発
+  priority: medium
+  due: '2025-06-22'
+  memo: 第1弾で良い出来の歌詞ができた場合の再現性確保。第2弾以降のテンプレート化
+  estimated_hours: 2
+- id: VISUAL-001
+  title: キャラクター画像生成実験
+  status: open
+  category: デザイン
+  priority: high
+  due: '2025-06-22'
+  memo: イメージ通りの女子高生キャラクターの雰囲気を画像生成で実現
+  estimated_hours: 3
+- id: VISUAL-002
+  title: 歴史シーン統合画像生成
+  status: open
+  category: デザイン
+  priority: high
+  due: '2025-06-23'
+  memo: キャラクターが歴史の舞台に溶け込んでいるイラストの生成文と生成フローを確立
+  estimated_hours: 3
+- id: DATA-007
+  title: 年号データのimage_scenario更新
+  status: open
+  category: 開発
+  priority: medium
+  due: '2025-06-25'
+  memo: 確立した画像生成文を全202個の年号のimage_scenarioに反映
   estimated_hours: 2
