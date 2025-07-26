@@ -1,0 +1,35 @@
+{
+  "name": "project-task-manager",
+  "version": "1.0.0",
+  "description": "汎用プロジェクト管理ツール - YAML + Markdown + 時間管理",
+  "main": "index.js",
+  "scripts": {
+    "today": "node scripts/extract.js --date $(date +%F) > daily/$(date +%F).md",
+    "sync-today": "node scripts/sync.js --file daily/$(date +%F).md",
+    "extract": "node scripts/extract.js",
+    "sync": "node scripts/sync.js",
+    "obsidian": "node scripts/obsidian-export.js",
+    "obsidian-category": "node scripts/obsidian-export.js --category",
+    "obsidian-status": "node scripts/obsidian-export.js --status",
+    "calendar": "node scripts/calendar-scheduler.js > calendar-output.md",
+    "review-weekly": "node scripts/review.js --period weekly",
+    "review-monthly": "node scripts/review.js --period monthly",
+    "review-summary": "node scripts/review.js --summary",
+    "review-export": "node scripts/review.js --export",
+    "sync-all": "npm run sync-today && npm run obsidian && npm run calendar"
+  },
+  "keywords": [
+    "task-management", 
+    "project-management",
+    "yaml",
+    "markdown",
+    "time-tracking"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
+    "minimist": "^1.2.8"
+  }
+}

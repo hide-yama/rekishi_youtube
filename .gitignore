@@ -1,0 +1,24 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Obsidian
+.obsidian/
+
+# 一時ファイル
+*.tmp
+*.bak
+*.log
+
+# 個人的なメモ（必要に応じて）
+# personal_notes/
+
+# 出力ファイル（必要に応じて）
+# obsidian-export/ 
+.env
