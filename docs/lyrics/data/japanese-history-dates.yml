@@ -1,0 +1,2247 @@
+# 日本史重要年号データベース
+# 受験で重要な年号200個とその語呂合わせ
+
+metadata:
+  version: "1.0.0"
+  created: "2025-06-19"
+  description: "中学・高校受験で必要な日本史重要年号200個"
+  usage: "YouTube動画制作用データベース"
+
+# 年号データ構造
+# - year: 西暦年
+#   era: 和暦（元号）
+#   event: 出来事
+#   category: 分類（古代/中世/近世/近現代）
+#   importance: 重要度（high/medium/low）
+#   mnemonic: 語呂合わせ（ひらがな）
+#   mnemonic_katakana: 語呂合わせ（カタカナ）
+#   image_scenario: 画像生成用シチュエーション（簡潔なイメージ描写）
+#   notes: 詳細情報
+
+dates:
+  # 古代（～794）
+  - year: 57
+    era: "後漢光武帝時代"
+    event: "奴国王、後漢へ（漢委奴国王印）"
+    category: "古代"
+    importance: "high"
+    実mnemonic: "こんな(57)金印欲しかった"
+    mnemonic_katakana: "コンナキンインホシカッタ"
+    image_scenario: "古代日本の王が中国皇帝から金印を受け取る場面"
+    notes: "志賀島で発見された金印"
+    video_used: false
+
+  - year: 239
+    era: "三国時代"
+    event: "卑弥呼、魏へ使者派遣"
+    category: "古代"
+    importance: "high"
+    mnemonic: "文(23)く(9)ださいね、卑弥呼より"
+    mnemonic_katakana: "フミクダサイネ、ヒミコヨリ"
+    image_scenario: "卑弥呼が魏の皇帝に使者を送る邪馬台国の宮殿"
+    notes: "魏志倭人伝に記載、親魏倭王の金印を受ける"
+    video_used: false
+
+  - year: 538
+    era: "欽明天皇時代"
+    event: "仏教伝来"
+    category: "古代"
+    importance: "high"
+    mnemonic: "ご参拝(538)仏来る"
+    mnemonic_katakana: "ゴサンパイホトケクル"
+    image_scenario: "百済から仏像と経典が献上される飛鳥の宮廷"
+    notes: "百済から仏教が伝来、蘇我氏が支持"
+    video_used: false
+
+  - year: 593
+    era: "推古天皇時代"
+    event: "聖徳太子、摂政となる"
+    category: "古代"
+    importance: "high"
+    mnemonic: "国産(593)太子立つ"
+    mnemonic_katakana: "コクサンタイシタツ"
+    image_scenario: "若い聖徳太子が推古天皇から摂政の任を受ける場面"
+    notes: "推古天皇の摂政として政治改革を推進"
+    video_used: false
+
+  - year: 600
+    era: "推古天皇時代"
+    event: "第1回遣隋使派遣"
+    category: "古代"
+    importance: "high"
+    mnemonic: "む(6)おお(00)ー!!隋へ向かうぞおおー!!!"
+    mnemonic_katakana: "ムオオー!!ズイヘムカウゾオオー!!!"
+    image_scenario: "遣隋使の船団が中国大陸に向けて出発する港の風景"
+    notes: "小野妹子らが隋に派遣される"
+    video_used: false
+
+  - year: 603
+    era: "推古天皇時代"
+    event: "冠位十二階制定"
+    category: "古代"
+    importance: "high"
+    mnemonic: "群れて見(603)る冠位十二階"
+    mnemonic_katakana: "ムレテミルカンイジュウニカイ"
+    image_scenario: "色とりどりの冠をかぶった朝廷の官僚たち"
+    notes: "身分制度を整備、才能による昇進制度"
+    video_used: false
+
+  - year: 604
+    era: "推古天皇時代"
+    event: "十七条憲法制定"
+    category: "古代"
+    importance: "high"
+    mnemonic: "群れて読む(604)憲法十七条"
+    mnemonic_katakana: "ムレテヨムケンポウジュウナナジョウ"
+    image_scenario: "聖徳太子が憲法を読み上げる朝廷の儀式"
+    notes: "日本初の成文憲法、和の精神を重視"
+    video_used: false
+
+  - year: 607
+    era: "推古天皇時代"
+    event: "遣隋使派遣（小野妹子）"
+    category: "古代"
+    importance: "high"
+    mnemonic: "む(6)れ(0)いな(7)り煬帝怒る遣隋使"
+    mnemonic_katakana: "ムレイナリヨウダイオコルケンズイシ"
+    image_scenario: "小野妹子が隋の煬帝に国書を渡す緊張した場面"
+    notes: "日出処天子の国書で煬帝が激怒"
+    video_used: false
+
+  - year: 630
+    era: "舒明天皇時代"
+    event: "第1回遣唐使派遣"
+    category: "古代"
+    importance: "high"
+    mnemonic: "船内で蒸され(630)ると吐くよ遣唐使"
+    mnemonic_katakana: "センナイデムサレルトハクヨケントウシ"
+    image_scenario: "遣唐使の船が唐の都長安を目指して出発する様子"
+    notes: "犬上御田鍬らが派遣、唐との外交開始"
+    video_used: false
+
+  - year: 645
+    era: "孝徳天皇時代"
+    event: "大化改新"
+    category: "古代"
+    importance: "high"
+    mnemonic: "虫殺(645)して旧体制"
+    mnemonic_katakana: "ムシコロシテキュウタイセイ"
+    image_scenario: "乙巳の変で蘇我入鹿が討たれる飛鳥板蓋宮の場面"
+    notes: "蘇我氏を倒し、中央集権国家建設開始"
+    video_used: false
+
+  - year: 663
+    era: "天智天皇時代"
+    event: "白村江の戦い"
+    category: "古代"
+    importance: "high"
+    mnemonic: "む(6)む(6)惨敗(3)白村江"
+    mnemonic_katakana: "ムムサンパイハクスキノエ"
+    image_scenario: "白村江で日本・百済連合軍が唐・新羅軍に敗れる海戦"
+    notes: "朝鮮半島での影響力を失う"
+    video_used: false
+
+  - year: 672
+    era: "天武天皇時代"
+    event: "壬申の乱"
+    category: "古代"
+    importance: "high"
+    mnemonic: "ろ(6)くな兄(7)ちゃん(2)じゃねえ！"
+    mnemonic_katakana: "ロクナニイチャンジャネエ"
+    image_scenario: "大海人皇子が大友皇子と皇位継承を巡り戦う"
+    notes: "天武天皇が即位、律令制整備へ"
+    video_used: false
+
+  - year: 694
+    era: "持統天皇時代"
+    event: "藤原京遷都"
+    category: "古代"
+    importance: "high"
+    mnemonic: "む(6)く(9)し(4)北を背に南を向くよ"
+    mnemonic_katakana: "ムクシキタヲセニミナミヲムクヨ"
+    image_scenario: "日本初の本格的都城藤原京の造営風景"
+    notes: "日本初の条坊制都市"
+    video_used: false
+
+  - year: 701
+    era: "文武天皇時代"
+    event: "大宝律令制定"
+    category: "古代"
+    importance: "high"
+    mnemonic: "な(7)お(0)一層(1)大宝律令"
+    mnemonic_katakana: "ナオイッソウタイホウリツリョウ"
+    image_scenario: "藤原不比等らが律令編纂作業を行う場面"
+    notes: "日本初の本格的成文法典"
+    video_used: false
+
+  - year: 708
+    era: "元明天皇時代"
+    event: "和同開珎発行"
+    category: "古代"
+    importance: "high"
+    mnemonic: "な(7)お(0)や(8)流通するお金になれや！"
+    mnemonic_katakana: "ナオヤリュウツウスルオカネニナレヤ"
+    image_scenario: "日本初の本格的貨幣和同開珎の鋳造場面"
+    notes: "日本最古の流通貨幣"
+    video_used: false
+
+  - year: 710
+    era: "元明天皇時代"
+    event: "平城京遷都"
+    category: "古代"
+    importance: "high"
+    mnemonic: "な(7)んと(10)立派な都"
+    mnemonic_katakana: "ナントリッパナミヤコ"
+    image_scenario: "奈良の平城京大極殿での遷都儀式"
+    notes: "奈良時代の始まり"
+    video_used: false
+
+  - year: 712
+    era: "元明天皇時代"
+    event: "『古事記』完成"
+    category: "古代"
+    importance: "high"
+    mnemonic: "な(7)い(1)ふ(2)に刻む古事"
+    mnemonic_katakana: "ナイフニキザムコジ"
+    image_scenario: "太安万侶が古事記を編纂する場面"
+    notes: "日本最古の歴史書"
+    video_used: false
+
+  - year: 720
+    era: "元正天皇時代"
+    event: "『日本書紀』完成"
+    category: "古代"
+    importance: "high"
+    mnemonic: "な(7)に(2)を(0)書き記す"
+    mnemonic_katakana: "ナニヲカキシルス"
+    image_scenario: "舎人親王らが日本書紀を編纂する宮廷"
+    notes: "日本初の正史"
+    video_used: false
+
+  - year: 723
+    era: "元正天皇時代"
+    event: "三世一身法制定"
+    category: "古代"
+    importance: "high"
+    mnemonic: "な(7)に(2)さ(3)！三世一身法"
+    mnemonic_katakana: "ナニササンゼイッシンホウ"
+    image_scenario: "開墾奨励の詔を発布する朝廷"
+    notes: "開墾地の私有を三代まで認める"
+    video_used: false
+
+  - year: 741
+    era: "聖武天皇時代"
+    event: "国分寺建立の詔"
+    category: "古代"
+    importance: "high"
+    mnemonic: "な(7)の良(4)い(1)国分寺"
+    mnemonic_katakana: "ナノヨイコクブンジ"
+    image_scenario: "全国に国分寺・国分尼寺建立を命じる聖武天皇"
+    notes: "仏教による国家鎮護を図る"
+    video_used: false
+
+  - year: 743
+    era: "聖武天皇時代"
+    event: "墾田永年私財法制定"
+    category: "古代"
+    importance: "high"
+    mnemonic: "な(7)よ(4)み(3)名より実を取る"
+    mnemonic_katakana: "ナヨミナヨリミヲトル"
+    image_scenario: "開墾地の永代私有を認める詔の発布"
+    notes: "荘園制の法的基盤となる"
+    video_used: false
+
+  - year: 752
+    era: "聖武天皇時代"
+    event: "東大寺大仏開眼供養"
+    category: "古代"
+    importance: "high"
+    mnemonic: "な(7)な！ご(5)っつ(2)い大仏だ"
+    mnemonic_katakana: "ナナゴッツイダイブツダ"
+    image_scenario: "東大寺大仏殿での盛大な開眼供養式"
+    notes: "奈良の大仏完成、国家仏教の頂点"
+    video_used: false
+
+  - year: 754
+    era: "孝謙天皇時代"
+    event: "鑑真来日"
+    category: "古代"
+    importance: "high"
+    mnemonic: "な(7)ん(5)ご(4)苦労ようやく鑑真来たり"
+    mnemonic_katakana: "ナンゴクロウヨウヤクガンジンキタリ"
+    image_scenario: "失明しながらも日本に到着した鑑真和尚"
+    notes: "正式な戒律を日本に伝える"
+    video_used: false
+
+  - year: 759
+    era: "淳仁天皇時代"
+    event: "万葉集完成"
+    category: "古代"
+    importance: "high"
+    mnemonic: "な(7)み(5)だ(9)ごくん読む歌"
+    mnemonic_katakana: "ナミダゴクンヨムウタ"
+    image_scenario: "大伴家持が万葉集最後の歌を詠む場面"
+    notes: "日本最古の和歌集完成"
+    video_used: false
+
+  - year: 794
+    era: "桓武天皇時代"
+    event: "平安京遷都"
+    category: "古代"
+    importance: "high"
+    mnemonic: "鳴(7)くよ(9)う(4)ぐいす平安京"
+    mnemonic_katakana: "ナクヨウグイスヘイアンキョウ"
+    image_scenario: "京都の平安京大極殿での遷都式"
+    notes: "平安時代の始まり、1000年続く"
+    video_used: false
+
+  # 中世（794～1573）
+  # 平安時代（794～1185）
+  - year: 805
+    era: "桓武天皇時代"
+    event: "最澄、天台宗開宗"
+    category: "中世"
+    importance: "high"
+    mnemonic: "や(8)れ(0)ご(5)苦労、比叡に法灯"
+    mnemonic_katakana: "ヤレゴクロウヒエイニホウトウ"
+    image_scenario: "最澄が比叡山延暦寺を開山する場面"
+    notes: "日本天台宗の開祖"
+    video_used: false
+
+  - year: 806
+    era: "桓武天皇時代"
+    event: "空海、真言宗開宗"
+    category: "中世"
+    importance: "high"
+    mnemonic: "や(8)お(0)ろ(6)空と海よ晴れろ"
+    mnemonic_katakana: "ヤオロソラトウミヨハレロ"
+    image_scenario: "空海が高野山金剛峯寺を開山する場面"
+    notes: "日本真言宗の開祖"
+    video_used: false
+
+  - year: 866
+    era: "清和天皇時代"
+    event: "応天門の変"
+    category: "中世"
+    importance: "high"
+    mnemonic: "や(8)ろ(6)う(6)むかつく応天門"
+    mnemonic_katakana: "ヤロウムカツクオウテンモン"
+    image_scenario: "応天門炎上事件で伴善男が追放される"
+    notes: "藤原氏の他氏排斥事件"
+    video_used: false
+
+  - year: 887
+    era: "光孝天皇時代"
+    event: "藤原基経、関白に就任"
+    category: "中世"
+    importance: "high"
+    mnemonic: "基経が や(8)や(8)な(7)かせて関白に"
+    mnemonic_katakana: "モトツネガヤヤナカセテカンパクニ"
+    image_scenario: "藤原基経が初の関白に任命される朝廷"
+    notes: "摂関政治の始まり"
+    video_used: false
+
+  - year: 894
+    era: "宇多天皇時代"
+    event: "遣唐使廃止"
+    category: "中世"
+    importance: "high"
+    mnemonic: "白紙(894)に戻す遣唐使"
+    mnemonic_katakana: "ハクシニモドスケントウシ"
+    image_scenario: "菅原道真の提言で遣唐使廃止を決める朝廷"
+    notes: "国風文化の発展へ"
+    video_used: false
+
+  - year: 939
+    era: "朱雀天皇時代"
+    event: "承平・天慶の乱"
+    category: "中世"
+    importance: "high"
+    mnemonic: "苦策(939)将門の乱"
+    mnemonic_katakana: "クサクマサカドノラン"
+    image_scenario: "平将門が関東で独立王国建設を目指す"
+    notes: "武士の台頭を示す反乱"
+    video_used: false
+
+  - year: 988
+    era: "一条天皇時代"
+    event: "『往生要集』完成"
+    category: "中世"
+    importance: "high"
+    mnemonic: "急(98)では(8)やい往生要集"
+    mnemonic_katakana: "キュウデハヤイオウジョウヨウシュウ"
+    image_scenario: "源信が念仏による往生を説く"
+    notes: "浄土教の普及に大きな影響"
+    video_used: false
+
+  - year: 1016
+    era: "三条天皇時代"
+    event: "藤原道長、摂政に就任"
+    category: "中世"
+    importance: "high"
+    mnemonic: "遠(10)い(1)昔(6)も道長一強"
+    mnemonic_katakana: "トオイムカシモミチナガイッキョウ"
+    image_scenario: "藤原道長が摂関政治の全盛を築く"
+    notes: "この世をば我が世とぞ思ふ"
+    video_used: false
+
+  - year: 1051
+    era: "後冷泉天皇時代"
+    event: "前九年の役"
+    category: "中世"
+    importance: "high"
+    mnemonic: "な(10)ん(5)と(1)強引前九年の役"
+    mnemonic_katakana: "ナントゴウインゼンクネンノエキ"
+    image_scenario: "源頼義・義家が安倍氏を討伐"
+    notes: "奥州での源氏の勢力拡大"
+    video_used: false
+
+  - year: 1053
+    era: "後冷泉天皇時代"
+    event: "平等院鳳凰堂建立"
+    category: "中世"
+    importance: "high"
+    mnemonic: "人(10)は(5)込み(3)鳳凰堂"
+    mnemonic_katakana: "ヒトハコミホウオウドウ"
+    image_scenario: "藤原頼通が建立した極楽浄土を表現した建築"
+    notes: "国風文化の最高傑作"
+    video_used: false
+
+  - year: 1069
+    era: "後三条天皇時代"
+    event: "荘園整理令"
+    category: "中世"
+    importance: "high"
+    mnemonic: "登録(10)要(6)く(9)！荘園整理"
+    mnemonic_katakana: "トウロクヨウクショウエンセイリ"
+    image_scenario: "後三条天皇が荘園の乱立を整理"
+    notes: "摂関家に対抗する天皇親政"
+    video_used: false
+
+  - year: 1083
+    era: "白河天皇時代"
+    event: "後三年の役"
+    category: "中世"
+    importance: "high"
+    mnemonic: "義家(10)いれば(8)皆(3)降参"
+    mnemonic_katakana: "ヨシイエイレバミナコウサン"
+    image_scenario: "源義家が清原氏の内紛を平定"
+    notes: "源氏の奥州支配確立"
+    video_used: false
+
+  - year: 1086
+    era: "白河天皇時代"
+    event: "院政開始"
+    category: "中世"
+    importance: "high"
+    mnemonic: "入(10)れ(8)歯(6)ルック院政開始"
+    mnemonic_katakana: "イレバルックインセイカイシ"
+    image_scenario: "白河上皇が院政を開始"
+    notes: "摂関政治から院政へ転換"
+    video_used: false
+
+  - year: 1156
+    era: "後白河天皇時代"
+    event: "保元の乱"
+    category: "中世"
+    importance: "high"
+    mnemonic: "い(1)い(1)頃(56)乱起こる"
+    mnemonic_katakana: "イイコロランオコル"
+    image_scenario: "上皇・天皇が対立し武士が政治に介入"
+    notes: "武士の政界進出の始まり"
+    video_used: false
+
+  - year: 1159
+    era: "二条天皇時代"
+    event: "平治の乱"
+    category: "中世"
+    importance: "high"
+    mnemonic: "人(1)々(1)ご(5)苦労(9)平治の乱"
+    mnemonic_katakana: "ヒトビトゴクロウヘイジノラン"
+    image_scenario: "源義朝と平清盛が武力で対立"
+    notes: "平氏政権確立のきっかけ"
+    video_used: false
+
+  - year: 1167
+    era: "六条天皇時代"
+    event: "平清盛、太政大臣に就任"
+    category: "中世"
+    importance: "high"
+    mnemonic: "い(1)い(1)胸毛(67)清盛ご満悦"
+    mnemonic_katakana: "イイムナゲキヨモリゴマンエツ"
+    image_scenario: "平清盛が武士初の太政大臣となる"
+    notes: "平氏政権の絶頂期"
+    video_used: false
+
+  - year: 1180
+    era: "安徳天皇時代"
+    event: "源平合戦開始"
+    category: "中世"
+    importance: "high"
+    mnemonic: "人(1)嫌(18)で(0)平氏打つ"
+    mnemonic_katakana: "ヒトキライデヘイシウツ"
+    image_scenario: "源頼朝が挙兵し平氏との戦いが始まる"
+    notes: "鎌倉幕府への道筋"
+    video_used: false
+
+  - year: 1185
+    era: "後鳥羽天皇時代"
+    event: "壇ノ浦の戦い・守護地頭設置"
+    category: "中世"
+    importance: "high"
+    mnemonic: "い(1)い(1)箱(85)作ろう鎌倉幕府の箱"
+    mnemonic_katakana: "イイハコツクロウカマクラバクフノハコ"
+    image_scenario: "壇ノ浦で平氏滅亡、源頼朝が守護地頭設置"
+    notes: "平安時代の終焉"
+    video_used: false
+
+  # 鎌倉時代（1185～1333）
+  - year: 1192
+    era: "後鳥羽天皇時代"
+    event: "源頼朝、征夷大将軍に就任"
+    category: "中世"
+    importance: "high"
+    mnemonic: "い(1)い(1)国(92)つくろ鎌倉幕府"
+    mnemonic_katakana: "イイクニツクロウカマクラバクフ"
+    image_scenario: "源頼朝が鎌倉で征夷大将軍に任命される"
+    notes: "武家政権の正式な確立"
+    video_used: false
+
+  - year: 1205
+    era: "土御門天皇時代"
+    event: "牧氏事件"
+    category: "中世"
+    importance: "high"
+    mnemonic: "人(1)連(2)れ(0)ご(5)挨拶牧氏事件"
+    mnemonic_katakana: "ヒトツレゴアイサツマキシジケン"
+    image_scenario: "北条時政が失脚し、北条義時が実権握る"
+    notes: "北条氏による執権政治確立"
+    video_used: false
+
+  - year: 1219
+    era: "承久天皇時代"
+    event: "源実朝暗殺"
+    category: "中世"
+    importance: "high"
+    mnemonic: "人(1)に(2)ひ(1)どく(9)狙われた実朝"
+    mnemonic_katakana: "ヒトニヒドクネラワレタサネトモ"
+    image_scenario: "鶴岡八幡宮で源実朝が公暁に暗殺される"
+    notes: "源氏将軍の断絶"
+    video_used: false
+
+  - year: 1221
+    era: "承久天皇時代"
+    event: "承久の乱"
+    category: "中世"
+    importance: "high"
+    mnemonic: "人(1)に(2)不(2)意(1)打ち承久の乱"
+    mnemonic_katakana: "ヒトニフイウチジョウキュウノラン"
+    image_scenario: "後鳥羽上皇が鎌倉幕府討伐を企てるが敗北"
+    notes: "朝廷の武家政権への完全敗北"
+    video_used: false
+
+  - year: 1232
+    era: "後堀河天皇時代"
+    event: "御成敗式目制定"
+    category: "中世"
+    importance: "high"
+    mnemonic: "い(1)い(2)兄(3)さん(2)に御成敗式目"
+    mnemonic_katakana: "イイニイサンニゴセイバイシキモク"
+    image_scenario: "北条泰時が武家法として御成敗式目を制定"
+    notes: "日本初の武家法、道理を重視"
+    video_used: false
+
+  - year: 1274
+    era: "後宇多天皇時代"
+    event: "文永の役"
+    category: "中世"
+    importance: "high"
+    mnemonic: "時宗(12)の悲痛(7)な(4)呼びかけ文永の役"
+    mnemonic_katakana: "トキムネノヒツウナヨビカケブンエイノエキ"
+    image_scenario: "モンゴル軍が博多湾に襲来し神風で撤退"
+    notes: "第一次モンゴル襲来"
+    video_used: false
+
+  - year: 1281
+    era: "後宇多天皇時代"
+    event: "弘安の役"
+    category: "中世"
+    importance: "high"
+    mnemonic: "人(1)に(2)矢(8)射(1)る弘安の役"
+    mnemonic_katakana: "ヒトニヤイルコウアンノエキ"
+    image_scenario: "再びモンゴル軍が襲来するが台風で壊滅"
+    notes: "第二次モンゴル襲来、神風伝説"
+    video_used: false
+
+  - year: 1297
+    era: "後宇多天皇時代"
+    event: "永仁徳政令"
+    category: "中世"
+    importance: "high"
+    mnemonic: "皮肉(1297)な徳政令"
+    mnemonic_katakana: "ヒニクナトクセイレイ"
+    image_scenario: "北条貞時が御家人救済のため借金棒引き令"
+    notes: "御家人の経済的困窮対策"
+    video_used: false
+
+  - year: 1324
+    era: "後醍醐天皇時代"
+    event: "正中の変"
+    category: "中世"
+    importance: "high"
+    mnemonic: "討幕(13)の秘密(24)知る正中の変"
+    mnemonic_katakana: "トウバクノヒミツシルショウチュウノヘン"
+    image_scenario: "後醍醐天皇の討幕計画が発覚し日野資朝配流"
+    notes: "後醍醐天皇の最初の討幕計画"
+    video_used: false
+
+  - year: 1331
+    era: "後醍醐天皇時代"
+    event: "元弘の変"
+    category: "中世"
+    importance: "high"
+    mnemonic: "天皇(13)一味(31)災難元弘の変"
+    mnemonic_katakana: "テンノウイチミサイナンゲンコウノヘン"
+    image_scenario: "後醍醐天皇が笠置山で挙兵し隠岐に流される"
+    notes: "鎌倉幕府滅亡への序曲"
+    video_used: false
+
+  - year: 1333
+    era: "後醍醐天皇時代"
+    event: "鎌倉幕府滅亡"
+    category: "中世"
+    importance: "high"
+    mnemonic: "遺産(13)さん(3)ざん(3)幕府滅亡"
+    mnemonic_katakana: "イサンサンザンバクフメツボウ"
+    image_scenario: "新田義貞が鎌倉を攻め北条高時らが自害"
+    notes: "148年間続いた鎌倉幕府の終焉"
+    video_used: false
+
+  - year: 1334
+    era: "後醍醐天皇時代"
+    event: "建武の新政"
+    category: "中世"
+    importance: "high"
+    mnemonic: "い(1)ざ(3)見(3)よ(4)建武の新政"
+    mnemonic_katakana: "イザミヨケンムノシンセイ"
+    image_scenario: "後醍醐天皇が親政を開始し公武一体政治"
+    notes: "天皇親政による政治改革"
+    video_used: false
+
+  - year: 1336
+    era: "後醍醐天皇時代"
+    event: "足利尊氏、京都占領"
+    category: "中世"
+    importance: "high"
+    mnemonic: "い(1)ざ(3)去(3)ろう(6)建武式目"
+    mnemonic_katakana: "イザサロウケンムシキモク"
+    image_scenario: "足利尊氏が京都を占領し建武式目を制定"
+    notes: "建武の新政の実質的終了"
+    video_used: false
+
+  - year: 1338
+    era: "光明天皇時代"
+    event: "室町幕府成立"
+    category: "中世"
+    importance: "high"
+    mnemonic: "い(1)ざ(3)都(38)幕府開く"
+    mnemonic_katakana: "イザミヤコバクフヒラク"
+    image_scenario: "足利尊氏が征夷大将軍となり室町幕府開始"
+    notes: "室町時代の始まり"
+    video_used: false
+
+  - year: 1378
+    era: "後円融天皇時代"
+    event: "花の御所建設"
+    category: "中世"
+    importance: "high"
+    mnemonic: "人(13)皆(7)花(8)と賑わう花の御所"
+    mnemonic_katakana: "ヒトミナハナトニギワウハナノゴショ"
+    image_scenario: "足利義満が京都に豪華な花の御所を建設"
+    notes: "室町幕府の権威の象徴"
+    video_used: false
+
+  - year: 1392
+    era: "後小松天皇時代"
+    event: "南北朝統一"
+    category: "中世"
+    importance: "high"
+    mnemonic: "い(1)ざ(3)国(92)統一南北朝合一"
+    mnemonic_katakana: "イザクニトウイツナンボクチョウゴウイツ"
+    image_scenario: "足利義満の仲介で南朝の後亀山天皇が譲位"
+    notes: "57年間続いた南北朝の分裂終了"
+    video_used: false
+
+  - year: 1404
+    era: "後小松天皇時代"
+    event: "勘合貿易開始"
+    category: "中世"
+    importance: "high"
+    mnemonic: "重視(14)をしよう(04)勘合の使用"
+    mnemonic_katakana: "ジュウシヲシヨウカンゴウノシヨウ"
+    image_scenario: "足利義満が明との正式な貿易を開始"
+    notes: "日明貿易の本格化"
+    video_used: false
+
+  - year: 1428
+    era: "称光天皇時代"
+    event: "正長の土一揆"
+    category: "中世"
+    importance: "high"
+    mnemonic: "人(14)世(2)には(8)百姓土一揆"
+    mnemonic_katakana: "ヒトヨニハヒャクショウツチイッキ"
+    image_scenario: "近江で農民が借金帳消しを要求し蜂起"
+    notes: "日本初の本格的農民一揆"
+    video_used: false
+
+  - year: 1429
+    era: "後花園天皇時代"
+    event: "琉球王国成立"
+    category: "中世"
+    importance: "high"
+    mnemonic: "意地(14)でも(2)継(9)ぐ琉球王国"
+    mnemonic_katakana: "イジデモツグリュウキュウオウコク"
+    image_scenario: "尚巴志が沖縄を統一し琉球王国建国"
+    notes: "中継貿易で繁栄する海洋王国"
+    video_used: false
+
+  - year: 1467
+    era: "後土御門天皇時代"
+    event: "応仁の乱"
+    category: "中世"
+    importance: "high"
+    mnemonic: "人(14)よ(6)む(7)なしい応仁の乱"
+    mnemonic_katakana: "ヒトヨムナシイオウニンノラン"
+    image_scenario: "京都が東軍西軍に分かれ11年間の大乱"
+    notes: "戦国時代の始まり"
+    video_used: false
+
+  - year: 1485
+    era: "後土御門天皇時代"
+    event: "山城国一揆"
+    category: "中世"
+    importance: "high"
+    mnemonic: "邪魔(14)しよう(8)って言った奴いつ(5)しばこ"
+    mnemonic_katakana: "ジャマシヨウッテイッタヤツイツシバコ"
+    image_scenario: "山城国の農民が守護を追放し自治実現"
+    notes: "農民による自治の成功例"
+    video_used: false
+
+  - year: 1488
+    era: "後土御門天皇時代"
+    event: "加賀一向一揆"
+    category: "中世"
+    importance: "high"
+    mnemonic: "意志(14)羽(8)ばたく(8)加賀一向一揆"
+    mnemonic_katakana: "イシハバタクカガイッコウイッキ"
+    image_scenario: "一向宗門徒が加賀国を支配下に置く"
+    notes: "宗教勢力による国支配"
+    video_used: false
+
+  # 室町・戦国・安土桃山時代（1333～1573）
+  - year: 1543
+    era: "後奈良天皇時代"
+    event: "鉄砲伝来"
+    category: "近世"
+    importance: "high"
+    mnemonic: "以後(15)予算(43)増鉄砲購入"
+    mnemonic_katakana: "イゴヨサンゾウテッポウコウニュウ"
+    image_scenario: "種子島にポルトガル船が漂着し鉄砲伝来"
+    notes: "戦国時代の戦術革命"
+    video_used: false
+
+  - year: 1549
+    era: "後奈良天皇時代"
+    event: "キリスト教伝来"
+    category: "近世"
+    importance: "high"
+    mnemonic: "以後(15)よく(49)広がるキリスト"
+    mnemonic_katakana: "イゴヨクヒロガルキリスト"
+    image_scenario: "フランシスコ・ザビエルが鹿児島に上陸"
+    notes: "南蛮文化の導入"
+    video_used: false
+
+  - year: 1560
+    era: "正親町天皇時代"
+    event: "桶狭間の戦い"
+    category: "近世"
+    importance: "high"
+    mnemonic: "人(15)こ(6)ろ(0)がす今川退散"
+    mnemonic_katakana: "ヒトコロガスイマガワタイサン"
+    image_scenario: "織田信長が今川義元を奇襲で討ち取る"
+    notes: "信長の天下取りの出発点"
+    video_used: false
+
+  - year: 1573
+    era: "正親町天皇時代"
+    event: "室町幕府滅亡"
+    category: "近世"
+    importance: "high"
+    mnemonic: "以後(15)涙(73)の義昭"
+    mnemonic_katakana: "イゴナミダノヨシアキ"
+    image_scenario: "織田信長が足利義昭を京都から追放"
+    notes: "238年間続いた室町幕府終了"
+    video_used: false
+
+  - year: 1575
+    era: "正親町天皇時代"
+    event: "長篠の戦い"
+    category: "近世"
+    importance: "high"
+    mnemonic: "以後(15)なご(75)む火縄銃"
+    mnemonic_katakana: "イゴナゴムヒナワジュウ"
+    image_scenario: "織田・徳川連合軍が武田軍を鉄砲で撃破"
+    notes: "鉄砲戦術の威力を実証"
+    video_used: false
+
+  - year: 1582
+    era: "正親町天皇時代"
+    event: "本能寺の変"
+    category: "近世"
+    importance: "high"
+    mnemonic: "いちご(15)パンツ(82)本能寺の変"
+    mnemonic_katakana: "イチゴパンツホンノウジノヘン"
+    image_scenario: "明智光秀が本能寺で織田信長を討つ"
+    notes: "信長の天下統一事業が頓挫"
+    video_used: false
+
+  - year: 1587
+    era: "正親町天皇時代"
+    event: "バテレン追放令"
+    category: "近世"
+    importance: "high"
+    mnemonic: "以後(15)花(87)散る宣教師"
+    mnemonic_katakana: "イゴハナチルセンキョウシ"
+    image_scenario: "豊臣秀吉がキリスト教宣教師の追放を命令"
+    notes: "キリスト教弾圧の始まり"
+    video_used: false
+
+  - year: 1588
+    era: "正親町天皇時代"
+    event: "刀狩令"
+    category: "近世"
+    importance: "high"
+    mnemonic: "以後(15)早々(88)刀集め"
+    mnemonic_katakana: "イゴソウソウカタナアツメ"
+    image_scenario: "秀吉が農民から武器を没収し兵農分離"
+    notes: "武士と農民の身分を固定化"
+    video_used: false
+
+  - year: 1590
+    era: "後陽成天皇時代"
+    event: "豊臣秀吉、天下統一"
+    category: "近世"
+    importance: "high"
+    mnemonic: "いちご(15)くれ(90)天下統一"
+    mnemonic_katakana: "イチゴクレテンカトウイツ"
+    image_scenario: "小田原城攻めで北条氏を降伏させ全国統一"
+    notes: "戦国時代の終了"
+    video_used: false
+
+  - year: 1592
+    era: "後陽成天皇時代"
+    event: "文禄の役"
+    category: "近世"
+    importance: "high"
+    mnemonic: "以後(15)国(92)へ出兵"
+    mnemonic_katakana: "イゴクニヘシュッペイ"
+    image_scenario: "豊臣秀吉が朝鮮出兵を開始"
+    notes: "第一次朝鮮出兵"
+    video_used: false
+
+  - year: 1597
+    era: "後陽成天皇時代"
+    event: "慶長の役"
+    category: "近世"
+    importance: "high"
+    mnemonic: "以後(15)苦難(97)再遠征"
+    mnemonic_katakana: "イゴクナンサイエンセイ"
+    image_scenario: "秀吉が再び朝鮮に出兵"
+    notes: "第二次朝鮮出兵"
+    video_used: false
+
+  - year: 1598
+    era: "後陽成天皇時代"
+    event: "豊臣秀吉死去"
+    category: "近世"
+    importance: "high"
+    mnemonic: "一刻(15)も早く(98)秀吉永眠"
+    mnemonic_katakana: "イッコクモハヤクヒデヨシエイミン"
+    image_scenario: "伏見城で秀吉が病死し朝鮮出兵終了"
+    notes: "豊臣政権の転換点"
+    video_used: false
+
+  - year: 1600
+    era: "後陽成天皇時代"
+    event: "関ヶ原の戦い"
+    category: "近世"
+    importance: "high"
+    mnemonic: "天下(16)を取ろ(00)う関ヶ原"
+    mnemonic_katakana: "テンカヲトロウセキガハラ"
+    image_scenario: "徳川家康が石田三成らを破り天下分け目の戦い"
+    notes: "徳川政権確立への決戦"
+    video_used: false
+
+  # 近世（1573～1868）
+  # 安土桃山・江戸時代（1573～1868）
+  - year: 1603
+    era: "後陽成天皇時代"
+    event: "江戸幕府開府"
+    category: "近世"
+    importance: "high"
+    mnemonic: "広(16)さ(03)江戸へ幕府"
+    mnemonic_katakana: "ヒロサエドヘバクフ"
+    image_scenario: "徳川家康が征夷大将軍となり江戸幕府開始"
+    notes: "江戸時代の始まり"
+    video_used: false
+
+  - year: 1607
+    era: "後陽成天皇時代"
+    event: "朝鮮通信使"
+    category: "近世"
+    importance: "high"
+    mnemonic: "拾(16)う(0)な(7)友好の使"
+    mnemonic_katakana: "ヒロウナユウコウノツカイ"
+    image_scenario: "朝鮮から友好使節団が江戸を訪問"
+    notes: "日朝関係の正常化"
+    video_used: false
+
+  - year: 1613
+    era: "後水尾天皇時代"
+    event: "支倉遣欧使節"
+    category: "近世"
+    importance: "high"
+    mnemonic: "広(16)い(1)さ(3)大洋へ"
+    mnemonic_katakana: "ヒロイサタイヨウヘ"
+    image_scenario: "支倉常長がヨーロッパへ派遣"
+    notes: "伊達政宗の外交政策"
+    video_used: false
+
+  - year: 1615
+    era: "後水尾天皇時代"
+    event: "大坂夏の陣"
+    category: "近世"
+    importance: "high"
+    mnemonic: "ヒーロー以後(1615)現れず夏の陣"
+    mnemonic_katakana: "ヒーローイゴアラワレズナツノジン"
+    image_scenario: "徳川家康が豊臣家を滅ぼし大坂城落城"
+    notes: "豊臣家滅亡、戦国時代完全終了"
+    video_used: false
+
+  - year: 1624
+    era: "後水尾天皇時代"
+    event: "スペイン船来航禁止"
+    category: "近世"
+    importance: "high"
+    mnemonic: "一路(16)西(2)向く(4)スペイン船"
+    mnemonic_katakana: "イチロニシムクスペインセン"
+    image_scenario: "江戸幕府がスペイン船の来航を禁止"
+    notes: "鎖国政策の一環"
+    video_used: false
+
+  - year: 1635
+    era: "明正天皇時代"
+    event: "参勤交代制度化"
+    category: "近世"
+    importance: "high"
+    mnemonic: "一路(16)見事(35)参勤交代"
+    mnemonic_katakana: "イチロミゴトサンキンコウタイ"
+    image_scenario: "大名が江戸と領国を往復する制度確立"
+    notes: "大名統制と経済効果"
+    video_used: false
+
+  - year: 1637
+    era: "明正天皇時代"
+    event: "島原の乱"
+    category: "近世"
+    importance: "high"
+    mnemonic: "疲労(16)で皆(37)島原の乱"
+    mnemonic_katakana: "ヒロウデミナシマバラノラン"
+    image_scenario: "天草四郎が率いるキリシタン農民の大規模反乱"
+    notes: "江戸時代最大の一揆"
+    video_used: false
+
+  - year: 1639
+    era: "明正天皇時代"
+    event: "鎖国完成"
+    category: "近世"
+    importance: "high"
+    mnemonic: "人(16)見(3)苦(9)しい異国船追放"
+    mnemonic_katakana: "ヒトミクルシイイコクセンツイホウ"
+    image_scenario: "ポルトガル船来航禁止で鎖国体制完成"
+    notes: "オランダ・中国のみとの貿易"
+    video_used: false
+
+  - year: 1641
+    era: "明正天皇時代"
+    event: "出島完成、オランダ商館移転"
+    category: "近世"
+    importance: "high"
+    mnemonic: "いろ(16)よ(4)い(1)返事で出島に移る"
+    mnemonic_katakana: "イロヨイヘンジデデジマニウツル"
+    image_scenario: "長崎出島にオランダ商館が移転"
+    notes: "鎖国下の唯一の西欧との窓口"
+    video_used: false
+
+  - year: 1669
+    era: "霊元天皇時代"
+    event: "シャクシャインの戦い"
+    category: "近世"
+    importance: "high"
+    mnemonic: "色々(16)むしゃくしゃ(69)するぜ"
+    mnemonic_katakana: "イロイロムシャクシャスルゼ"
+    image_scenario: "アイヌ民族が松前藩に対して蜂起"
+    notes: "蝦夷地での和人との対立"
+    video_used: false
+
+  - year: 1685
+    era: "霊元天皇時代"
+    event: "生類憐みの令"
+    category: "近世"
+    importance: "high"
+    mnemonic: "色(16)んな(8)箱(5)に犬入れる"
+    mnemonic_katakana: "イロンナハコニイヌイレル"
+    image_scenario: "徳川綱吉が動物愛護令を発布"
+    notes: "犬公方と呼ばれる極端な動物保護政策"
+    video_used: false
+
+  - year: 1709
+    era: "中御門天皇時代"
+    event: "正徳の治"
+    category: "近世"
+    importance: "high"
+    mnemonic: "いい(17)な、億(09)を節約しよう！正徳の治"
+    mnemonic_katakana: "イイナオクヲセツヤクシヨウショウトクノチ"
+    image_scenario: "新井白石が財政再建と文治政治を推進"
+    notes: "学問を重視した政治改革"
+    video_used: false
+
+  - year: 1716
+    era: "中御門天皇時代"
+    event: "享保の改革"
+    category: "近世"
+    importance: "high"
+    mnemonic: "非難(17)いろいろ(16)享保の改革"
+    mnemonic_katakana: "ヒナンイロイロキョウホウノカイカク"
+    image_scenario: "徳川吉宗が質素倹約と新田開発を推進"
+    notes: "幕府財政立て直しの改革"
+    video_used: false
+
+  - year: 1722
+    era: "中御門天皇時代"
+    event: "上米の制"
+    category: "近世"
+    importance: "high"
+    mnemonic: "稲田(17)堤(22)上米の制"
+    mnemonic_katakana: "イナダツツミアゲマイノセイ"
+    image_scenario: "大名に米の上納と引き換えに参勤交代緩和"
+    notes: "享保の改革の一環"
+    video_used: false
+
+  - year: 1772
+    era: "後桃園天皇時代"
+    event: "田沼政治全盛"
+    category: "近世"
+    importance: "high"
+    mnemonic: "いい(17)な(7)何(2)より田沼の政治"
+    mnemonic_katakana: "イイナナニヨリタヌマノセイジ"
+    image_scenario: "田沼意次が商業重視の政策を展開"
+    notes: "重商主義政策の推進"
+    video_used: false
+
+  - year: 1782
+    era: "光格天皇時代"
+    event: "天明の大飢饉"
+    category: "近世"
+    importance: "high"
+    mnemonic: "農村(17)の稲穂(8)や(2)つれる"
+    mnemonic_katakana: "ノウソンノイナホヤツレル"
+    image_scenario: "浅間山噴火などで全国的な飢饉発生"
+    notes: "江戸時代最大の飢饉"
+    video_used: false
+
+  - year: 1787
+    era: "光格天皇時代"
+    event: "寛政の改革"
+    category: "近世"
+    importance: "high"
+    mnemonic: "否(17)、花(8)咲く(7)寛政の改革"
+    mnemonic_katakana: "イヤハナサクカンセイノカイカク"
+    image_scenario: "松平定信が質素倹約と学問振興を推進"
+    notes: "田沼政治への反動改革"
+    video_used: false
+
+  - year: 1790
+    era: "光格天皇時代"
+    event: "異学の禁"
+    category: "近世"
+    importance: "high"
+    mnemonic: "一発(17)殴(9)れ(0)朱子学以外"
+    mnemonic_katakana: "イッパツナグレシュシガクイガイ"
+    image_scenario: "昌平坂学問所で朱子学以外の学問を禁止"
+    notes: "寛政の改革の思想統制"
+    video_used: false
+
+  - year: 1792
+    era: "光格天皇時代"
+    event: "ラクスマン来航"
+    category: "近世"
+    importance: "high"
+    mnemonic: "いー(17)な(9)国(2)に露船ラクスマン"
+    mnemonic_katakana: "イーナクニニロセンラクスマン"
+    image_scenario: "ロシアのラクスマンが根室に来航し通商要求"
+    notes: "鎖国に対する最初の本格的挑戦"
+    video_used: false
+
+  - year: 1808
+    era: "仁孝天皇時代"
+    event: "フェートン号事件"
+    category: "近世"
+    importance: "high"
+    mnemonic: "違反(18)やめろ(08)フェートン号"
+    mnemonic_katakana: "イハンヤメロフェートンゴウ"
+    image_scenario: "イギリス軍艦が長崎港に侵入し騒動"
+    notes: "海防の必要性を痛感"
+    video_used: false
+
+  - year: 1821
+    era: "仁孝天皇時代"
+    event: "伊能図完成"
+    category: "近世"
+    importance: "high"
+    mnemonic: "いや(18)に(2)いい(1)地図できた"
+    mnemonic_katakana: "イヤニイイチズデキタ"
+    image_scenario: "伊能忠敬の実測による精密な日本地図完成"
+    notes: "世界最高水準の測量技術"
+    video_used: false
+
+  - year: 1825
+    era: "仁孝天皇時代"
+    event: "異国船打払令"
+    category: "近世"
+    importance: "high"
+    mnemonic: "一発(18)ごめん(25)！打払令"
+    mnemonic_katakana: "イッパツゴメンウチハライレイ"
+    image_scenario: "外国船を問答無用で砲撃する強硬策"
+    notes: "攘夷政策の強化"
+    video_used: false
+
+  - year: 1837
+    era: "仁孝天皇時代"
+    event: "モリソン号事件"
+    category: "近世"
+    importance: "high"
+    mnemonic: "嫌味(18)な(37)モリソン号事件"
+    mnemonic_katakana: "イヤミナモリソンゴウジケン"
+    image_scenario: "アメリカ商船を砲撃し日本人漂流民の送還を拒絶"
+    notes: "打払令の弊害が露呈"
+    video_used: false
+
+  - year: 1839
+    era: "仁孝天皇時代"
+    event: "蛮社の獄"
+    category: "近世"
+    importance: "high"
+    mnemonic: "人(18)は(3)錯乱(9)、蛮社の獄"
+    mnemonic_katakana: "ヒトハサクラン、バンシャノゴク"
+    image_scenario: "渡辺崋山・高野長英らが開国論で弾圧される"
+    notes: "蘭学者への思想弾圧"
+    video_used: false
+
+  - year: 1840
+    era: "仁孝天皇時代"
+    event: "アヘン戦争"
+    category: "近世"
+    importance: "high"
+    mnemonic: "人(18)は(4)ヨレヨレ(0)アヘン戦争"
+    mnemonic_katakana: "ヒトハヨレヨレアヘンセンソウ"
+    image_scenario: "清国がイギリスに敗北し中国の近代化衝撃"
+    notes: "隣国の敗北が日本に危機感"
+    video_used: false
+
+  - year: 1841
+    era: "仁孝天皇時代"
+    event: "天保の改革"
+    category: "近世"
+    importance: "high"
+    mnemonic: "人(18)は(4)良(1)いのに…忠邦失敗"
+    mnemonic_katakana: "ヒトハヨイノニ…タダクニシッパイ"
+    image_scenario: "水野忠邦が株仲間解散などの改革を断行"
+    notes: "最後の三大改革、失敗に終わる"
+    video_used: false
+
+  - year: 1842
+    era: "仁孝天皇時代"
+    event: "薪水給与令"
+    category: "近世"
+    importance: "high"
+    mnemonic: "水野(18)一派(42)清に驚き"
+    mnemonic_katakana: "ミズノイッパシンニオドロキ"
+    image_scenario: "外国船に燃料と水の補給を許可する緩和策"
+    notes: "打払令から転換、開国への布石"
+    video_used: false
+
+  # 近現代（1853～）
+  # 幕末（1853～1868）
+  - year: 1853
+    era: "孝明天皇時代"
+    event: "ペリー来航"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "人(18)は(5)来(3)黒船"
+    mnemonic_katakana: "ヒトハキクロフネ"
+    image_scenario: "ペリー提督が黒船4隻で浦賀に来航"
+    notes: "鎖国体制の動揺、開国要求"
+    video_used: false
+
+  - year: 1854
+    era: "孝明天皇時代"
+    event: "日米和親条約"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひと(18)箱(54)開く港"
+    mnemonic_katakana: "ヒトハコアクミナト"
+    image_scenario: "下田・函館を開港し日米和親条約締結"
+    notes: "鎖国の終了、開国の始まり"
+    video_used: false
+
+  - year: 1858
+    era: "孝明天皇時代"
+    event: "日米修好通商条約"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いや(18)ご(5)や(8)関税低く"
+    mnemonic_katakana: "イヤゴヤカンゼイヒクク"
+    image_scenario: "井伊直弼が勅許なしで不平等条約に調印"
+    notes: "不平等条約の開始"
+    video_used: false
+
+  - year: 1860
+    era: "孝明天皇時代"
+    event: "桜田門外の変"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "一派(18)む(6)れ(0)斬らる井伊"
+    mnemonic_katakana: "イッパムレキラルイイ"
+    image_scenario: "水戸浪士が江戸城桜田門外で井伊直弼を暗殺"
+    notes: "尊王攘夷運動の激化"
+    video_used: false
+
+  - year: 1862
+    era: "孝明天皇時代"
+    event: "生麦事件"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "威張る(18)日本(62)に怒る英生麦"
+    mnemonic_katakana: "イバルニホンニオコルエイナマムギ"
+    image_scenario: "薩摩藩士がイギリス人を殺傷し国際問題化"
+    notes: "攘夷実行の結果、外国との対立"
+    video_used: false
+
+  - year: 1863
+    era: "孝明天皇時代"
+    event: "薩英戦争"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "人(18)は(6)無惨(3)薩英砲火"
+    mnemonic_katakana: "ヒトハムザンサツエイホウカ"
+    image_scenario: "薩摩藩がイギリス艦隊と交戦し鹿児島砲撃"
+    notes: "薩摩藩の開国・近代化への転換"
+    video_used: false
+
+  - year: 1864
+    era: "孝明天皇時代"
+    event: "禁門の変"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "人(18)む(6)なし(4)焦土の京"
+    mnemonic_katakana: "ヒトムナシショウドノキョウ"
+    image_scenario: "長州藩が京都御所を攻撃し会津・薩摩と交戦"
+    notes: "長州藩の朝敵化"
+    video_used: false
+
+  - year: 1866
+    era: "孝明天皇時代"
+    event: "薩長同盟"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いや(18)無論(66)討幕だ薩長同盟"
+    mnemonic_katakana: "イヤムロントウバクダサッチョウドウメイ"
+    image_scenario: "坂本龍馬の仲介で薩摩と長州が秘密同盟"
+    notes: "倒幕への重要な転換点"
+    video_used: false
+
+  - year: 1867
+    era: "孝明天皇時代"
+    event: "大政奉還"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "人(18)は(6)むなしく(7)大政奉還"
+    mnemonic_katakana: "ヒトハムナシクタイセイホウカン"
+    image_scenario: "徳川慶喜が政権を朝廷に返上"
+    notes: "江戸幕府の政権返上"
+    video_used: false
+
+  # 明治時代（1868～1912）
+  - year: 1868
+    era: "明治天皇時代"
+    event: "戊辰戦争・明治維新"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひとつ(18)やろうや(68)明治維新"
+    mnemonic_katakana: "ヒトツヤロウヤメイジイシン"
+    image_scenario: "鳥羽伏見の戦いから始まる新政府軍と旧幕府軍の内戦"
+    notes: "明治新政府樹立、近代日本の始まり"
+    video_used: false
+
+  - year: 1869
+    era: "明治天皇時代"
+    event: "版籍奉還"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "人(18)は(6)無口(9)版籍奉還"
+    mnemonic_katakana: "ヒトハムクチハンセキホウカン"
+    image_scenario: "各藩主が土地と人民を天皇に返還"
+    notes: "中央集権への第一歩"
+    video_used: false
+
+  - year: 1871
+    era: "明治天皇時代"
+    event: "廃藩置県"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "藩(18)とは(7)言わない(1)県という"
+    mnemonic_katakana: "ハントハイワナイケントイウ"
+    image_scenario: "全国の藩を廃止し府県制に統一"
+    notes: "中央集権国家の完成"
+    video_used: false
+
+  - year: 1872
+    era: "明治天皇時代"
+    event: "学制発布・富岡製糸場"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "人(18)は(7)なに(2)より教育が大切"
+    mnemonic_katakana: "ヒトハナニヨリキョウイクガタイセツ"
+    image_scenario: "全国に小学校設置と官営模範工場建設"
+    notes: "近代教育制度と殖産興業の開始"
+    video_used: false
+
+  - year: 1873
+    era: "明治天皇時代"
+    event: "徴兵令・地租改正"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "イヤ(18)涙(73)でるよ徴兵令"
+    mnemonic_katakana: "イヤナミダデルヨチョウヘイレイ"
+    image_scenario: "国民皆兵制と土地税の金納制実施"
+    notes: "富国強兵政策の基盤整備"
+    video_used: false
+
+  - year: 1874
+    era: "明治天皇時代"
+    event: "民選議院設立建白書・佐賀の乱"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "嫌(18)な(7)世(4)直せと民権運動"
+    mnemonic_katakana: "イヤナヨナオセトミンケンウンドウ"
+    image_scenario: "板垣退助らが国会開設を要求"
+    notes: "自由民権運動の始まり"
+    video_used: false
+
+  - year: 1875
+    era: "明治天皇時代"
+    event: "樺太・千島交換条約"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いや(18)なこ(7)ったい(5)樺太・千島交換"
+    mnemonic_katakana: "イヤナコッタイカラフトチシマコウカン"
+    image_scenario: "ロシアと樺太・千島の領土を交換"
+    notes: "北方領土問題の起源"
+    video_used: false
+
+  - year: 1877
+    era: "明治天皇時代"
+    event: "西南戦争"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いや(18)な(7)内乱(7)西南戦争"
+    mnemonic_katakana: "イヤナナイランセイナンセンソウ"
+    image_scenario: "西郷隆盛が鹿児島で政府軍と最後の内戦"
+    notes: "士族反乱の終息、徴兵制の確立"
+    video_used: false
+
+  - year: 1879
+    era: "明治天皇時代"
+    event: "琉球処分"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "人(18)は(7)泣く(9)琉球処分"
+    mnemonic_katakana: "ヒトハナクリュウキュウショブン"
+    image_scenario: "琉球王国を廃止し沖縄県設置"
+    notes: "日本の領土統一完成"
+    video_used: false
+
+  - year: 1880
+    era: "明治天皇時代"
+    event: "集会条例"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "人(18)は(8)歯(0)をくいしばる集会条例"
+    mnemonic_katakana: "ヒトハハヲクイシバルシュウカイジョウレイ"
+    image_scenario: "政治集会を制限し自由民権運動を弾圧"
+    notes: "民権運動への政府の対応"
+    video_used: false
+
+  - year: 1881
+    era: "明治天皇時代"
+    event: "国会開設の詔"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いち(18)早(8)い(1)国会開設"
+    mnemonic_katakana: "イチハヤイコッカイカイセツ"
+    image_scenario: "明治天皇が10年後の国会開設を約束"
+    notes: "立憲政治への道筋"
+    video_used: false
+
+  - year: 1882
+    era: "明治天皇時代"
+    event: "壬午事変"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いや(18)、初(8)めての(2)朝鮮事変"
+    mnemonic_katakana: "イヤハジメテノチョウセンジヘン"
+    image_scenario: "朝鮮で反日暴動が発生し日本が軍事介入"
+    notes: "朝鮮への本格的関与開始"
+    video_used: false
+
+  - year: 1883
+    era: "明治天皇時代"
+    event: "鹿鳴館開館"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いわ(18)ばみ(8)んなの(3)鹿鳴館"
+    mnemonic_katakana: "イワバミンナノロクメイカン"
+    image_scenario: "欧化政策の象徴として鹿鳴館で舞踏会"
+    notes: "条約改正への外交努力"
+    video_used: false
+
+  - year: 1884
+    era: "明治天皇時代"
+    event: "華族令"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "人(18)は(8)走る(4)華族令"
+    mnemonic_katakana: "ヒトハハシルカゾクレイ"
+    image_scenario: "公侯伯子男の五爵制で華族制度確立"
+    notes: "身分制度の近代化"
+    video_used: false
+
+  - year: 1885
+    era: "明治天皇時代"
+    event: "内閣制度開始"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひや(18)やっこ(85)食べて内閣制度"
+    mnemonic_katakana: "ヒヤヤッコタベテナイカクセイド"
+    image_scenario: "伊藤博文が初代総理大臣に就任"
+    notes: "近代的政府機構の整備"
+    video_used: false
+
+  - year: 1886
+    era: "明治天皇時代"
+    event: "学校令"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いや(18)はろ(86)教育刷新"
+    mnemonic_katakana: "イヤハロキョウイクサッシン"
+    image_scenario: "小学校から大学まで学校制度を体系化"
+    notes: "近代教育制度の完成"
+    video_used: false
+
+  - year: 1889
+    era: "明治天皇時代"
+    event: "大日本帝国憲法発布"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いち(18)早く(89)憲法公布"
+    mnemonic_katakana: "イチハヤクケンポウコウフ"
+    image_scenario: "紀元節に明治天皇が憲法を発布"
+    notes: "アジア初の近代憲法"
+    video_used: false
+
+  - year: 1890
+    era: "明治天皇時代"
+    event: "第1回帝国議会"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "日(18)は(9)暮れる(0)帝国議会"
+    mnemonic_katakana: "ヒハクレルテイコクギカイ"
+    image_scenario: "衆議院と貴族院による二院制議会開始"
+    notes: "立憲政治の実現"
+    video_used: false
+
+  - year: 1891
+    era: "明治天皇時代"
+    event: "大津事件"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いわ(18)くい(9)っぱい(1)大津事件"
+    mnemonic_katakana: "イワクイッパイオオツジケン"
+    image_scenario: "ロシア皇太子が大津で警官に襲撃される"
+    notes: "司法権の独立を示した事件"
+    video_used: false
+
+  - year: 1894
+    era: "明治天皇時代"
+    event: "日清戦争"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いっ(18)ぱい(9)食うよ(4)日清UFO→日清戦争"
+    mnemonic_katakana: "イッパイクウヨニッシンユーエフオー→ニッシンセンソウ"
+    image_scenario: "朝鮮の主導権を巡り清国と戦争"
+    notes: "近代日本初の対外戦争"
+    video_used: false
+
+  - year: 1895
+    era: "明治天皇時代"
+    event: "下関条約"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "一躍(18)ご(9)機嫌(5)下関条約"
+    mnemonic_katakana: "イチヤクゴキゲンシモノセキジョウヤク"
+    image_scenario: "日清戦争勝利で朝鮮独立と遼東半島割譲"
+    notes: "日本の大陸進出開始"
+    video_used: false
+
+  - year: 1901
+    era: "明治天皇時代"
+    event: "八幡製鉄所操業開始"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)わい(01)！八幡製鉄所"
+    mnemonic_katakana: "イクワイヤハタセイテツショ"
+    image_scenario: "官営製鉄所で重工業の基盤確立"
+    notes: "近代工業の発展"
+    video_used: false
+
+  - year: 1902
+    era: "明治天皇時代"
+    event: "日英同盟"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "日暮(19)れに(02)結ぼう日英同盟"
+    mnemonic_katakana: "ヒグレニムスボウニチエイドウメイ"
+    image_scenario: "ロシアに対抗してイギリスと同盟締結"
+    notes: "国際的孤立からの脱却"
+    video_used: false
+
+  - year: 1904
+    era: "明治天皇時代"
+    event: "日露戦争"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)わよ(04)ロシアへ"
+    mnemonic_katakana: "イクワヨロシアヘ"
+    image_scenario: "満州の権益を巡りロシア帝国と戦争"
+    notes: "有色人種が白人国家に勝利"
+    video_used: false
+
+  - year: 1905
+    era: "明治天皇時代"
+    event: "ポーツマス条約"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひどく(19)おこ(05)られポーツマス"
+    mnemonic_katakana: "ヒドクオコラレポーツマス"
+    image_scenario: "日露戦争講和条約で南満州の権益獲得"
+    notes: "賠償金なしで国民の不満"
+    video_used: false
+
+  - year: 1910
+    era: "明治天皇時代"
+    event: "韓国併合"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "韓国へ行く(19)どー(10)"
+    mnemonic_katakana: "カンコクヘイクドー"
+    image_scenario: "韓国皇帝が退位し朝鮮総督府設置"
+    notes: "朝鮮半島の植民地化"
+    video_used: false
+
+  - year: 1911
+    era: "明治天皇時代"
+    event: "関税自主権回復"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひどく(19)いい(11)結果だ関税自主権"
+    mnemonic_katakana: "ヒドクイイケッカダカンゼイジシュケン"
+    image_scenario: "不平等条約改正が完全に実現"
+    notes: "条約改正の完成"
+    video_used: false
+
+  # 大正時代（1912～1926）
+  - year: 1914
+    era: "大正天皇時代"
+    event: "第一次世界大戦"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)意思(14)なし世界大戦"
+    mnemonic_katakana: "イクイシナシセカイタイセン"
+    image_scenario: "日英同盟でドイツに宣戦布告"
+    notes: "大戦景気と国際的地位向上"
+    video_used: false
+
+  - year: 1915
+    era: "大正天皇時代"
+    event: "21か条要求"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)以後(15)中国へ要求"
+    mnemonic_katakana: "イクイゴチュウゴクヘヨウキュウ"
+    image_scenario: "中国に政治・経済的特権要求"
+    notes: "中国の反日感情高まる"
+    video_used: false
+
+  - year: 1916
+    era: "大正天皇時代"
+    event: "大正政変"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)いろ(16)政局グラグラ"
+    mnemonic_katakana: "イクイロセイキョクグラグラ"
+    image_scenario: "護憲運動で桂太郎内閣が倒れる"
+    notes: "大正デモクラシーの始まり"
+    video_used: false
+
+  - year: 1917
+    era: "大正天皇時代"
+    event: "ロシア革命"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "レーニン得意(19)な(17)革命"
+    mnemonic_katakana: "レーニントクイナカクメイ"
+    image_scenario: "ボルシェヴィキがロシア皇帝を倒す"
+    notes: "社会主義革命の成功"
+    video_used: false
+
+  - year: 1918
+    era: "大正天皇時代"
+    event: "米騒動"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "富山(19)の人(18)食いっぱぐれ米騒動"
+    mnemonic_katakana: "トヤマノヒトクイッパグレコメソウドウ"
+    image_scenario: "米価高騰で全国的な暴動発生"
+    notes: "大正デモクラシーの民衆運動"
+    video_used: false
+
+  - year: 1919
+    era: "大正天皇時代"
+    event: "ベルサイユ条約"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)行く(19)ベルサイユ条約"
+    mnemonic_katakana: "イクイクベルサイユジョウヤク"
+    image_scenario: "パリ講和会議で戦後処理決定"
+    notes: "国際連盟常任理事国に"
+    video_used: false
+
+  - year: 1920
+    era: "大正天皇時代"
+    event: "国際連盟発足"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いい(19)国(20)を。国際連盟"
+    mnemonic_katakana: "イイクニヲコクサイレンメイ"
+    image_scenario: "戦争防止を目的とした国際機関設立"
+    notes: "日本は常任理事国として参加"
+    video_used: false
+
+  - year: 1921
+    era: "大正天皇時代"
+    event: "ワシントン会議"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いく(19)つ(2)要る(1)んだ？軍縮！"
+    mnemonic_katakana: "イクツイルンダグンシュク"
+    image_scenario: "海軍軍縮条約で日英米の軍艦比率決定"
+    notes: "軍備制限と太平洋の平和"
+    video_used: false
+
+  - year: 1922
+    era: "大正天皇時代"
+    event: "全国水平社結成"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いい(19)国(22)にするぞ水平社"
+    mnemonic_katakana: "イイクニニスルゾスイヘイシャ"
+    image_scenario: "被差別部落の解放運動組織結成"
+    notes: "人権平等を求める社会運動"
+    video_used: false
+
+  - year: 1923
+    era: "大正天皇時代"
+    event: "関東大震災"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "19の(19)兄(2)さん(3)地震で離ればなれ"
+    mnemonic_katakana: "ジュウクノニイサンジシンデハナレバナレ"
+    image_scenario: "マグニチュード7.9の大地震で東京壊滅"
+    notes: "近代日本最大の自然災害"
+    video_used: false
+
+  - year: 1924
+    era: "大正天皇時代"
+    event: "第二次護憲運動"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "とっ(19)く(2)に(2)知ってる(4)護憲三派"
+    mnemonic_katakana: "トックニシッテルゴケンサンパ"
+    image_scenario: "加藤高明を首班とする護憲三派内閣成立"
+    notes: "政党政治の本格化"
+    video_used: false
+
+  - year: 1925
+    era: "大正天皇時代"
+    event: "普通選挙法・治安維持法"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "選挙へ行く(19)。25歳以上の男子全員"
+    mnemonic_katakana: "センキョヘイクニジュウゴサイイジョウノダンシゼンイン"
+    image_scenario: "男子普通選挙実現と同時に思想統制強化"
+    notes: "民主主義と統制の二面性"
+    video_used: false
+
+  # 昭和時代（1926～1989）
+  - year: 1926
+    era: "昭和天皇時代"
+    event: "昭和時代開始"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)風呂(26)、昭和始まる"
+    mnemonic_katakana: "イクフロショウワハジマル"
+    image_scenario: "昭和天皇即位で新時代開始"
+    notes: "激動の昭和時代の幕開け"
+    video_used: false
+
+  - year: 1927
+    era: "昭和天皇時代"
+    event: "昭和金融恐慌"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "重苦(19)に泣(27)いた金融恐慌"
+    mnemonic_katakana: "ジュウクニナイタキンユウキョウコウ"
+    image_scenario: "銀行の取り付け騒ぎで金融システム混乱"
+    notes: "世界恐慌前の日本の金融危機"
+    video_used: false
+
+  - year: 1928
+    era: "昭和天皇時代"
+    event: "張作霖爆殺事件"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "一口(19)には(2)言えぬ(8)張作霖爆殺"
+    mnemonic_katakana: "ヒトクチニハイエヌチョウサクリンバクサツ"
+    image_scenario: "関東軍が中国軍閥を爆殺し満州事変の布石"
+    notes: "軍部独走の始まり"
+    video_used: false
+
+  - year: 1929
+    era: "昭和天皇時代"
+    event: "世界恐慌"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "特に苦(19)し(2)い(9)世界恐慌"
+    mnemonic_katakana: "トクニクルシイセカイキョウコウ"
+    image_scenario: "ニューヨーク株式市場大暴落で世界経済混乱"
+    notes: "日本も深刻な不況に"
+    video_used: false
+
+  - year: 1930
+    era: "昭和天皇時代"
+    event: "ロンドン軍縮会議"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "戦(19)ゼロ(30)目指し軍縮"
+    mnemonic_katakana: "センゼロメザシグンシュク"
+    image_scenario: "海軍軍縮条約延長で軍部が反発"
+    notes: "統帥権干犯問題で政党政治に打撃"
+    video_used: false
+
+  - year: 1931
+    era: "昭和天皇時代"
+    event: "満州事変"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)ぞ災難(31)満州事変"
+    mnemonic_katakana: "イクゾサイナンマンシュウジヘン"
+    image_scenario: "関東軍が柳条湖事件を起こし満州占領"
+    notes: "十五年戦争の始まり"
+    video_used: false
+
+  - year: 1932
+    era: "昭和天皇時代"
+    event: "五・一五事件"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "戦(19)に(3)邪魔だと(2)犬食う5月"
+    mnemonic_katakana: "センニジャマダトイヌクウゴガツ"
+    image_scenario: "海軍青年将校が犬養毅首相を暗殺"
+    notes: "政党政治の終焉"
+    video_used: false
+
+  - year: 1933
+    era: "昭和天皇時代"
+    event: "国際連盟脱退"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "戦(19)さ散々(33)連盟脱退"
+    mnemonic_katakana: "センササンザンレンメイダッタイ"
+    image_scenario: "松岡洋右が満州国承認拒否に抗議し退場"
+    notes: "国際的孤立の始まり"
+    video_used: false
+
+  - year: 1934
+    era: "昭和天皇時代"
+    event: "ワシントン・ロンドン軍縮条約破棄通告"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "戦策(1934)条約破棄"
+    mnemonic_katakana: "センサクジョウヤクハキ"
+    image_scenario: "海軍軍縮条約からの離脱を通告"
+    notes: "軍備拡張路線への転換"
+    video_used: false
+
+  - year: 1936
+    era: "昭和天皇時代"
+    event: "二・二六事件"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "戦(19)無論(36)青年将校"
+    mnemonic_katakana: "センムロンセイネンショウコウ"
+    image_scenario: "陸軍青年将校が政府要人を暗殺しクーデター未遂"
+    notes: "軍部ファシズム体制確立"
+    video_used: false
+
+  - year: 1937
+    era: "昭和天皇時代"
+    event: "日中戦争"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いく(19)ぞみ(3)んな(7)日中戦争"
+    mnemonic_katakana: "イクゾミンナニッチュウセンソウ"
+    image_scenario: "盧溝橋事件から本格的な日中戦争開始"
+    notes: "泥沼の長期戦に突入"
+    video_used: false
+
+  - year: 1938
+    era: "昭和天皇時代"
+    event: "国家総動員法"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いく(19)さや(3)ねん(8)総動員法"
+    mnemonic_katakana: "イクサヤネンソウドウインホウ"
+    image_scenario: "政府が人的・物的資源を統制動員"
+    notes: "戦時体制の法的基盤"
+    video_used: false
+
+  - year: 1939
+    era: "昭和天皇時代"
+    event: "ノモンハン事件"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "戦〈いくさ〉苦(19)し(3)い(9)ノモンハン"
+    mnemonic_katakana: "イクサクルシイノモンハン"
+    image_scenario: "関東軍がソ連軍と激戦し大敗"
+    notes: "関東軍の南進政策への転換"
+    video_used: false
+
+  - year: 1940
+    era: "昭和天皇時代"
+    event: "日独伊三国同盟"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)よ(4)俺たち(0)日独伊三国同盟"
+    mnemonic_katakana: "イクヨオレタチニチドクイサンゴクドウメイ"
+    image_scenario: "ファシズム諸国が軍事同盟締結"
+    notes: "枢軸国結成、対米英関係悪化"
+    video_used: false
+
+  - year: 1941
+    era: "昭和天皇時代"
+    event: "太平洋戦争開戦"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いく(19)よ(4)一気に(1)真珠湾"
+    mnemonic_katakana: "イクヨイッキニシンジュワン"
+    image_scenario: "日本海軍が真珠湾を奇襲攻撃"
+    notes: "第二次世界大戦に本格参戦"
+    video_used: false
+
+  - year: 1945
+    era: "昭和天皇時代"
+    event: "太平洋戦争終戦"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "引く(19)よ(4)ごめん(5)ポツダム宣言"
+    mnemonic_katakana: "ヒクヨゴメンポツダムセンゲン"
+    image_scenario: "広島・長崎原爆投下後に無条件降伏"
+    notes: "15年戦争終結、戦後復興開始"
+    video_used: false
+
+  - year: 1946
+    era: "昭和天皇時代"
+    event: "日本国憲法公布"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "一休(19)む(4)ろ(6)新憲法"
+    mnemonic_katakana: "ヒトヤスムロシンケンポウ"
+    image_scenario: "戦争放棄と基本的人権を明記した新憲法"
+    notes: "平和憲法で民主主義国家に"
+    video_used: false
+
+  - year: 1947
+    era: "昭和天皇時代"
+    event: "日本国憲法施行"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)よ(4)な(7)学校へ"
+    mnemonic_katakana: "イクヨナガッコウヘ"
+    image_scenario: "新憲法施行で教育基本法も制定"
+    notes: "戦後民主教育の開始"
+    video_used: false
+
+  - year: 1950
+    era: "昭和天皇時代"
+    event: "朝鮮戦争"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "朝鮮半島に行く(19)号令(50)"
+    mnemonic_katakana: "チョウセンハントウニイクゴウレイ"
+    image_scenario: "北朝鮮軍が38度線を越え戦争開始"
+    notes: "特需景気で日本経済復活"
+    video_used: false
+
+  - year: 1951
+    era: "昭和天皇時代"
+    event: "サンフランシスコ講和条約・日米安保条約"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひどく(19)強引(51)安全保障"
+    mnemonic_katakana: "ヒドクゴウインアンゼンホショウ"
+    image_scenario: "占領終了と同時に日米軍事同盟締結"
+    notes: "主権回復と冷戦体制組み込み"
+    video_used: false
+
+  - year: 1954
+    era: "昭和天皇時代"
+    event: "自衛隊発足"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "特訓(19)だ！腰(54)を鍛える、自衛隊"
+    mnemonic_katakana: "トックンダコシヲキタエルジエイタイ"
+    image_scenario: "警察予備隊を改組し自衛隊創設"
+    notes: "憲法9条と軍備の矛盾"
+    video_used: false
+
+  - year: 1955
+    era: "昭和天皇時代"
+    event: "55年体制成立"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)ぞゴーゴー(55)自民党"
+    mnemonic_katakana: "イクゾゴーゴージミントウ"
+    image_scenario: "自民党結成で保守合同、社会党統一"
+    notes: "戦後政治体制の基盤確立"
+    video_used: false
+
+  - year: 1956
+    era: "昭和天皇時代"
+    event: "国連加盟"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)ころ(56)だ、国連へ"
+    mnemonic_katakana: "イクコロダコクレンヘ"
+    image_scenario: "ソ連との国交回復で国連加盟実現"
+    notes: "国際社会復帰の完成"
+    video_used: false
+
+  - year: 1960
+    era: "昭和天皇時代"
+    event: "日米新安保条約・安保闘争"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひどく(19)無礼(60)な、新安保"
+    mnemonic_katakana: "ヒドクブレイナシンアンポ"
+    image_scenario: "岸信介内閣が強行採決し大規模な反対運動"
+    notes: "戦後最大の政治危機"
+    video_used: false
+
+  - year: 1964
+    era: "昭和天皇時代"
+    event: "東京オリンピック・東海道新幹線"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "一苦労(19)よ(64)オリンピック"
+    mnemonic_katakana: "ヒトクロウヨオリンピック"
+    image_scenario: "戦後復興の象徴として東京五輪開催"
+    notes: "高度経済成長の頂点"
+    video_used: false
+
+  - year: 1965
+    era: "昭和天皇時代"
+    event: "日韓基本条約"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひどく(19)むご(65)いベトナム戦争"
+    mnemonic_katakana: "ヒドクムゴイベトナムセンソウ"
+    image_scenario: "朴正熙政権と国交正常化"
+    notes: "戦後処理と経済協力開始"
+    video_used: false
+
+  - year: 1967
+    era: "昭和天皇時代"
+    event: "公害対策基本法"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひどく(19)むな(67)しい公害対策"
+    mnemonic_katakana: "ヒドクムナシイコウガイタイサク"
+    image_scenario: "高度成長の負の側面である公害問題対策"
+    notes: "環境保護への転換点"
+    video_used: false
+
+  - year: 1968
+    era: "昭和天皇時代"
+    event: "大学紛争・核拡散防止条約"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "一番(19)急務(68)は核拡散防止"
+    mnemonic_katakana: "イチバンキュウムハカクカクサンボウシ"
+    image_scenario: "東大安田講堂占拠など全国で学生運動"
+    notes: "既成秩序への挑戦と冷戦緊張"
+    video_used: false
+
+  - year: 1971
+    era: "昭和天皇時代"
+    event: "沖縄返還協定"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)な(7)一(1)年待て沖縄返還"
+    mnemonic_katakana: "イクナイチネンマテオキナワヘンカン"
+    image_scenario: "佐藤栄作首相が沖縄返還交渉妥結"
+    notes: "戦後処理の最大課題解決"
+    video_used: false
+
+  - year: 1972
+    era: "昭和天皇時代"
+    event: "沖縄復帰・日中国交正常化"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)ぞ、夏(72)の沖縄へ"
+    mnemonic_katakana: "イクゾナツノオキナワヘ"
+    image_scenario: "沖縄県発足と田中角栄の訪中"
+    notes: "戦後外交の大転換"
+    video_used: false
+
+  - year: 1973
+    era: "昭和天皇時代"
+    event: "第一次石油ショック"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "一苦難(1973)さってまたオイルショック"
+    mnemonic_katakana: "ヒトクナンサッテマタオイルショック"
+    image_scenario: "第四次中東戦争で原油価格4倍に急騰"
+    notes: "高度成長終了、省エネ社会へ"
+    video_used: false
+
+  - year: 1978
+    era: "昭和天皇時代"
+    event: "日中平和友好条約"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひどく(19)悩(78)んで、日中、仲直り"
+    mnemonic_katakana: "ヒドクナヤンデニッチュウナカナオリ"
+    image_scenario: "ケ小平来日で日中関係本格化"
+    notes: "反覇権条項でソ連牽制"
+    video_used: false
+
+  - year: 1985
+    era: "昭和天皇時代"
+    event: "プラザ合意"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)や(8)5人(5)でプラザ合意"
+    mnemonic_katakana: "イクヤゴニンデプラザゴウイ"
+    image_scenario: "G5がドル高是正で合意し円急騰"
+    notes: "円高不況からバブル経済へ"
+    video_used: false
+
+  - year: 1988
+    era: "昭和天皇時代"
+    event: "リクルート事件"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "いく(19)や(8)約束破り(8)リクルート事件"
+    mnemonic_katakana: "イクヤヤクソクヤブリリクルートジケン"
+    image_scenario: "未公開株譲渡で政財界汚職事件"
+    notes: "政治不信と政界再編の契機"
+    video_used: false
+
+  # 平成時代（1989～2019）
+  - year: 1989
+    era: "平成天皇時代"
+    event: "ベルリンの壁崩壊・消費税導入"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "遠く(19)で(8)爆発(9)！ベルリンの壁"
+    mnemonic_katakana: "トオクデバクハツベルリンノカベ"
+    image_scenario: "冷戦終結と平成時代開始"
+    notes: "昭和天皇崩御、新時代開始"
+    video_used: false
+
+  - year: 1990
+    era: "平成天皇時代"
+    event: "東西ドイツ統一"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひとくくり(1990)！壁、崩壊！ドイツ統一"
+    mnemonic_katakana: "ヒトククリカベホウカイドイツトウイツ"
+    image_scenario: "ベルリンの壁崩壊から1年でドイツ再統一"
+    notes: "冷戦体制の完全終了"
+    video_used: false
+
+  - year: 1991
+    era: "平成天皇時代"
+    event: "バブル経済崩壊・湾岸戦争"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "一気(19)にグイ(91)っとソ連解体"
+    mnemonic_katakana: "イッキニグイットソレンカイタイ"
+    image_scenario: "株価暴落とソビエト連邦解体"
+    notes: "長期不況と新世界秩序"
+    video_used: false
+
+  - year: 1992
+    era: "平成天皇時代"
+    event: "PKO協力法成立"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "遠く(19)の国(92)へ、PKO"
+    mnemonic_katakana: "トオクノクニヘピーケーオー"
+    image_scenario: "国際平和協力法で自衛隊海外派遣開始"
+    notes: "国際貢献と憲法解釈変更"
+    video_used: false
+
+  - year: 1993
+    era: "平成天皇時代"
+    event: "細川内閣成立"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "ひどく(19)臭い(93)、細川内閣"
+    mnemonic_katakana: "ヒドククサイホソカワナイカク"
+    image_scenario: "38年ぶりの非自民政権誕生"
+    notes: "55年体制崩壊、政界再編"
+    video_used: false
+
+  - year: 1995
+    era: "平成天皇時代"
+    event: "阪神大震災・地下鉄サリン事件"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "行く(19)ぞ救護(95)だ！阪神へ"
+    mnemonic_katakana: "イクゾキュウゴダハンシンヘ"
+    image_scenario: "阪神大震災とオウム真理教テロ事件"
+    notes: "災害対策と治安問題の転換点"
+    video_used: false
+
+  - year: 1997
+    era: "平成天皇時代"
+    event: "香港返還・アジア通貨危機"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "低く(19)な(97)い誇り香港返還"
+    mnemonic_katakana: "ヒククナイホコリホンコンヘンカン"
+    image_scenario: "香港がイギリスから中国に返還"
+    notes: "アジア経済危機と金融不安"
+    video_used: false
+
+  - year: 1998
+    era: "平成天皇時代"
+    event: "長野冬季オリンピック"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "インク(19)食う(98)バカと長野五輪見てた冬"
+    mnemonic_katakana: "インククウバカトナガノゴリンミテタフユ"
+    image_scenario: "長野で冬季五輪開催、日本勢メダル獲得"
+    notes: "不況下での明るい話題"
+    video_used: false
+
+  - year: 2001
+    era: "平成天皇時代"
+    event: "省庁再編・9.11同時多発テロ"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "負(20)をおい(01)すぎた多発テロ"
+    mnemonic_katakana: "フヲオイスギタタハツテロ"
+    image_scenario: "中央省庁再編と米国同時多発テロ"
+    notes: "行政改革とテロとの戦い開始"
+    video_used: false
+
+  - year: 2002
+    era: "平成天皇時代"
+    event: "日朝首脳会談・日韓W杯"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "このボール(20)匂う(02)にゃん。日韓W杯"
+    mnemonic_katakana: "コノボールニオウニャンニッカンダブリューハイ"
+    image_scenario: "小泉首相訪朝と日韓共催ワールドカップ"
+    notes: "拉致問題発覚と日韓協力"
+    video_used: false
+
+  - year: 2009
+    era: "平成天皇時代"
+    event: "民主党政権誕生"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "二重苦(2009)、政権交代"
+    mnemonic_katakana: "ニジュウクセイケンコウタイ"
+    image_scenario: "鳩山由紀夫を首班とする民主党政権成立"
+    notes: "戦後2度目の本格的政権交代"
+    video_used: false
+
+  - year: 2011
+    era: "平成天皇時代"
+    event: "東日本大震災"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "触れる(20)人々(11)、復興へ"
+    mnemonic_katakana: "フレルヒトビトフッコウヘ"
+    image_scenario: "マグニチュード9.0の大地震と津波、原発事故"
+    notes: "戦後最大の複合災害"
+    video_used: false
+
+  # 令和時代（2019～）
+  - year: 2019
+    era: "令和天皇時代"
+    event: "令和時代開始"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "未来(20)の匂い(19)キュン新元号"
+    mnemonic_katakana: "ミライノニオイキュンシンゲンゴウ"
+    image_scenario: "平成天皇退位で令和時代開始"
+    notes: "新時代の幕開け"
+    video_used: false
+
+  - year: 2020
+    era: "令和天皇時代"
+    event: "新型コロナウイルス・東京五輪延期"
+    category: "近現代"
+    importance: "high"
+    mnemonic: "徒然(2020)なるまま世界停止"
+    mnemonic_katakana: "ツレヅレナルママセカイテイシ"
+    image_scenario: "パンデミックで世界的な都市封鎖"
+    notes: "感染症との闘いと社会変革"
+    video_used: false
+
+
