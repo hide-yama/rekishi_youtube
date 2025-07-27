@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRT字幕ジェネレーター</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SRT字幕ジェネレーター</h1>
+        
+        <!-- ファイル入力セクション -->
+        <div class="input-section">
+            <div class="file-input-group">
+                <label for="mp3-input">MP3ファイル：</label>
+                <input type="file" id="mp3-input" accept="audio/mp3,audio/mpeg">
+            </div>
+            
+            <div class="lyrics-input-group">
+                <label for="lyrics-input">歌詞を入力：</label>
+                <textarea id="lyrics-input" placeholder="歌詞をペーストするか、下のファイルを選択してください" rows="10"></textarea>
+                <input type="file" id="lyrics-file-input" accept=".txt">
+            </div>
+        </div>
+        
+        <!-- オーディオプレイヤーセクション -->
+        <div class="player-section">
+            <audio id="audio-player" controls></audio>
+            <div class="time-display">
+                現在時刻: <span id="current-time">00:00.000</span>
+            </div>
+        </div>
+        
+        <!-- メインコンテンツセクション -->
+        <div class="main-content">
+            <!-- 歌詞表示エリア -->
+            <div class="lyrics-display">
+                <h3>歌詞</h3>
+                <div id="lyrics-lines"></div>
+            </div>
+            
+            <!-- コントロールセクション -->
+            <div class="control-section">
+                <div class="control-buttons">
+                    <button id="main-btn" class="control-btn main-btn" disabled>
+                        開始 / 次へ
+                    </button>
+                    <button id="end-btn" class="control-btn end-btn" disabled>
+                        終了のみ
+                    </button>
+                </div>
+                
+                <div class="status-display">
+                    <p>現在の行: <span id="current-line-num">-</span></p>
+                    <p>状態: <span id="status-text">準備中</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- タイムライン表示 -->
+        <div class="timeline-section">
+            <h3>タイムライン</h3>
+            <div id="timeline-display"></div>
+        </div>
+        
+        <!-- エクスポートセクション -->
+        <div class="export-section">
+            <div class="filename-input-group">
+                <label for="filename-input">ファイル名（オプション）：</label>
+                <input type="text" id="filename-input" placeholder="subtitles">
+                <span class="file-extension">.srt</span>
+            </div>
+            <div class="export-buttons">
+                <button id="export-btn" disabled>SRTファイルをダウンロード</button>
+                <button id="preview-btn" disabled>プレビュー</button>
+            </div>
+        </div>
+        
+        <!-- プレビューモーダル -->
+        <div id="preview-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>SRTプレビュー</h3>
+                <pre id="preview-content"></pre>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
