@@ -1,158 +1,201 @@
-# 大化改新と律令国家 - 動画生成プロンプト集
+# 大化改新と律令国家 - 羊毛フェルト動画プロンプト集
 
-各行の元歌詞と対応する動画生成用プロンプトです。
+各歌詞に対応する羊毛フェルトスタイルの動画生成プロンプトです。
 
 ## Verse 1
 
-**元歌詞**: 蘇我氏の時代が終わりを告げて  
-**プロンプト**: 日本の古代宮殿で権力者が去っていく場面、薄暗い宮殿から静かに退場する貴族、時代の終焉を感じさせる雰囲気
+**歌詞**: 蘇我氏の時代が終わりを告げて  
+**シーン解釈**: 権力が終わる、去っていく  
+**プロンプト**: wool felt stop motion animation style, old bear walking away sadly, leaving a traditional Japanese building, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 中大兄と鎌足が夢を描いた  
-**プロンプト**: 若い2人の貴族が新しい国の設計図を広げて熱心に議論している場面、希望に満ちた表情、古代日本の宮殿内
+**歌詞**: 中大兄と鎌足が夢を描いた  
+**シーン解釈**: 新しい二人が希望を持つ  
+**プロンプト**: wool felt stop motion animation style, two foxes drawing plans together excitedly, around a small table with papers, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 無事故(645)で改革成功させて  
-**プロンプト**: 古代日本の宮殿で新しい政策を発表する場面、人々が歓声を上げている、改革成功の祝賀ムード
+**歌詞**: 無事故（645）で改革成功させて  
+**シーン解釈**: 成功を祝う、喜び  
+**プロンプト**: wool felt stop motion animation style, group of animals celebrating with raised paws, confetti falling, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 新しい国が動き出す  
-**プロンプト**: 朝日が昇る古代日本の都市風景、活気あふれる市場や建設現場、新時代の始まりを象徴する場面
+**歌詞**: 新しい国が動き出す  
+**シーン解釈**: 朝日、新しい始まり  
+**プロンプト**: wool felt stop motion animation style, various animals starting their morning activities, sunrise background, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
 ## Verse 2
 
-**元歌詞**: 海を越えて援軍送ったけれど  
-**プロンプト**: 古代の和船が荒波を越えて進む場面、兵士たちを乗せた船団、朝鮮半島へ向かう航海
+**歌詞**: 白村江の戦いでは  
+**シーン解釈**: 戦いの場面  
+**プロンプト**: wool felt stop motion animation style, animals on small wooden boats, looking worried, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: む(6)む(6)惨敗(3)白村江で悲しくて  
-**プロンプト**: 古代の海戦で敗北した日本軍、沈む船と漂う兵士たち、悲しみに包まれた戦場の様子
+**歌詞**: 倭と百済は む、無惨（663）にも  
+**シーン解釈**: 敗北、悲しみ  
+**プロンプト**: wool felt stop motion animation style, rabbit and cat crying sadly on a wooden ship deck, hugging each other, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 唐と新羅に負けてしまって  
-**プロンプト**: 勝利を祝う唐と新羅の軍隊、敗北を受け入れる日本軍、古代東アジアの戦場風景
+**歌詞**: 唐と新羅の連合軍に  
+**シーン解釈**: 相手が強い  
+**プロンプト**: wool felt stop motion animation style, two strong bears standing confidently, looking powerful, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: でも強い国を作りたいって思った  
-**プロンプト**: 敗戦から立ち上がる日本の指導者たち、決意に満ちた表情で会議をする場面、希望の光が差し込む
+**歌詞**: 手も足も出なかった  
+**シーン解釈**: 完全な敗北  
+**プロンプト**: wool felt stop motion animation style, small animals lying down exhausted, looking defeated, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
 ## Pre-Chorus
 
-**元歌詞**: 皇位継承で心が揺れて  
-**プロンプト**: 古代日本の宮殿で悩む皇族、王位を象徴する玉座を前に葛藤する人物、重い決断の場面
+**歌詞**: 皇位継承で心が揺れて  
+**シーン解釈**: 迷い、悩み  
+**プロンプト**: wool felt stop motion animation style, fox looking confused between two paths, thinking deeply, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 兄弟の絆も切れてしまって  
-**プロンプト**: 対立する2人の皇子、背を向け合う兄弟、古代宮殿の廊下で距離を置く場面
+**歌詞**: 兄弟の絆も切れるなんてね  
+**シーン解釈**: 兄弟が別れる  
+**プロンプト**: wool felt stop motion animation style, two rabbits turning away from each other sadly, breaking apart, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
 ## Chorus
 
-**元歌詞**: ろ(6)くな兄(7)ちゃん(2)じゃねえって  
-**プロンプト**: 怒りに満ちた若い皇子が兄を非難する場面、感情的な対立、古代日本の宮殿内での激しい口論
+**歌詞**: ろくな兄（672）ちゃんじゃねえって  
+**シーン解釈**: 兄弟けんか、怒り  
+**プロンプト**: wool felt stop motion animation style, two rabbits fighting gently while crying, poking each other softly, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 大海人皇子が言ったの  
-**プロンプト**: 威厳ある大海人皇子が決意を語る場面、カリスマ性あふれる指導者の姿、支持者たちに囲まれて
+**歌詞**: 大海人皇子が叫んだ  
+**シーン解釈**: 強い決意を示す  
+**プロンプト**: wool felt stop motion animation style, determined bear standing proudly with raised paw, looking confident, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 壬申の乱で勝ち抜いて  
-**プロンプト**: 古代日本の戦場で勝利を収める大海人皇子の軍、勝鬨を上げる兵士たち、決戦の勝利場面
+**歌詞**: 壬申の乱で勝ったのは兄  
+**シーン解釈**: 勝利の喜び  
+**プロンプト**: wool felt stop motion animation style, bear celebrating victory with other animals cheering, jumping happily, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 天武天皇になって  
-**プロンプト**: 即位式で王冠を戴く天武天皇、荘厳な儀式、新天皇の誕生を祝う宮廷の様子
+**歌詞**: 天武天皇が生まれて  
+**シーン解釈**: 新しいリーダー誕生  
+**プロンプト**: wool felt stop motion animation style, bear wearing a small crown, surrounded by celebrating animals, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 新しい時代が始まった  
-**プロンプト**: 天武天皇の治世開始、明るい未来を予感させる都の風景、希望に満ちた人々の表情
+**歌詞**: 新しい時代が始まった  
+**シーン解釈**: 希望の朝  
+**プロンプト**: wool felt stop motion animation style, various animals watching sunrise together hopefully, new day beginning, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
 ## Verse 3
 
-**元歌詞**: みんなのルールを決めたいって  
-**プロンプト**: 古代の書記官たちが法律を編纂する場面、巻物に文字を記す様子、真剣な議論をする官僚たち
+**歌詞**: みんなのルールを決めたいと  
+**シーン解釈**: みんなで話し合う  
+**プロンプト**: wool felt stop motion animation style, various animals raising hands enthusiastically in a classroom setting, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: な(7)お(0)一層(1)大宝律令で  
-**プロンプト**: 完成した大宝律令の巻物を掲げる場面、荘厳な法典の発布式、古代日本の法治国家誕生
+**歌詞**: なお一（701）層大宝律令  
+**シーン解釈**: 法律が完成  
+**プロンプト**: wool felt stop motion animation style, owl holding a large scroll proudly, other animals watching respectfully, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 初めての法律ができあがって  
-**プロンプト**: 新しい法律書を民衆に説明する役人、人々が熱心に聞いている場面、秩序ある社会の始まり
+**歌詞**: 初めての法律ができあがって  
+**シーン解釈**: みんなで勉強  
+**プロンプト**: wool felt stop motion animation style, animals studying together around a blackboard, taking notes seriously, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 中央集権の夢が叶ったの  
-**プロンプト**: 都から地方へ指令が伝わる様子、統一された国家システム、中央政府の威光が全国に及ぶ場面
+**歌詞**: 中央集権の夢が叶ったの  
+**シーン解釈**: 統一された喜び  
+**プロンプト**: wool felt stop motion animation style, animals forming a circle holding hands, looking united and happy, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
 ## Verse 4
 
-**元歌詞**: お金の文化も始まって  
-**プロンプト**: 古代の造幣所で貨幣を作る職人たち、初めての硬貨が誕生する瞬間、経済革命の始まり
+**歌詞**: お金の文化も始まった  
+**シーン解釈**: 新しいものの始まり  
+**プロンプト**: wool felt stop motion animation style, hamster making small round coins excitedly, workshop setting, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: な(7)お(0)や(8)流通するお金になれやって  
-**プロンプト**: 新しい和同開珎を手に取る商人、市場で初めて貨幣が使われる場面、経済活動の活発化
+**歌詞**: 流通するお金になれや（708）と  
+**シーン解釈**: お金を広めたい  
+**プロンプト**: wool felt stop motion animation style, animals passing coins to each other happily in a market, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 和同開珎が生まれて  
-**プロンプト**: 完成した和同開珎のクローズアップ、美しい古代貨幣のデザイン、日本初の流通貨幣
+**歌詞**: 和同開珎が生まれた  
+**シーン解釈**: コインの誕生  
+**プロンプト**: wool felt stop motion animation style, shiny coin being held up by proud hamster, sparkles around, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 商いの風が吹いてる  
-**プロンプト**: 活気あふれる古代の市場、貨幣を使って取引する商人たち、経済発展する都市の様子
+**歌詞**: 商いの風が吹きはじめた  
+**シーン解釈**: 活気ある市場  
+**プロンプト**: wool felt stop motion animation style, busy market scene with various animals trading goods, wind blowing gently, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-## Pre-Chorus 2
+## Pre-Chorus
 
-**元歌詞**: 新しい都を作りたいって  
-**プロンプト**: 都市計画の設計図を広げる建築家たち、壮大な新都市の構想、夢と希望に満ちた計画会議
+**歌詞**: 新しい都を作りたいと  
+**シーン解釈**: 大きな夢を描く  
+**プロンプト**: wool felt stop motion animation style, animals looking at building plans together dreamily, pointing excitedly, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 奈良の地に夢を託して  
-**プロンプト**: 奈良盆地を見渡す指導者たち、新都建設予定地の風景、未来への期待を込めた眼差し
+**歌詞**: 奈良の地に夢を託して  
+**シーン解釈**: 希望の地を見る  
+**プロンプト**: wool felt stop motion animation style, animals on a hill looking at distant land hopefully, sunset background, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-## Chorus 2
+## Chorus
 
-**元歌詞**: な(7)んと(10)立派な都だね  
-**プロンプト**: 完成した平城京の壮大な全景、整然とした街並み、朱雀大路を中心とした美しい都市
+**歌詞**: なんと（710）立派な都だね  
+**シーン解釈**: 美しい都に感動  
+**プロンプト**: wool felt stop motion animation style, animals admiring beautiful miniature city buildings, looking amazed, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 平城京に引っ越して  
-**プロンプト**: 新都への大移動、荷車で引っ越す貴族や民衆、新しい生活への期待に満ちた行列
+**歌詞**: 平城京に引っ越して  
+**シーン解釈**: みんなで引っ越し  
+**プロンプト**: wool felt stop motion animation style, line of animals carrying small belongings, moving happily together, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: な(7)い(1)ふ(2)に刻む古事記には  
-**プロンプト**: 古事記を編纂する学者たち、筆で丁寧に文字を記す場面、日本最古の歴史書制作
+**歌詞**: ナイフ（712）に刻む古事記には  
+**シーン解釈**: ナイフで何かを刻む  
+**プロンプト**: wool felt stop motion animation style, fox carefully carving something with a small knife, concentrated expression, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 私たちの物語を載せて  
-**プロンプト**: 古事記に描かれる神話の場面、日本の起源物語、歴史と神話が交錯する幻想的な映像
+**歌詞**: 私たちの物語を載せて  
+**シーン解釈**: 物語を伝える  
+**プロンプト**: wool felt stop motion animation style, owl reading from a scroll to young animals listening intently, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 未来へと繋いでいく  
-**プロンプト**: 古事記を次世代に伝える場面、若い学生たちが熱心に学ぶ様子、文化の継承
+**歌詞**: 未来へと繋いでいく  
+**シーン解釈**: 世代を超えて伝える  
+**プロンプト**: wool felt stop motion animation style, adult animal passing scroll to young animal, generational connection, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
 ## Bridge
 
-**元歌詞**: 大化の改新から始まった  
-**プロンプト**: 645年の大化の改新の瞬間、歴史的な政変の場面、時代の転換点を象徴する映像
+**歌詞**: 大化の改新から始まった  
+**シーン解釈**: 変化の始まり  
+**プロンプト**: wool felt stop motion animation style, timeline showing animals evolving from old to new style, transformation scene, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: この国の大きな変化  
-**プロンプト**: 古代日本の変革を表すモンタージュ、政治・経済・文化の発展を示す連続映像
+**歌詞**: この国の大きな変化  
+**シーン解釈**: 大きな変化  
+**プロンプト**: wool felt stop motion animation style, before and after scene with animals, dramatic change visible, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 白村江で涙を流して  
-**プロンプト**: 白村江の敗戦を悼む人々、悲しみに暮れる兵士の家族、戦争の悲劇を描く場面
+**歌詞**: 白村江で涙を流し  
+**シーン解釈**: 悲しい記憶  
+**プロンプト**: wool felt stop motion animation style, animals comforting each other with tears, sad but gentle scene, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 壬申の乱で道を開いて  
-**プロンプト**: 壬申の乱での勝利により新しい道が開ける様子、希望の光が差し込む戦後の風景
+**歌詞**: 壬申の乱で道を開いた  
+**シーン解釈**: 新しい道が開く  
+**プロンプト**: wool felt stop motion animation style, animals clearing a path together, working as a team, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 今ここに私たちがいるの  
-**プロンプト**: 現代と古代をつなぐ映像、歴史の連続性を表現、時を超えた日本の姿
+**歌詞**: 今、全てがつながってゆく  
+**シーン解釈**: すべてがつながる  
+**プロンプト**: wool felt stop motion animation style, all different animals holding hands in a big circle, unity scene, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
 ## Final Chorus
 
-**元歌詞**: な(7)んと(10)立派な都だね  
-**プロンプト**: 夕日に照らされる平城京、黄金色に輝く都の美しい景観、繁栄の象徴
+**歌詞**: なんと（710）立派な都だね  
+**シーン解釈**: 夕日の美しい都  
+**プロンプト**: wool felt stop motion animation style, animals watching sunset over miniature city, golden hour lighting, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 平城京で夢を見て  
-**プロンプト**: 平城京で暮らす人々の幸せな日常、文化的な活動、平和な都市生活
+**歌詞**: 平城京で夢を見て  
+**シーン解釈**: 幸せな日常  
+**プロンプト**: wool felt stop motion animation style, animals living happily in the city, daily peaceful life, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: な(7)い(1)ふ(2)に刻む古事記には  
-**プロンプト**: 後世に伝わる古事記、大切に保管される歴史書、文化遺産としての価値
+**歌詞**: ナイフ（712）に刻む古事記には  
+**シーン解釈**: 大切な記録  
+**プロンプト**: wool felt stop motion animation style, owl protecting a precious scroll carefully, treasure-like importance, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: みんなの想いを込めて  
-**プロンプト**: 様々な身分の人々が協力して国を作る様子、団結と希望のシーン
+**歌詞**: みんなの想いを込めて  
+**シーン解釈**: みんなで協力  
+**プロンプト**: wool felt stop motion animation style, diverse animals working together on a project, teamwork scene, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: な(7)お(0)一層(1)大宝律令で  
-**プロンプト**: 大宝律令に基づいて秩序正しく運営される国家、法の支配が確立された社会
+## Final Chorus (続き)
 
-**元歌詞**: 法の国を作って  
-**プロンプト**: 裁判所で公正な裁きが行われる場面、法治国家としての日本の姿
+**歌詞**: なお一（701）層大宝律令で  
+**シーン解釈**: 法律で守られる  
+**プロンプト**: wool felt stop motion animation style, animals following rules orderly in a line, disciplined but happy, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: な(7)お(0)や(8)流通する和同開珎  
-**プロンプト**: 全国に広がる和同開珎、活発な商取引、経済的繁栄の様子
+**歌詞**: 法の国を作って  
+**シーン解釈**: 公平な社会  
+**プロンプト**: wool felt stop motion animation style, owl judge with small gavel, other animals listening respectfully, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 新しい日本が生まれて  
-**プロンプト**: 律令国家として生まれ変わった日本、近代的な国家システムの確立
+**歌詞**: 希望になれや（708）和同開珎  
+**シーン解釈**: お金が広がる喜び  
+**プロンプト**: wool felt stop motion animation style, coins spreading among happy animals, prosperity scene, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: きっと明日も晴れるかな  
-**プロンプト**: 希望に満ちた朝の平城京、晴れやかな空と活気ある都市、明るい未来への期待
+**歌詞**: 新しい日本が生まれて  
+**シーン解釈**: 新しい国の誕生  
+**プロンプト**: wool felt stop motion animation style, baby animals being born or hatching, new beginning symbolism, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 
-**元歌詞**: 律令国家で夢を見てる  
-**プロンプト**: 平城京の夜景、星空の下で未来を語る人々、律令国家の理想と現実が調和した場面
+**歌詞**: きっと明日も晴れるかな  
+**シーン解釈**: 希望の未来  
+**プロンプト**: wool felt stop motion animation style, animals looking at rainbow after rain, hopeful expressions, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7

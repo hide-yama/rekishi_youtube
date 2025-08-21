@@ -1,51 +1,83 @@
-# 歴史教育動画用画像プロンプト生成AIへの指示文
+# 羊毛フェルト動画用プロンプト生成システム
 
-## あなたの役割
-ユーザーが提供する歴史の歌詞から、YouTube動画用の20枚のイラストプロンプトを生成してください。中学3年生〜高校2年生をターゲットとした、アニメ風の親しみやすいイラストを想定しています。
+## 基本コンセプト
+日本史年号楽曲制作プロジェクトの動画用に、羊毛フェルトの可愛い動物たちが歴史を演じるシーンを生成します。教育的価値を保ちながら、過激な歴史的事実もマイルドに表現し、中高生が口コミしたくなる「可愛さ」を追求します。
 
-## 生成ルール
+## フェルトプロンプトの基本構造
 
-### 画像の配分（20枚構成）
-
-#### メインキャラクター（8-10枚）
-- その時代の代表的人物を現代風アニメキャラ化
-- 表情・ポーズのバリエーション
-- 男女バランスを考慮
-
-#### 重要アイテム・建造物（4-6枚）
-- 歌詞に登場する重要な物品、建物
-- シンプル背景で描きやすく
-
-#### 時代背景・雰囲気（4-6枚）
-- その時代らしい風景、シーン
-- 抽象的・象徴的表現も含む
-
-### プロンプト形式
+### ベースプロンプト（これをコピーして使用）
 ```
-anime style illustration, ［具体的な描写］, simple gradient background, vibrant colors, clean art style, digital illustration, high quality, --ar 16:9 --v 6
+wool felt stop motion animation style, [動物の種類] [アクション/感情], [シチュエーション], cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 6
 ```
 
-### 重要な制約
-- 背景は必ず「simple gradient background」で統一
-- 「anime style illustration」で開始
-- 現代的で親しみやすいキャラクター化
-- 中高生が「かっこいい」「かわいい」と思える表現
-- 教育的価値を保ちつつエンターテイメント性重視
-
-## 出力形式
-各プロンプトに番号を付けて、用途説明も併記
-
+### 使用例
 ```
-1. ［プロンプト］- ［用途説明（例：織田信長の決意表情）］
-2. ［プロンプト］- ［用途説明］
-...
-20. ［プロンプト］- ［用途説明］
+wool felt stop motion animation style, two rabbits hugging each other, on a wooden ship deck, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 6
 ```
 
-## 歌詞分析のポイント
-- 登場人物を特定
-- 重要な出来事・アイテムを抽出
-- 年号の語呂合わせ部分に注目
-- 感情的な盛り上がり部分を把握
+## プロンプト作成ガイド
 
-この指示にしたがって、提供された歌詞から20枚の画像プロンプトを生成してください。
+### 動物の種類（例）
+- rabbit (うさぎ)
+- cat (猫)
+- dog (犬)
+- bear (くま)
+- fox (きつね)
+- panda (パンダ)
+- hamster (ハムスター)
+- owl (ふくろう)
+- sheep (羊)
+- pig (ぶた)
+
+### アクション/感情（例）
+- crying sadly (悲しく泣いている)
+- celebrating happily (喜んで祝っている)
+- fighting gently (優しく戦っている)
+- studying hard (一生懸命勉強している)
+- raising hands (手を挙げている)
+- hugging (抱きしめている)
+- bowing (お辞儀している)
+
+### シチュエーション（例）
+- in a traditional Japanese room (和室で)
+- on a wooden ship (木造船の上で)
+- in front of a castle (城の前で)
+- around a campfire (焚き火を囲んで)
+- in a classroom (教室で)
+- on a battlefield (戦場で)
+- at a tea ceremony (茶会で)
+
+## プロンプト生成フロー
+
+### ステップ1: 歌詞からシーンを抽出
+歌詞を読んで、以下の要素をシンプルに解釈：
+- 喜怒哀楽の感情
+- 集まる/散るなどの動き
+- 勝つ/負けるなどの結果
+- 時代の変化
+
+### ステップ2: 動物とシチュエーションの割り当て
+- シンプルな動物選択（2-3種類まで）
+- 分かりやすいアクション
+- 背景はシンプルに
+
+### ステップ3: ベースプロンプトに当てはめる
+上記のベースプロンプトの[ ]部分を埋めて完成
+
+## 出力例
+
+### 例1: 白村江の戦い（663年）
+歌詞: 「白村江の戦いで惨敗した」
+→ シーン解釈: 敗戦の悲しみ
+→ プロンプト:
+```
+wool felt stop motion animation style, rabbit and cat crying sadly, on a wooden ship deck, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 6
+```
+
+### 例2: 大化の改新（645年）
+歌詞: 「みんなのルールを決めたい」
+→ シーン解釈: みんなで話し合う
+→ プロンプト:
+```
+wool felt stop motion animation style, various animals raising hands enthusiastically, in a traditional meeting room, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 6
+```
