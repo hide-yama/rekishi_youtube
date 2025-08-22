@@ -64,20 +64,34 @@ wool felt stop motion animation style, two rabbits hugging each other, on a wood
 ### ステップ3: ベースプロンプトに当てはめる
 上記のベースプロンプトの[ ]部分を埋めて完成
 
+## プロンプト出力フォーマット
+
+### 必須要件
+各プロンプトには必ず以下の4つの要素を含めること：
+
+1. **歌詞**: 該当する歌詞の引用
+2. **シーン解釈**: 歌詞からイメージするシーンの説明
+3. **プロンプト**: 英語の画像生成プロンプト
+4. **日本語訳**: プロンプトの内容を分かりやすく説明した日本語訳（必須）
+
+### フォーマット例
+```
+**歌詞**: [歌詞の該当部分]
+**シーン解釈**: [シーンの説明]
+**プロンプト**: [英語のプロンプト]
+**日本語訳**: [プロンプトの日本語訳]
+```
+
 ## 出力例
 
 ### 例1: 白村江の戦い（663年）
-歌詞: 「白村江の戦いで惨敗した」
-→ シーン解釈: 敗戦の悲しみ
-→ プロンプト:
-```
-wool felt stop motion animation style, rabbit and cat crying sadly, on a wooden ship deck, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 6
-```
+**歌詞**: 「白村江の戦いで惨敗した」
+**シーン解釈**: 敗戦の悲しみ
+**プロンプト**: wool felt stop motion animation style, rabbit and cat crying sadly, on a wooden ship deck, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 6
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、木造船のデッキで悲しく泣くうさぎと猫、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
 
 ### 例2: 大化の改新（645年）
-歌詞: 「みんなのルールを決めたい」
-→ シーン解釈: みんなで話し合う
-→ プロンプト:
-```
-wool felt stop motion animation style, various animals raising hands enthusiastically, in a traditional meeting room, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 6
-```
+**歌詞**: 「みんなのルールを決めたい」
+**シーン解釈**: みんなで話し合う
+**プロンプト**: wool felt stop motion animation style, various animals raising hands enthusiastically, in a traditional meeting room, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 6
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、伝統的な会議室で熱心に手を挙げる様々な動物たち、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
