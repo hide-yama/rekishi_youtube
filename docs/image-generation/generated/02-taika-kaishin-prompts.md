@@ -243,3 +243,127 @@
 **シーン解釈**: 希望の未来
 **プロンプト**: wool felt stop motion animation style, animals looking at rainbow after rain, hopeful expressions, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 **日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、雨上がりの虹を見つめる動物たち、希望に満ちた表情、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
+
+## 番外編：可愛いキツネの男の子のダンスシーン
+
+**シーン**: 楽しくダンスする
+**プロンプト**: wool felt stop motion animation style, cute boy fox dancing happily with arms raised, joyful expression, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、腕を上げて楽しくダンスする可愛い男の子キツネ、喜びの表情、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
+
+**シーン**: くるくる回転
+**プロンプト**: wool felt stop motion animation style, playful boy fox spinning around with fluffy tail swaying, cheerful mood, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、ふわふわの尻尾を揺らしながらくるくる回る遊び心いっぱいの男の子キツネ、陽気な雰囲気、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
+
+**シーン**: おどけたポーズ
+**プロンプト**: wool felt stop motion animation style, silly boy fox making funny face with tongue out, playful wink, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、舌を出して変顔をする、遊び心あるウィンクのおどけた男の子キツネ、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
+
+**シーン**: ジャンプして喜ぶ
+**プロンプト**: wool felt stop motion animation style, energetic boy fox jumping high with excitement, mid-air pose with open arms, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、興奮して高くジャンプする元気な男の子キツネ、腕を開いた空中ポーズ、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
+
+**シーン**: ヒップホップダンス
+**プロンプト**: wool felt stop motion animation style, cool boy fox doing hip hop dance moves, wearing tiny cap sideways, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、小さな帽子を斜めにかぶってヒップホップダンスをするクールな男の子キツネ、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
+
+**シーン**: 左から右へ歩いてこちらを向く
+**プロンプト**: wool felt stop motion animation style, adorable boy fox walking from left to right then slowly turning head to face camera with gentle smile, smooth walking motion, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、左から右へ歩いて優しい笑顔でゆっくりカメラの方を向く愛らしい男の子キツネ、滑らかな歩行動作、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
+
+**シーン**: 2つの手がゆっくり離れていく
+**プロンプト**: wool felt stop motion animation style, two paws slowly separating from each other, emotional farewell gesture, close-up of felted animal hands drifting apart, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、ゆっくりとお互いから離れていく2つの前足、感情的な別れのジェスチャー、離れていくフェルト動物の手のクローズアップ、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
+
+## 特別編：フェルトゴーストハンズのダンスシーン
+
+**シーン**: ワイルドなダンス開始
+**プロンプト**: wool felt stop motion animation style, two felted ghost hands (one orange, one white) dancing wildly with energetic movements, bouncing and spinning, cute needle felted texture, dark blue background, soft lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、激しく踊る2つのフェルトゴーストハンド（オレンジと白）、エネルギッシュな動き、弾んで回転、可愛いニードルフェルトの質感、濃い青の背景、柔らかい照明、カワイイスタイル
+
+**シーン**: ブレイクダンス
+**プロンプト**: wool felt stop motion animation style, orange and white felted ghost hands doing breakdance moves, spinning on fingertips, dynamic poses, cute needle felted texture, dark blue background, dramatic lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、ブレイクダンスをするオレンジと白のフェルトゴーストハンド、指先で回転、ダイナミックなポーズ、可愛いニードルフェルトの質感、濃い青の背景、ドラマティックな照明、カワイイスタイル
+
+**シーン**: ロボットダンス
+**プロンプト**: wool felt stop motion animation style, two felted ghost hands performing robot dance with stiff movements, popping and locking, orange and white colors, cute needle felted texture, dark blue background, neon accent lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、硬い動きでロボットダンスをする2つのフェルトゴーストハンド、ポッピングとロッキング、オレンジと白の色、可愛いニードルフェルトの質感、濃い青の背景、ネオンアクセント照明、カワイイスタイル
+
+**シーン**: ペアダンス
+**プロンプト**: wool felt stop motion animation style, orange and white felted ghost hands dancing together as partners, synchronized movements, twirling and dipping, cute needle felted texture, dark blue background, romantic lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、パートナーとして一緒に踊るオレンジと白のフェルトゴーストハンド、シンクロした動き、回転とディップ、可愛いニードルフェルトの質感、濃い青の背景、ロマンチックな照明、カワイイスタイル
+
+**シーン**: フィナーレジャンプ
+**プロンプト**: wool felt stop motion animation style, two felted ghost hands jumping high in the air together, triumphant pose, orange and white colors glowing, cute needle felted texture, dark blue background, spotlight effect, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、一緒に高く空中にジャンプする2つのフェルトゴーストハンド、勝利のポーズ、光るオレンジと白の色、可愛いニードルフェルトの質感、濃い青の背景、スポットライト効果、カワイイスタイル
+
+## 平城京の街並みシーン
+
+**シーン**: 夕暮れの平城京で動物たちが歩く
+**プロンプト**: wool felt stop motion animation style, cute rabbits and animals walking through miniature Japanese castle town at dusk, glowing windows, traditional pagoda buildings with blue roofs, cherry blossom trees, warm lantern light, needle felted textures, kawaii style, --ar 16:9 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、夕暮れのミニチュア日本の城下町を歩く可愛いウサギと動物たち、光る窓、青い屋根の伝統的な塔建築、桜の木、温かい提灯の光、ニードルフェルトの質感、カワイイスタイル
+
+**シーン**: お店から動物が顔を出す
+**プロンプト**: wool felt stop motion animation style, small felted bunny peeking out from glowing shop entrance in miniature Japanese town, other animals walking by, traditional architecture with blue tiled roofs, warm evening atmosphere, needle felted textures, kawaii style, --ar 16:9 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、ミニチュア日本の町の光る店の入り口から顔を出す小さなフェルトうさぎ、通り過ぎる他の動物たち、青い瓦屋根の伝統建築、温かい夕方の雰囲気、ニードルフェルトの質感、カワイイスタイル
+
+**シーン**: 提灯が揺れる商店街
+**プロンプト**: wool felt stop motion animation style, paper lanterns swaying gently in miniature Japanese shopping street, felted animals browsing shops, pagoda silhouettes in background, warm golden hour lighting, needle felted textures, kawaii style, --ar 16:9 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、ミニチュア日本の商店街で優しく揺れる提灯、店を見て回るフェルト動物たち、背景に塔のシルエット、温かいゴールデンアワーの照明、ニードルフェルトの質感、カワイイスタイル
+
+## 和同開珎の喜びシーン
+
+**シーン**: コインを喜んで見せ合う動物たち
+**プロンプト**: wool felt stop motion animation style, happy fox and cat holding ancient Japanese coins (Wado Kaichin), showing each other excitedly, coins scattered on wooden table, warm sunset lighting through window, needle felted animals with joyful expressions, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、古代日本の硬貨（和同開珎）を持って喜ぶキツネと猫、興奮してお互いに見せ合う、木のテーブルに散らばるコイン、窓から差し込む温かい夕日の光、喜びの表情のニードルフェルト動物、カワイイスタイル
+
+## 活気ある市場の街並みシーン
+
+**シーン**: 賑やかな朝市で買い物する動物たち
+**プロンプト**: wool felt stop motion animation style, busy morning market street with felted animals shopping, fox carrying basket walking past wooden stalls, traditional Japanese architecture with blue tile roofs, other animals selling goods, bright sunny day atmosphere, needle felted textures, tilt-shift effect, kawaii style, --ar 16:9 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、フェルト動物たちが買い物する賑やかな朝市の通り、木の屋台を通り過ぎるかごを持つキツネ、青い瓦屋根の伝統的な日本建築、商品を売る他の動物たち、明るい晴れた日の雰囲気、ニードルフェルトの質感、チルトシフト効果、カワイイスタイル
+
+## 怒りのうさぎシーン
+
+**シーン**: 激怒して叫ぶうさぎ
+**プロンプト**: wool felt stop motion animation style, angry white bunny with pink nose shouting with mouth wide open, furrowed eyebrows, stomping feet animation, gray-blue background, needle felted texture, dramatic lighting from side, kawaii style but expressing anger, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、口を大きく開けて叫ぶピンクの鼻の怒った白いうさぎ、しかめた眉毛、足踏みアニメーション、灰青色の背景、ニードルフェルトの質感、横からのドラマティックな照明、怒りを表現するカワイイスタイル
+
+**シーン**: 静止したうさぎからズームアウト
+**プロンプト**: wool felt stop motion animation style, COMPLETELY FROZEN still bunny statue with orange ears wearing gray sweater, hands on hips in fixed pose, NO MOVEMENT AT ALL from bunny, ONLY camera movement slowly zooming out, bunny remains absolutely motionless like a statue, gray-blue soft background, needle felted texture, cinematic depth of field, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、完全に凍結した静止状態のうさぎの彫像、オレンジの耳とグレーのセーター、腰に手を当てた固定ポーズ、うさぎは一切動かない、カメラの動きのみゆっくりズームアウト、うさぎは彫像のように完全に動かない、灰青色の柔らかい背景、ニードルフェルトの質感、映画的な被写界深度、カワイイスタイル
+
+**シーン**: 超怒ったうさぎのドアップ
+**プロンプト**: wool felt stop motion animation style, extreme close-up of furious bunny rabbit with orange ears wearing blue-gray sweater, both arms raised high above head screaming in rage, mouth wide open showing anger, eyebrows deeply furrowed, intense furious expression, CLOSE-UP FACE SHOT, needle felted texture, dramatic lighting, kawaii style expressing extreme anger, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、青灰色のセーターを着たオレンジの耳の激怒したうさぎの超クローズアップ、怒りで叫びながら頭上高く両腕を上げ、怒りを示す大きく開いた口、深くしかめた眉毛、激しい憤怒の表情、クローズアップの顔ショット、ニードルフェルトの質感、ドラマティックな照明、極度の怒りを表現するカワイイスタイル
+
+**シーン**: 夕日の崖で手前のうさぎだけが振り返る
+**プロンプト**: wool felt stop motion animation style, group of felted animals on cliff at sunset, ONLY the front bunny wearing light blue scarf slowly turns its head to look at camera while other animals (pink bunny, bear, yellow animal) remain completely still facing away, dramatic golden hour lighting, warm orange-pink sky, rocky cliff edge with moss, needle felted texture, cinematic depth of field, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、夕日の崖の上のフェルト動物たちのグループ、薄い青いスカーフを着た手前のうさぎのみがゆっくりと首を振り返ってカメラを見る、他の動物たち（ピンクのうさぎ、くま、黄色い動物）は完全に静止して後ろ向きのまま、ドラマティックなゴールデンアワーの照明、温かいオレンジピンクの空、苔のある岩の崖の端、ニードルフェルトの質感、映画的な被写界深度、カワイイスタイル
+
+**シーン**: 2匹の狐がハイタッチで喜ぶ
+**プロンプト**: wool felt stop motion animation style, two adorable foxes wearing light green sweaters celebrating with a high-five, sitting at wooden table with drawing paper and pencils, warm bokeh lights in background, joyful expressions with big smiles, orange fur with white bellies, cozy art studio setting with paint bottles and supplies, needle felted texture, warm golden lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、薄緑のセーターを着た2匹の愛らしい狐がハイタッチで祝う、木のテーブルに画用紙と鉛筆、背景に温かいボケライト、大きな笑顔の喜びの表情、白いお腹のオレンジの毛、絵の具のボトルや画材のある居心地の良いアートスタジオの設定、ニードルフェルトの質感、温かいゴールデンライティング、カワイイスタイル
+
+**シーン**: 平城京の街で花火を見上げる動物たち
+**プロンプト**: wool felt stop motion animation style, miniature Japanese pagoda town with blue tiled roofs at night, beautiful fireworks bursting in the dark blue sky above, small felted animals (bunnies, cats, bears) looking up in wonder at the colorful explosions, glowing windows in traditional buildings, pink lanterns illuminating the street, needle felted texture, magical evening atmosphere, kawaii style, --ar 16:9 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、夜の青い瓦屋根のミニチュア日本の塔の町、上空の濃紺の空に美しく炸裂する花火、色とりどりの爆発を驚いて見上げる小さなフェルト動物たち（うさぎ、猫、くま）、伝統的建物の光る窓、街を照らすピンクの提灯、ニードルフェルトの質感、魔法的な夕方の雰囲気、カワイイスタイル
+
+**シーン**: 勝ち誇ったうさぎの仁王立ちガッツポーズ
+**プロンプト**: wool felt stop motion animation style, triumphant white bunny with orange ears standing in heroic pose, one arm raised high in victory gesture, confident proud expression with big smile, legs spread wide in powerful stance, chest puffed out, celebrating victory moment, needle felted texture, dramatic lighting from below, gray-blue background, kawaii style expressing triumph, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、オレンジの耳の勝ち誇った白いうさぎがヒロイックなポーズで立つ、勝利のジェスチャーで片腕を高く上げ、大きな笑顔の自信に満ちた誇らしい表情、力強い姿勢で足を大きく広げ、胸を張って、勝利の瞬間を祝う、ニードルフェルトの質感、下からのドラマティックな照明、灰青色の背景、勝利を表現するカワイイスタイル
+
+**シーン**: 神々しく照らされながら手を下ろすうさぎ
+**プロンプト**: wool felt stop motion animation style, white bunny sitting on wooden chair in ancient temple, COMPLETELY MOTIONLESS body position, ONLY slowly lowering raised arm from victory pose to resting position, divine light gradually intensifying from soft glow to brilliant radiance illuminating the bunny like a deity, ancient stone pillars with traditional paintings in background, floating dust particles in light beams, needle felted texture, cinematic lighting transition, kawaii style with spiritual atmosphere, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、古代寺院の木の椅子に座る白いうさぎ、完全に動かない体の位置、勝利のポーズから休息ポジションへゆっくりと上げた腕のみを下ろす、柔らかい輝きから神のようにうさぎを照らす輝かしい光まで徐々に強まる神々しい光、背景に伝統的な絵画のある古い石柱、光の筋に浮かぶ塵の粒子、ニードルフェルトの質感、映画的な照明の変化、精神的な雰囲気のカワイイスタイル
+
+**シーン**: キツネが尻尾を振る
+**プロンプト**: wool felt stop motion animation style, cute orange fox sitting and wagging fluffy tail happily from side to side, white belly, black paws, bright eyes looking forward with sweet expression, tail movement creating blur effect, simple gray background, needle felted texture with visible wool fibers, soft lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、可愛いオレンジのキツネが座ってふわふわの尻尾を嬉しそうに左右に振る、白いお腹、黒い足、甘い表情で前を見る明るい目、ブラー効果を作る尻尾の動き、シンプルな灰色の背景、見える羊毛繊維のニードルフェルトの質感、柔らかい照明、カワイイスタイル
+
+**シーン**: キツネがゴロゴロ転がる
+**プロンプト**: wool felt stop motion animation style, playful orange fox rolling on its back and side, fluffy tail swirling, paws up in the air, joyful expression with eyes closed in happiness, continuous rolling motion from left to right, simple gray background, needle felted texture with visible wool fibers, soft lighting capturing movement, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、遊び心のあるオレンジのキツネが背中と横に転がる、ふわふわの尻尾が渦巻く、空中に上げた足、幸せで目を閉じた喜びの表情、左から右への連続した転がり動作、シンプルな灰色の背景、見える羊毛繊維のニードルフェルトの質感、動きを捉える柔らかい照明、カワイイスタイル
+
+**シーン**: 2匹のキツネが仲良く寄り添う
+**プロンプト**: wool felt stop motion animation style, two adorable foxes sitting close together sharing a warm moment, one fox gently nuzzling the other's cheek, soft orange fur with white bellies and black paws, cozy atmosphere with warm bokeh lights in background, sitting on wooden surface with scattered papers and colored pencils, gentle expressions showing friendship and affection, needle felted texture with visible wool fibers, soft warm lighting creating intimate mood, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、温かい瞬間を共有して親密に寄り添う2匹の愛らしいキツネ、1匹のキツネがもう1匹の頬を優しく撫でる、白いお腹と黒い足の柔らかいオレンジの毛、背景に温かいボケライトの居心地の良い雰囲気、散らばった紙と色鉛筆のある木の表面に座る、友情と愛情を示す優しい表情、見える羊毛繊維のニードルフェルトの質感、親密な雰囲気を作る柔らかく温かい照明、カワイイスタイル

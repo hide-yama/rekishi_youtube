@@ -37,9 +37,9 @@
 **日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、公式の巻物を見て驚く動物たち、驚きの表情、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
 
 **歌詞**: 頑張った人に褒美をあげ  
-**シーン解釈**: 努力が報われる  
-**プロンプト**: wool felt stop motion animation style, animals receiving small gifts and medals, celebration scene, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
-**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、小さな贈り物やメダルを受け取る動物たち、お祝いのシーン、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
+**シーン解釈**: 農作業を頑張った人への報酬  
+**プロンプト**: wool felt stop motion animation style, farmer animals with farming tools jumping for joy while receiving rewards, extremely happy expressions with big smiles, muddy paws, celebrating with raised arms, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、農具を持った農民の動物たちが褒美を受け取りながら喜びでジャンプ、大きな笑顔で非常に幸せな表情、泥だらけの足、腕を上げて祝う、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
 
 **歌詞**: みんなの夢が叶うといいな  
 **シーン解釈**: 希望に満ちた願い  
@@ -238,3 +238,9 @@
 **シーン解釈**: 美しく輝く時代  
 **プロンプト**: wool felt stop motion animation style, entire Nara period scene sparkling with golden light, animals looking back proudly, glorious era, cute needle felted animals, soft pastel colors, cozy handmade texture, simple scene, warm lighting, kawaii style, --ar 1:1 --v 7
 **日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、金色の光で輝く奈良時代全体のシーン、誇らしげに振り返る動物たち、栄光の時代、可愛いニードルフェルトの動物たち、柔らかいパステルカラー、居心地の良い手作りの質感、シンプルなシーン、温かい照明、カワイイスタイル
+
+## 特別編：奈良の都カメラワーク
+
+**シーン**: 奈良の都が徐々に引きの絵になっていく  
+**プロンプト**: wool felt stop motion animation style, camera slowly pulling back from close-up of miniature Nara capital buildings to wide aerial view, gradual zoom out revealing entire ancient city layout with temples and palaces, cute needle felted animals becoming tiny dots, soft pastel colors, cozy handmade texture, smooth camera movement, warm lighting, kawaii style, --ar 16:9 --v 7
+**日本語訳**: 羊毛フェルトのストップモーションアニメスタイル、ミニチュア奈良の都の建物のクローズアップから広い空撮ビューへゆっくりと引いていくカメラ、寺院や宮殿を含む古代都市全体のレイアウトが徐々に明らかになるズームアウト、可愛いニードルフェルトの動物たちが小さな点になっていく、柔らかいパステルカラー、居心地の良い手作りの質感、滑らかなカメラの動き、温かい照明、カワイイスタイル
